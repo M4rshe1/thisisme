@@ -1,0 +1,12 @@
+:root {
+    --sh-class: #F1A08B;       /* Teal - from Circle 4 */
+    --sh-identifier: #2A2A3D;  /* Dark Background */
+    --sh-sign: #C8B5E5;        /* Lavender - from Circle 6 */
+    --sh-property: #F9C763;    /* Yellow-Orange - from Circle 2 */
+    --sh-entity: #4889A2;      /* Teal - from Circle 4 */
+    --sh-jsxliterals: #C8B5E5; /* Lavender - from Circle 6 */
+    --sh-string: #A0D8DA;      /* Light Blue - from Circle 5 */
+    --sh-keyword: #EF6D8E;     /* Pink - from Circle 1 */
+    --sh-comment: #4889A2;     /* Teal - from Circle 4 */
+    --sh-key: #F1A08B;         /* Teal - from Circle 4 */
+}

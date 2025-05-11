@@ -1,0 +1,192 @@
+{
+  "meta": {
+    "title": "Colin Heggli - Full Stack Developer | Software Engineer | IT Guy",
+    "description": "This is the English translation file for the website.",
+    "keywords": "Colin Heggli, Software Engineer, Full Stack Developer, IT Guy, Web Developer, Portfolio, Projects, Blog, Contact",
+    "author": "Colin Heggli",
+    "language": "en"
+  },
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact",
+    "career ": "Career ",
+    "github": {
+      "title": "GitHub",
+      "description": "View my GitHub profile and repositories",
+      "link": "https://github.com/m4rshe1"
+    },
+    "linkedin": {
+      "title": "LinkedIn",
+      "description": "View my LinkedIn profile and connect with me",
+      "link": "https://www.linkedin.com/in/colin-heggli/"
+    },
+    "youtube": {
+      "title": "YouTube",
+      "description": "View my YouTube channel and subscribe for updates",
+      "link": "https://www.youtube.com/channel/UCU0bh2sZt9NQmUbn6jLJl3g"
+    }
+  },
+  "about": {
+    "keys": {
+        "age": "age",
+        "name": "name",
+        "location": "location",
+        "jobTitle": "jobTitle",
+        "learning": "learning",
+        "interests": "interests",
+        "languages": "languages",
+        "description": "description",
+        "days": "days",
+        "years": "years",
+        "months": "months",
+        "hours": "hours",
+        "minutes": "minutes",
+        "seconds": "seconds"
+    },
+    "title": "About Me",
+    "name": "Colin Heggli",
+    "birthday": "2007-01-22",
+    "jobTitle": "IT Guy in apprentice",
+    "location": "Schaffhausen, Switzerland",
+    "firstName": "Colin",
+    "lastName": "Heggli",
+    "learning": "Cyber Security",
+    "interests": [
+      "Coding",
+      "Flying drone",
+      "Climbing"
+    ],
+    "languages": {
+        "german": "Native",
+        "english": "Fluent"
+    },
+    "downloadResume": "Download Resume",
+    "description": "I have been coding for over 4 years, beginning my journey in 2021. Initially, I learned HTML, CSS, and JavaScript to build websites.\n\nMy first project was a simple website built with HTML, CSS, and JavaScript (~mid-2021).\nAs I progressed, I first focused on React.js and after a while switched Oger to Next.js.\n\nI am currently also making a apprenticeship as an IT Guy at Georg Fischer AG, where I lean a lot about how big businesses operate."
+  },
+  "hero": {
+    "linkText": "Read More",
+    "link": "/#readmore",
+    "name": "Colin Heggli",
+    "title": "This is ME",
+    "image": "/images/nordkapp.jpg",
+    "bio": "I love coding, learning new technologies and flying drone. I am a software engineer with a passion for building anything that is fun.",
+    "welcome": "Hey, I'm Colin",
+    "description": "I am a software engineer with a passion for building web applications. I love coding and learning new technologies.",
+    "rotary": [
+      {
+        "title": "Nordkapp Trip 2025",
+        "link": "https://youtu.be/eJs1toIXj5k?si=9PiRkNPdJdO5Xo1a",
+        "linkText": "Watch the video",
+        "image": "/images/nordkapp.jpg",
+        "description": "1.5 years ago my Dad sade to me: \"Colin, when your 18 and you have your driving license, we will go to Nordkapp\". I sad: \"Sure, why not\". And this is how the idea was born.",
+        "date": "2025-04-19",
+        "newPage": true
+      },
+      {
+        "title": "This is ME",
+        "link": "https://colin.heggli.dev",
+        "linkText": "This Portfolio",
+        "date": "2025-05-12",
+        "image": "/images/thisisme.png",
+        "description": "This is my personal website where I showcase my projects and skills. I built it using Next.js, TypeScript, Tailwind CSS and many more."
+      }
+    ]
+  },
+  "buttons": {
+    "readMore": "Read More",
+    "contact": "Contact Me",
+    "downloadResume": "Download Resume",
+    "viewProjects": "View Projects",
+    "viewCode": "View Code",
+    "viewGithub": "View my github",
+    "viewLinkedIn": "View my LinkedIn",
+    "visitWebsite": "Visit Website",
+    "viewAll": "View All",
+    "sendMessage": "Send Message",
+    "send": "Send",
+    "close": "Close",
+    "learnMore": "Learn More",
+    "backToTop": "Back to Top",
+    "myWork": "My Work",
+    "myProjects": "My Projects",
+    "blog": "Blog",
+    "projects": "Projects",
+    "home": "Home",
+    "more": "More"
+  },
+  "recentProjects": {
+    "noEndDate": "now",
+    "seeMore": "Want to see more?",
+    "viewAll": "View all projects",
+    "viewGithub": "View on GitHub",
+    "visitWebsite": "Visit Website",
+    "title": "Recent Projects",
+    "description": "Explore some of my recent projects below. For more, visit my GitHub profile.",
+    "projects": [
+      {
+        "name": "This is ME",
+        "description": "This is my personal website where I showcase my projects and skills.",
+        "image": "/images/thisisme.png",
+        "link": "https://colin.heggli.dev",
+        "github": "https://github.com/m4rshe1/thisisme",
+        "startDate": "2025-05-11",
+        "technologies": [
+          "nextjs",
+          "typescript",
+          "tailwindcss",
+          "lucide-react",
+          "i18n",
+          "shadcnui",
+          "turbopack"
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "theme": "Theme",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "systemDefault": "System Default",
+    "save": "Save Settings",
+    "description": "Here you can change your settings, like website theme or decorations."
+  },
+  "technologies": {
+    "tech": [
+      "javascript",
+      "typescript",
+      "nodejs",
+      "npm",
+      "react",
+      "nextjs",
+      "postgresql",
+      "git",
+      "github",
+      "docker",
+      "office",
+      "excel",
+      "tailwindcss",
+      "vercel",
+      "eslint",
+      "webpack",
+      "express",
+      "word",
+      "powerpoint",
+      "wordpress",
+      "ubuntu",
+      "linux",
+      "windows",
+      "raspberrypi",
+      "debian",
+      "python",
+      "shadcnui",
+      "powerbi"
+    ],
+    "title": "Technology I use",
+    "description": "Over the years, I have worked with a variety of technologies. Here are some of the technologies I have experience with:"
+  }
+}
