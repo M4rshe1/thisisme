@@ -182,5 +182,29 @@
       "characters": "characters",
       "maxLength": "Maximum length is 500 characters."
     }
+  },
+  "wakatime": {
+    "title": "Wakatime Stats",
+    "description": "Wakatime is a tool that tracks the time I spend coding. Here are my stats for all time.",
+    "languages": "Languages",
+    "editors": "Editors",
+    "os": "Operating Systems",
+    "overall": "Overall Activity",
+    "topEditors": "Top Editors in hours",
+    "topLanguages": "Top Languages in hours",
+    "totalLanguages": "Total Languages",
+    "totalTime": "Total time",
+    "topOperatingSystems": "Top Operating Systems in hours",
+    "codingActivity": "Coding Activity",
+    "lastWeek": "Last Week",
+    "noStats": "No Wakatime data available.",
+    "loading": "Loading Wakatime stats...",
+    "dailyAverage": "Daily Average",
+    "totalCodingTime": "Total coding statistics since {startDate}",
+    "noLanguageDate": "No language data available.",
+    "noEditorData": "No editor data available.",
+    "noOperatingSystemData": "No operating system data available.",
+    "time": "Time",
+    "hours": "Hours"
   }
 }

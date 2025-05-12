@@ -384,7 +384,7 @@ const technologies: Record<string, TechnologyDef> = {
         name: 'Figma',
         icon: 'https://www.google.com/s2/favicons?domain=figma.com&sz=256',
         type: 'design',
-        color: '#F24E1E',
+        color: '#874fff',
     },
     google: {
         name: 'Google',
@@ -397,7 +397,79 @@ const technologies: Record<string, TechnologyDef> = {
         icon: 'https://www.google.com/s2/favicons?domain=cloudflare.com&sz=256',
         type: 'security',
         color: '#F38020',
-    }
+    },
+    vscode: {
+        name: 'Visual Studio Code',
+        icon: 'https://www.google.com/s2/favicons?domain=code.visualstudio.com&sz=256',
+        type: 'editor',
+        color: '#007ACC',
+    },
+    visualstudio: {
+        name: 'Visual Studio',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/5/59/Visual_Studio_Icon_2019.svg',
+        type: 'editor',
+        color: '#5C2D91',
+    },
+    jetbrains: {
+        name: 'JetBrains',
+        icon: 'https://www.google.com/s2/favicons?domain=www.jetbrains.com&sz=256',
+        type: 'editor',
+        color: '#fd2f55',
+    },
+    webstorm: {
+        name: 'WebStorm',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/WebStorm_Icon.svg/512px-WebStorm_Icon.svg.png?20210315203338',
+        type: 'editor',
+        color: '#12bbf4',
+    },
+    android: {
+        name: 'Android',
+        icon: 'https://www.google.com/s2/favicons?domain=developer.android.com&sz=256',
+        type: 'mobile',
+        color: '#3DDC84',
+    },
+    pycharm: {
+        name: 'PyCharm',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/PyCharm_Icon.svg/512px-PyCharm_Icon.svg.png',
+        type: 'editor',
+        color: '#28d890',
+    },
+    intellij: {
+        name: 'IntelliJ IDEA',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/512px-IntelliJ_IDEA_Icon.svg.png',
+        type: 'editor',
+        color: '#fe7f27',
+    },
+    phpstorm: {
+        name: 'PhpStorm',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/PhpStorm_Icon.svg/512px-PhpStorm_Icon.svg.png?20200803075927',
+        type: 'editor',
+        color: '#b14df2',
+    },
+    goland: {
+        name: 'GoLand',
+        icon: '/images/tech/goland.png',
+        type: 'editor',
+        color: '#08aec3',
+    },
+    rubymine: {
+        name: 'RubyMine',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/RubyMine_Icon.svg/512px-RubyMine_Icon.svg.png?20210316062044',
+        type: 'editor',
+        color: '#ff2658',
+    },
+    clion: {
+        name: 'CLion',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Clion.svg/105px-Clion.svg.png?20231228070033',
+        type: 'editor',
+        color: '#29d993',
+    },
+    rider: {
+        name: 'Rider',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/JetBrains_Rider_Icon.svg/512px-JetBrains_Rider_Icon.svg.png?20220320173724',
+        type: 'editor',
+        color: '#e77136',
+    },
 }
 
 export default technologies

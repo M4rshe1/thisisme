@@ -152,17 +152,17 @@ const About = () => {
                                 <div className={"flex items-center gap-2 p-2 text-sm text-gray-200"}>
                                     {/* Green Button (Fullscreen) */}
                                     <button
-                                        className={"h-3 w-3 rounded-full bg-green-500"}
+                                        className={"h-3 w-3 rounded-full bg-green-500 cursor-pointer"}
                                         onClick={() => setDisplayMode("full")}
                                     ></button>
                                     {/* Yellow Button (Minimize) */}
                                     <button
-                                        className={"h-3 w-3 rounded-full bg-yellow-500"}
+                                        className={"h-3 w-3 rounded-full bg-yellow-500 cursor-pointer"}
                                         onClick={() => setDisplayMode("minimized")}
                                     ></button>
                                     {/* Red Button (Close) */}
                                     <button
-                                        className={"h-3 w-3 rounded-full bg-red-500"}
+                                        className={"h-3 w-3 rounded-full bg-red-500 cursor-pointer"}
                                         onClick={() => setDisplayMode("closed")}
                                     ></button>
                                 </div>

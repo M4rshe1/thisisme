@@ -32,7 +32,13 @@ export const TECH: string[] = [
     "powerbi",
     "prisma",
     "google",
-    "cloudflare"
+    "cloudflare",
+    "pycharm",
+    "vscode",
+    "webstorm",
+    "jetbrains",
+    "visualstudio",
+    "powershell",
 ]
 
 export type Social = SocialWithIcon | SocialWithImage

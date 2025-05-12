@@ -3,6 +3,8 @@
 import Image from "next/image";
 import {Social} from "@/lib/settings";
 import {Link} from "@/i18n/navigation";
+import {ArrowRight} from "lucide-react";
+import React from "react";
 
 const SocialBadge = ({social}: { social: Social }) => {
 
@@ -10,7 +12,7 @@ const SocialBadge = ({social}: { social: Social }) => {
         <Link
             href={social.link}
             target="_blank"
-            className="flex items-center cursor-pointer border rounded border-gray-800 p-2 mb-2 max-w-2xl mx-auto shadow transition-all duration-300 ease-in-out cursor-default"
+            className="flex items-center cursor-pointer border rounded border-gray-800 p-2 mb-2 max-w-2xl mx-auto shadow transition-all duration-300 ease-in-out cursor-default group"
             style={{
                 borderColor: `${social.color}33`,
                 backgroundColor: `${social.color}15`,
@@ -46,7 +48,7 @@ const SocialBadge = ({social}: { social: Social }) => {
                         height={24}
                     />
             }
-            <span>{social.name}</span>
+            <span>{social.name}</span><ArrowRight className={"w-4 h-4 ml-2 mr-1 group-hover:translate-x-0.5 transition-transform duration-200"}/>
         </Link>
     );
 }
