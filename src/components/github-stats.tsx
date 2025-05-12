@@ -37,12 +37,15 @@ async function getUserData(username: string): Promise<GithubStatsData | null> {
         const userData = await userRes.json();
 
         // Fetch starred repos count (requires separate endpoint)
-        const starredRes = await fetch(`https://api.github.com/users/${username}/starred?per_page=1`, {
-            headers: {
-                Authorization: `token ${token}`,
+        const starredRes = await fetch(
+            `https://api.github.com/users/${username}/starred?per_page=1`,
+            {
+                headers: {
+                    Authorization: `token ${token}`,
+                },
+                next: { revalidate: 3600 }, // Revalidate every hour
             },
-            next: { revalidate: 3600 }, // Revalidate every hour
-        });
+        );
 
         let starredCount = 0;
         if (starredRes.ok) {
@@ -53,52 +56,87 @@ async function getUserData(username: string): Promise<GithubStatsData | null> {
                     starredCount = parseInt(lastPageMatch[1], 10);
                 }
             } else {
-                console.warn("Could not determine total starred repo count from 'Link' header.");
+                console.warn(
+                    "Could not determine total starred repo count from 'Link' header.",
+                );
             }
         } else {
             console.error(`Error fetching starred repos: ${starredRes.statusText}`);
         }
 
-        // --- Fetch total contributions using GraphQL ---
+        // --- Fetch total contributions using GraphQL in batches ---
         const graphqlEndpoint = 'https://api.github.com/graphql';
         const graphqlQuery = `
-            query($username: String!) {
+            query($username: String!, $from: DateTime, $to: DateTime) {
               user(login: $username) {
-                contributionsCollection {
-                  contributionCalendar {
-                    totalContributions
-                  }
+                contributionsCollection(from: $from, to: $to) {
+                    contributionCalendar {
+                        totalContributions
+                    }
                 }
               }
             }
         `;
 
-        const graphqlRes = await fetch(graphqlEndpoint, {
-            method: 'POST',
-            headers: {
-                Authorization: `Bearer ${token}`,
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                query: graphqlQuery,
-                variables: { username },
-            }),
-            next: { revalidate: 3600 }, // Cache for an hour, same as other data
-        });
-
         let totalContributions = 0;
-        if (graphqlRes.ok) {
-            const graphqlData = await graphqlRes.json();
-            if (graphqlData.data && graphqlData.data.user && graphqlData.data.user.contributionsCollection && graphqlData.data.user.contributionsCollection.contributionCalendar) {
-                totalContributions = graphqlData.data.user.contributionsCollection.contributionCalendar.totalContributions;
+        const startYear = 2020; // Starting year for fetching contributions
+        const currentYear = new Date().getFullYear();
+
+        for (let year = startYear; year <= currentYear; year++) {
+            const fromDate = new Date(`${year}-01-01T00:00:00Z`).toISOString();
+            const toDate = new Date(`${year}-12-31T23:59:59Z`).toISOString();
+
+            // Adjust the 'to' date for the current year to not exceed the current date
+            const now = new Date();
+            const currentYearEndDate = new Date(`${currentYear}-12-31T23:59:59Z`);
+            const effectiveToDate = year === currentYear && now < currentYearEndDate ? now.toISOString() : toDate;
+
+
+            console.log(`Fetching contributions for ${year}: from ${fromDate} to ${effectiveToDate}`);
+
+            const graphqlRes = await fetch(graphqlEndpoint, {
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    query: graphqlQuery,
+                    variables: {
+                        username,
+                        from: fromDate,
+                        to: effectiveToDate,
+                    },
+                }),
+                next: { revalidate: 3600 }, // Cache for an hour
+            });
+
+            if (graphqlRes.ok) {
+                const graphqlData = await graphqlRes.json();
+                if (
+                    graphqlData.data &&
+                    graphqlData.data.user &&
+                    graphqlData.data.user.contributionsCollection &&
+                    graphqlData.data.user.contributionsCollection.contributionCalendar
+                ) {
+                    totalContributions +=
+                        graphqlData.data.user.contributionsCollection.contributionCalendar
+                            .totalContributions;
+                } else {
+                    console.error(
+                        `Could not extract total contributions from GraphQL response for year ${year}.`,
+                    );
+                    console.error('GraphQL Data:', graphqlData); // Log the full data for debugging
+                }
             } else {
-                console.error('Could not extract total contributions from GraphQL response.');
+                console.error(
+                    `Error fetching GraphQL data for year ${year}: ${graphqlRes.statusText}`,
+                );
+                // Log the response body for more details on the error
+                const errorBody = await graphqlRes.text();
+                console.error('GraphQL Error Response Body:', errorBody);
+                break; // Stop fetching batches if there's an error
             }
-        } else {
-            console.error(`Error fetching GraphQL data: ${graphqlRes.statusText}`);
-            // Log the response body for more details on the error
-            const errorBody = await graphqlRes.text();
-            console.error('GraphQL Error Response Body:', errorBody);
         }
         // --- End of GraphQL Fetch ---
 
@@ -106,14 +144,14 @@ async function getUserData(username: string): Promise<GithubStatsData | null> {
             public_repos: userData.public_repos,
             followers: userData.followers,
             starred_repos: starredCount,
-            total_contributions: totalContributions, // Using contributions as the value
+            total_contributions: totalContributions, // Sum of contributions from all years
         };
-
     } catch (error) {
         console.error('Error fetching GitHub data:', error);
         return null;
     }
 }
+
 
 
 interface GithubStatsProps {
@@ -166,7 +204,7 @@ export default async function GithubStats({username}: GithubStatsProps) {
                 className="flex items-center space-x-2 hover:text-gray-200 transition-colors duration-200 hover:underline">
                 <GitCommit className="w-5 h-5"/>
                 <span className="font-bold">{
-                    humanReadable(stats.total_contributions || 0)
+                    humanReadable(stats.total_contributions || 0, 1)
                 }</span>
                 <span>Commits</span>
             </Link>
