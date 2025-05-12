@@ -10,6 +10,7 @@ import {routing} from '@/i18n/routing';
 import React from "react";
 import Header from "@/components/header";
 import {getTranslations} from "next-intl/server";
+import { Analytics } from "@vercel/analytics/next"
 
 export const generateMetadata = async ({
                                            params
@@ -44,6 +45,7 @@ export default async function LocaleLayout({
         <html lang={locale}
               className="min-h-screen m-0 p-0 font-mono dark"
         >
+        <Analytics/>
         <body className="min-h-screen m-0 p-0">
         <div className="min-h-screen grid grid-cols-1 grid-rows-1">
             <div className="h-full w-full bg-black opacity-70 backdrop-blur-sm -z-5 col-start-1 row-start-1"/>
