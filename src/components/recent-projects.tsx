@@ -15,7 +15,7 @@ const RecentProjects = () => {
         <div className="flex flex-col gap-4 my-8">
             <h2 className="text-3xl font-bold">
                 {t("title")}
-                <Dot/>
+                <Dot className={"ml-1"}/>
             </h2>
             <p className="text-gray-400">
                 {t("description")}

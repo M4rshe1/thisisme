@@ -11,6 +11,7 @@ import React from "react";
 import Header from "@/components/header";
 import {getTranslations} from "next-intl/server";
 import { Analytics } from "@vercel/analytics/next"
+import {Toaster} from "@/components/ui/sonner";
 
 export const generateMetadata = async ({
                                            params
@@ -56,6 +57,7 @@ export default async function LocaleLayout({
                     <div className={"mt-22 max-w-5xl w-full px-4 sm:px-6 lg:px-8"}>
                     {children}
                     </div>
+                    <Toaster />
                 </NextIntlClientProvider>
             </div>
         </div>

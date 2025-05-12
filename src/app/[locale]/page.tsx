@@ -4,6 +4,7 @@ import RecentProjects from "@/components/recent-projects";
 import About from "@/components/about";
 import Technology from "@/components/technology";
 import WakatimeStats from "@/components/wakatime-stats";
+import Contact from "@/components/contact";
 
 export default function HomePage() {
     return (
@@ -15,6 +16,7 @@ export default function HomePage() {
             <RecentProjects/>
             <WakatimeStats/>
             <Technology/>
+            <Contact/>
         </>
     );
 }

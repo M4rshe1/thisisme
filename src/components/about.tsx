@@ -207,14 +207,10 @@ const About = () => {
                 </AnimatePresence>
                 <Link
                     href={"/resume.pdf"}
-                    className={cn(buttonVariants({ variant: "outline" }), "group")}
+                    className={buttonVariants({ variant: "outline" })}
                 >
                     {t("about.downloadResume")}
-                    <Download
-                        className={
-                            "transition-transform duration-200 group-hover:translate-x-0.5"
-                        }
-                    />
+                    <Download/>
                 </Link>
             </div>
         </div>
