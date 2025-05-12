@@ -85,7 +85,7 @@ const About = () => {
                 </p>
                 <div className="mt-4 flex items-center gap-4 gap-2">
                     <Link
-                        href={"https://githhub.com/m4rsh1"}
+                        href={"https://githhub.com/m4rshe1"}
                         className={cn(buttonVariants({ variant: "accent" }), "group")}
                     >
                         {t("buttons.viewGithub")}

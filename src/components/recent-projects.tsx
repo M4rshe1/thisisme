@@ -42,7 +42,7 @@ const RecentProjects = () => {
                     <Link href={"/projects"} className={cn(buttonVariants({variant: "outline"}), "group")}>
                         {t("viewAll")} <ArrowRight className={"group-hover:translate-x-0.5 transition-transform duration-200"}/>
                     </Link>
-                    <Link href={"https://githhub.com/m4rsh1"} className={cn(buttonVariants({variant: "accent"}), "group")}>
+                    <Link href={"https://githhub.com/m4rshe1"} className={cn(buttonVariants({variant: "accent"}), "group")}>
                         {t("viewGithub")} <ArrowRight className={"group-hover:translate-x-0.5 transition-transform duration-200"}/>
                     </Link>
                 </div>
