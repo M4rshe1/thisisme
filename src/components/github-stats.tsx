@@ -12,6 +12,7 @@ interface GithubStatsData {
 }
 
 async function getUserData(username: string): Promise<GithubStatsData | null> {
+    "use cache";
     const token = process.env.GITHUB_TOKEN;
 
     if (!token) {
@@ -92,7 +93,7 @@ async function getUserData(username: string): Promise<GithubStatsData | null> {
             const effectiveToDate = year === currentYear && now < currentYearEndDate ? now.toISOString() : toDate;
 
 
-            console.log(`Fetching contributions for ${year}: from ${fromDate} to ${effectiveToDate}`);
+            // console.log(`Fetching contributions for ${year}: from ${fromDate} to ${effectiveToDate}`);
 
             const graphqlRes = await fetch(graphqlEndpoint, {
                 method: 'POST',
