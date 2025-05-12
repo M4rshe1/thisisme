@@ -57,7 +57,7 @@ const Contact = () => {
 
 
     return (
-        <div className="flex flex-col gap-4 my-8">
+        <div className="flex flex-col gap-4">
             <h2 className="text-3xl font-bold">
                 {t("title")}
                 <Dot className={"ml-1"}/>

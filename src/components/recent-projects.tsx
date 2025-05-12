@@ -7,12 +7,13 @@ import {cn} from "@/lib/utils";
 import Dot from "@/components/dot";
 import React from "react";
 
-const RecentProjects = () => {
+const RecentProjects = ({count}: {count?: number}) => {
     const t = useTranslations("recentProjects");
     const messages = useMessages();
-    const projects = messages.recentProjects.projects;
+    const projectsCount = count ?? messages.recentProjects.projects.length;
+    const projects = messages.recentProjects.projects.slice(0, projectsCount);
     return (
-        <div className="flex flex-col gap-4 my-8">
+        <div className="flex flex-col gap-4">
             <h2 className="text-3xl font-bold">
                 {t("title")}
                 <Dot className={"ml-1"}/>

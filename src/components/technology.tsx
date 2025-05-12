@@ -8,7 +8,7 @@ const Technology = () => {
     const t = useTranslations("technologies");
 
     return (
-        <div className="flex flex-col justify-center w-full my-16">
+        <div className="flex flex-col justify-center w-full">
             <h1 className="text-3xl font-bold">
                 {t("title")}
                 <Dot className={"mt-1.5 ml-1.5"}/>

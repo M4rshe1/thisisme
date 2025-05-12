@@ -11,11 +11,16 @@ export default function HomePage() {
         <>
             <Hero/>
             <GithubStats username={"m4rshe1"}/>
+            <div className="h-4"/>
             <div id={"readmore"}/>
             <About/>
+            <div className="h-16"/>
             <RecentProjects/>
+            <div className="h-16"/>
             <WakaTimeStats/>
+            <div className="h-16"/>
             <Technology/>
+            <div className="h-16"/>
             <Contact/>
         </>
     );

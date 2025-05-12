@@ -64,7 +64,7 @@ const About = () => {
     };
 
     return (
-        <div className="my-8 grid auto-rows-auto grid-cols-1 gap-6 md:grid-cols-2 md:grid-rows-1">
+        <div className="grid auto-rows-auto grid-cols-1 gap-6 md:grid-cols-2 md:grid-rows-1">
             <div>
                 <Image
                     src={"/images/me.jpg"}
