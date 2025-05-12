@@ -3,6 +3,7 @@ import GithubStats from "@/components/github-stats";
 import RecentProjects from "@/components/recent-projects";
 import About from "@/components/about";
 import Technology from "@/components/technology";
+import WakatimeStats from "@/components/wakatime-stats";
 
 export default function HomePage() {
     return (
@@ -12,6 +13,7 @@ export default function HomePage() {
             <div id={"readmore"}/>
             <About/>
             <RecentProjects/>
+            <WakatimeStats/>
             <Technology/>
         </>
     );
