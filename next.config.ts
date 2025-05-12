@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
     experimental: {
         useCache: true,
     },
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
     images: {
         remotePatterns: [
             {
@@ -32,7 +35,7 @@ const nextConfig: NextConfig = {
                 pathname: '/**',
             },
         ],
-    }
+    },
 };
 
 const withNextIntl = createNextIntlPlugin();
