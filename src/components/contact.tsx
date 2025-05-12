@@ -71,32 +71,33 @@ const Contact = () => {
                 <div className="space-y-2">
                     <Label htmlFor="name" className="text-gray-400 ">
                         {t("form.name")}
+                        <span className="text-red-500">*</span>
                     </Label>
                     <Input
                         type="text"
                         id="name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        className="bg-transparent border border-gray-600 rounded-md p-2 focus:outline-none focus:border-gray-400"
                         placeholder={t("form.placeholderName")}
                     />
                 </div>
                 <div className={"space-y-2"}>
                     <Label htmlFor="email" className="text-gray-400">
                         {t("form.email")}
+                        <span className="text-red-500">*</span>
                     </Label>
                     <Input
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         type="email"
                         id="email"
-                        className="bg-transparent border border-gray-600 rounded-md p-2 focus:outline-none focus:border-gray-400"
                         placeholder={t("form.placeholderEmail")}
                     />
                 </div>
                 <div className="lg:col-span-2 space-y-2">
                     <Label htmlFor="message" className="text-gray-400">
                         {t("form.message")}
+                            <span className="text-red-500">*</span>
                     </Label>
                     <div className="*:not-first:mt-2">
                         <Textarea
@@ -104,6 +105,7 @@ const Contact = () => {
                             value={value}
                             placeholder={t("form.placeholderMessage")}
                             maxLength={maxLength}
+                            rows={5}
                             onChange={(e) => handleChange(e.target.value)}
                         />
                         <p
