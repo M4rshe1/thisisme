@@ -386,6 +386,18 @@ const technologies: Record<string, TechnologyDef> = {
         type: 'design',
         color: '#F24E1E',
     },
+    google: {
+        name: 'Google',
+        icon: 'https://www.google.com/s2/favicons?domain=google.com&sz=256',
+        type: 'search engine',
+        color: '#4285F4',
+    },
+    cloudflare: {
+        name: 'Cloudflare',
+        icon: 'https://www.google.com/s2/favicons?domain=cloudflare.com&sz=256',
+        type: 'security',
+        color: '#F38020',
+    }
 }
 
 export default technologies

@@ -33,8 +33,8 @@ const Project = ({name, description, image, github, link, technologies, startDat
     }) : t("noEndDate")
 
     return (
-        <div className={"flex flex-col md:flex-row items-center justify-between mb-4"}>
-            <div className={"flex flex-col gap-2"}>
+        <div className={"flex flex-col md:flex-row items-center justify-between mb-4 w-full"}>
+            <div className={"flex flex-col gap-2 w-full"}>
                 <h3 className={"text-lg font-semibold text-gray-200"}>{name}</h3>
                 <p className={"text-sm text-gray-600"}>{formattedStartDate} - {formattedEndDate}</p>
                 <p className={"text-sm text-gray-400"}>{description}</p>
@@ -45,7 +45,7 @@ const Project = ({name, description, image, github, link, technologies, startDat
                     height={200}
                     className={"rounded-md shadow-md w-full aspect-video object-cover border border-gray-600"}
                 />
-                <div className={"flex gap-2 mt-2 flex-wrap"}>
+                <div className={"flex gap-2 mt-2 flex-wrap justify-start w-fit"}>
                     {technologies.map((tech, index) => (
                         <TechnologyBadge
                             tech={tech}

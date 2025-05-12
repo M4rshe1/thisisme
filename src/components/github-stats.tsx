@@ -1,9 +1,4 @@
-import {
-    GitCommit,
-    Star,
-    Users,
-    FolderOpen,
-} from 'lucide-react';
+import {FolderOpen, GitCommit, Star, Users,} from 'lucide-react';
 import {humanReadable} from "@/lib/utils";
 import {Link} from "@/i18n/navigation";
 
@@ -31,7 +26,7 @@ async function getUserData(username: string): Promise<GithubStatsData | null> {
                 Authorization: `token ${token}`,
             },
             // Next.js specific: Cache the data for a bit
-            next: { revalidate: 3600 }, // Revalidate every hour
+            next: {revalidate: 3600}, // Revalidate every hour
         });
 
         if (!userRes.ok) {
@@ -46,11 +41,11 @@ async function getUserData(username: string): Promise<GithubStatsData | null> {
             headers: {
                 Authorization: `token ${token}`,
             },
-            next: { revalidate: 3600 }, // Revalidate every hour
+            next: {revalidate: 3600}, // Revalidate every hour
         });
 
         let starredCount = 0;
-        if(starredRes.ok) {
+        if (starredRes.ok) {
             // Get the total count from the 'Link' header if available
             const linkHeader = starredRes.headers.get('link');
             if (linkHeader) {
@@ -95,7 +90,7 @@ interface GithubStatsProps {
     username: string;
 }
 
-export default async function GithubStats({ username }: GithubStatsProps) {
+export default async function GithubStats({username}: GithubStatsProps) {
     const stats = await getUserData(username);
 
     if (!stats) {
@@ -103,11 +98,12 @@ export default async function GithubStats({ username }: GithubStatsProps) {
     }
 
     return (
-        <div className="mg:flex md:flex-row grid grid-cols-2 justify-between items-center rounded-md p-4 text-gray-400 text-sm">
+        <div
+            className="md:flex md:flex-row grid grid-cols-2 justify-between items-center rounded-md p-4 text-gray-400 text-sm">
             <Link
                 href={`https://github.com/${username}?tab=repositories`}
                 className="flex items-center space-x-2 mb-2 md:mb-0 hover:text-gray-200 transition-colors duration-200 hover:underline">
-                <FolderOpen className="w-5 h-5" />
+                <FolderOpen className="w-5 h-5"/>
                 <span className="font-bold">{
                     humanReadable(stats.public_repos)
                 }</span>
@@ -117,7 +113,7 @@ export default async function GithubStats({ username }: GithubStatsProps) {
             <Link
                 href={`https://github.com/${username}?tab=stars`}
                 className="flex items-center space-x-2 mb-2 md:mb-0 hover:text-gray-200 transition-colors duration-200 hover:underline">
-                <Star className="w-5 h-5" />
+                <Star className="w-5 h-5"/>
                 <span className="font-bold">{
                     humanReadable(stats.starred_repos || 0)
                 }</span>
@@ -127,7 +123,7 @@ export default async function GithubStats({ username }: GithubStatsProps) {
             <Link
                 href={`https://github.com/${username}?tab=followers`}
                 className="flex items-center space-x-2 mb-2 md:mb-0 hover:text-gray-200 transition-colors duration-200 hover:underline">
-                <Users className="w-5 h-5" />
+                <Users className="w-5 h-5"/>
                 <span className="font-bold">{
                     humanReadable(stats.followers)
                 }</span>
@@ -138,7 +134,7 @@ export default async function GithubStats({ username }: GithubStatsProps) {
                 href={`https://github.com/${username}`}
 
                 className="flex items-center space-x-2 hover:text-gray-200 transition-colors duration-200 hover:underline">
-                <GitCommit className="w-5 h-5" />
+                <GitCommit className="w-5 h-5"/>
                 <span className="font-bold">{
                     humanReadable(stats.total_commits || 0)
                 }</span>

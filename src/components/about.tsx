@@ -9,6 +9,7 @@ import React, { useEffect, useState } from "react";
 import { highlight } from "sugar-high";
 import Dot from "@/components/dot";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const About = () => {
     const t = useTranslations();
@@ -65,7 +66,17 @@ const About = () => {
     return (
         <div className="my-8 grid auto-rows-auto grid-cols-1 gap-6 md:grid-cols-2 md:grid-rows-1">
             <div>
-                <h2 className="text-3xl font-bold text-gray-200">
+                <Image
+                    src={"/images/me.jpg"}
+                    alt={"Picture of me"}
+                    width={300}
+                    height={300}
+                    className="rounded-lg border border-gray-600 shadow-lg"
+                    style={{
+                        aspectRatio: "1/1",
+                    }}
+                />
+                <h2 className="text-3xl font-bold text-gray-200 mt-6">
                     {t("about.title")}
                     <Dot className={"ml-1.5 mt-1.5"} />
                 </h2>

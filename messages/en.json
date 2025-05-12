@@ -31,20 +31,20 @@
   },
   "about": {
     "keys": {
-        "age": "age",
-        "name": "name",
-        "location": "location",
-        "jobTitle": "jobTitle",
-        "learning": "learning",
-        "interests": "interests",
-        "languages": "languages",
-        "description": "description",
-        "days": "days",
-        "years": "years",
-        "months": "months",
-        "hours": "hours",
-        "minutes": "minutes",
-        "seconds": "seconds"
+      "age": "age",
+      "name": "name",
+      "location": "location",
+      "jobTitle": "jobTitle",
+      "learning": "learning",
+      "interests": "interests",
+      "languages": "languages",
+      "description": "description",
+      "days": "days",
+      "years": "years",
+      "months": "months",
+      "hours": "hours",
+      "minutes": "minutes",
+      "seconds": "seconds"
     },
     "title": "About Me",
     "name": "Colin Heggli",
@@ -60,11 +60,11 @@
       "Climbing"
     ],
     "languages": {
-        "german": "Native",
-        "english": "Fluent"
+      "german": "Native",
+      "english": "Fluent"
     },
     "downloadResume": "Download Resume",
-    "description": "I have been coding for over 4 years, beginning my journey in 2021. Initially, I learned HTML, CSS, and JavaScript to build websites.\n\nMy first project was a simple website built with HTML, CSS, and JavaScript (~mid-2021).\nAs I progressed, I first focused on React.js and after a while switched Oger to Next.js.\n\nI am currently also making a apprenticeship as an IT Guy at Georg Fischer AG, where I lean a lot about how big businesses operate."
+    "description": "I have been coding for over 4 years, beginning my journey in 2021. Initially, I learned HTML, CSS, and JavaScript to build websites.\n\nMy first project was a simple website built with HTML, CSS, and JavaScript (~mid-2021).\nAs I progressed, I first focused on React.js and after a while switched over to Next.js.\n\nI am currently also making a apprenticeship as an IT Guy at Georg Fischer AG, where I lean a lot about how big businesses operate."
   },
   "hero": {
     "linkText": "Read More",
@@ -184,7 +184,10 @@
       "debian",
       "python",
       "shadcnui",
-      "powerbi"
+      "powerbi",
+      "prisma",
+      "google",
+      "cloudflare"
     ],
     "title": "Technology I use",
     "description": "Over the years, I have worked with a variety of technologies. Here are some of the technologies I have experience with:"

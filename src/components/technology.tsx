@@ -14,7 +14,7 @@ const Technology = () => {
             </h1>
             <p className="mt-4 text-lg text-gray-400">
                 {messages.technologies.description}</p>
-            <div className="flex items-center justify-start w-full flex-wrap gap-2 mt-4">
+            <div className="flex items-start justify-start w-full flex-wrap gap-2 mt-4 w-fit">
                 {
                     messages.technologies.tech.map((technology: string, index: number) => {
                         return (
