@@ -39,21 +39,22 @@ export const parseISO = (date: string): string => {
     })} ${formatted.getUTCDate()}, ${formatted.getFullYear()}`;
 };
 
-export function stripTypenames(value: any): any {
-    if (Array.isArray(value)) {
-        return value.map(stripTypenames);
-    } else if (value !== null && typeof value === "object") {
-        const newObject: Record<string, any> = {};
-        for (const property in value) {
-            if (property !== "__typename") {
-                newObject[property] = stripTypenames(value[property]);
-            }
-        }
-        return newObject;
-    } else {
-        return value;
-    }
-}
+// // @ts-expect-error
+// export function stripTypenames(value: any): any {
+//     if (Array.isArray(value)) {
+//         return value.map(stripTypenames);
+//     } else if (value !== null && typeof value === "object") {
+//         const newObject: Record<string, any> = {};
+//         for (const property in value) {
+//             if (property !== "__typename") {
+//                 newObject[property] = stripTypenames(value[property]);
+//             }
+//         }
+//         return newObject;
+//     } else {
+//         return value;
+//     }
+// }
 
 
 const idToRequestCount = new Map<string, number>();
@@ -86,5 +87,5 @@ export const slugify = (str: string) => {
         .replace(/\s+/g, "-") // Replace spaces with -
         .replace(/&/g, "-and-") // Replace & with 'and'
         .replace(/[^\w\-]+/g, "") // Remove all non-word characters except for -
-        .replace(/\-\-+/g, "-"); // Replace multiple - with single -
+        .replace(/--+/g, "-"); // Replace multiple - with single -
 };
