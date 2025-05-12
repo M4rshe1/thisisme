@@ -5,6 +5,8 @@ import {Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis
 import fetchWakatimeStats from "@/actions/fetchWakatimeStats";
 import {useFormatter, useTranslations} from "next-intl";
 import Dot from "@/components/dot";
+import {Link} from "@/i18n/navigation";
+import {SquareArrowOutUpRight} from "lucide-react";
 
 interface WakaTimeStatsDef {
     total_seconds: number;
@@ -84,7 +86,15 @@ const WakaTimeStats = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black p-6 rounded-lg">
+        <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black p-6 rounded-lg relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-900/0 to-gray-800 opacity-50 blur-lg"></div>
+            <Link
+                href={`https://wakatime.com/@${process.env.NEXT_PUBLIC_WAKATIME_USERNAME}`}
+                target="_blank"
+                className="absolute top-4 right-4 rounded-full bg-black/30 p-2 text-gray-200 transition hover:bg-black/50"
+            >
+                <SquareArrowOutUpRight className="h-5 w-5"/>
+            </Link>
             <div className="mx-auto max-w-7xl">
                 <div className="mb-8">
                     <h1 className="text-3xl font-bold text-gray-200">{t("title")}<Dot className={"ml-1"}/></h1>
