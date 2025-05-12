@@ -1,6 +1,6 @@
 import Hero from "@/components/hero";
 import GithubStats from "@/components/github-stats";
-import RecentProjects from "@/components/recent-projects";
+import Projects from "@/components/projects";
 import About from "@/components/about";
 import Technology from "@/components/technology";
 import WakaTimeStats from "@/components/waka-time-stats";
@@ -15,7 +15,7 @@ export default function HomePage() {
             <div id={"readmore"}/>
             <About/>
             <div className="h-16"/>
-            <RecentProjects/>
+            <Projects count={3}/>
             <div className="h-16"/>
             <WakaTimeStats/>
             <div className="h-16"/>

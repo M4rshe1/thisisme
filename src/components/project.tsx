@@ -19,7 +19,7 @@ export interface ProjectProps {
 }
 
 const Project = ({name, description, image, github, link, technologies, startDate, endDate}: ProjectProps) => {
-    const t = useTranslations("recentProjects");
+    const t = useTranslations("projects");
 
     const format = useFormatter();
     const formattedStartDate = format.dateTime(new Date(startDate), {

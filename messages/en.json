@@ -117,14 +117,14 @@
     "home": "Home",
     "more": "More"
   },
-  "recentProjects": {
+  "projects": {
     "noEndDate": "now",
     "seeMore": "Want to see more?",
     "viewAll": "View all projects",
     "viewGithub": "View on GitHub",
     "visitWebsite": "Visit Website",
-    "title": "Recent Projects",
-    "description": "Explore some of my recent projects below. For more, visit my GitHub profile.",
+    "title": "My Projects",
+    "description": "Explore some of my recent or not so recent projects below. For more, visit my GitHub profile.",
     "projects": [
       {
         "name": "This is ME",
@@ -167,7 +167,7 @@
       "name": "Name",
       "placeholderName": "Your Name",
       "email": "Email",
-      "placeholderEmail": "michi@srf.ch",
+      "placeholderEmail": "richi@srf.ch",
       "message": "Message",
       "placeholderMessage": "Hello there, I would like to ask you about...",
       "send": "Send Message",
@@ -206,5 +206,22 @@
     "noOperatingSystemData": "No operating system data available.",
     "time": "Time",
     "hours": "Hours"
+  },
+  "blog": {
+    "title": "Tech Blog",
+    "description": "A blog about technology, programming, and various intriguing topics. Here I share my experiences, projects and opinions.",
+    "keywords": "blog, technology, programming, software development, web development, coding, tutorials, guides",
+    "readMore": "Read More",
+    "noPosts": "No blog posts available.",
+    "loading": "Loading blog posts...",
+    "seeAllPosts": "See all posts",
+    "seeAllCategories": "See all categories",
+    "allPosts": "All Posts",
+    "words": "words",
+    "published": "Published",
+    "by": "by",
+    "on": "on",
+    "read": "read",
+    "tableOfContents": "Table of Contents"
   }
 }

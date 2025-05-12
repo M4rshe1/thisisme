@@ -87,7 +87,7 @@ const WakaTimeStats = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black p-6 rounded-lg relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-900/0 to-gray-800 opacity-50 blur-lg"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-900/0 to-gray-800 opacity-50 blur-lg pointer-events-none"></div>
             <Link
                 href={`https://wakatime.com/@${process.env.NEXT_PUBLIC_WAKATIME_USERNAME}`}
                 target="_blank"
@@ -292,7 +292,6 @@ const WakaTimeStats = () => {
                                                 name,
                                             ]}
                                         />
-                                        {/*<Legend />*/}
                                         <Bar
                                             dataKey="total_seconds"
                                             fill="#f59e0b"

@@ -171,7 +171,7 @@ export default async function GithubStats({username}: GithubStatsProps) {
             className="md:flex md:flex-row grid grid-cols-2 justify-between items-center rounded-md p-4 text-gray-400 text-sm">
             <Link
                 href={`https://github.com/${username}?tab=repositories`}
-                className="flex items-center space-x-2 mb-2 md:mb-0 hover:text-gray-200 transition-colors duration-200 hover:underline">
+                className="flex items-center space-x-2 mb-2 md:mb-0 hover:text-gray-200 transition-colors duration-200 font-bold">
                 <FolderOpen className="w-5 h-5"/>
                 <span className="font-bold">{
                     humanReadable(stats.public_repos)
@@ -181,7 +181,7 @@ export default async function GithubStats({username}: GithubStatsProps) {
 
             <Link
                 href={`https://github.com/${username}?tab=stars`}
-                className="flex items-center space-x-2 mb-2 md:mb-0 hover:text-gray-200 transition-colors duration-200 hover:underline">
+                className="flex items-center space-x-2 mb-2 md:mb-0 hover:text-gray-200 transition-colors duration-200 font-bold">
                 <Star className="w-5 h-5"/>
                 <span className="font-bold">{
                     humanReadable(stats.starred_repos || 0)
@@ -191,7 +191,7 @@ export default async function GithubStats({username}: GithubStatsProps) {
 
             <Link
                 href={`https://github.com/${username}?tab=followers`}
-                className="flex items-center space-x-2 mb-2 md:mb-0 hover:text-gray-200 transition-colors duration-200 hover:underline">
+                className="flex items-center space-x-2 mb-2 md:mb-0 hover:text-gray-200 transition-colors duration-200 font-bold">
                 <Users className="w-5 h-5"/>
                 <span className="font-bold">{
                     humanReadable(stats.followers)
@@ -202,7 +202,7 @@ export default async function GithubStats({username}: GithubStatsProps) {
             <Link
                 href={`https://github.com/${username}`}
 
-                className="flex items-center space-x-2 hover:text-gray-200 transition-colors duration-200 hover:underline">
+                className="flex items-center space-x-2 hover:text-gray-200 transition-colors duration-200 font-bold">
                 <GitCommit className="w-5 h-5"/>
                 <span className="font-bold">{
                     humanReadable(stats.total_contributions || 0, 1)

@@ -7,11 +7,11 @@ import {cn} from "@/lib/utils";
 import Dot from "@/components/dot";
 import React from "react";
 
-const RecentProjects = ({count}: {count?: number}) => {
-    const t = useTranslations("recentProjects");
+const Projects = ({count}: {count?: number}) => {
+    const t = useTranslations("projects");
     const messages = useMessages();
-    const projectsCount = count ?? messages.recentProjects.projects.length;
-    const projects = messages.recentProjects.projects.slice(0, projectsCount);
+    const projectsCount = count ?? messages.projects.projects.length;
+    const projects = messages.projects.projects.slice(0, projectsCount);
     return (
         <div className="flex flex-col gap-4">
             <h2 className="text-3xl font-bold">
@@ -52,4 +52,4 @@ const RecentProjects = ({count}: {count?: number}) => {
     );
 }
 
-export default RecentProjects;
+export default Projects;

@@ -2,7 +2,7 @@
 
 import Dot from "@/components/dot";
 import React, {useState} from "react";
-import {SOCIALS} from "@/lib/settings";
+import {SOCIALS} from "@/config/settings";
 import SocialBadge from "@/components/social-badge";
 import {useTranslations} from "next-intl";
 import {Button} from "@/components/ui/button";
@@ -126,7 +126,7 @@ const Contact = () => {
                         "cursor-not-allowed opacity-50": !name || !email || !value,
                     })}
                 >
-                    {t("form.send")} <Send/>
+                    <Send/> {t("form.send")}
                 </Button>
             </form>
             <div className="flex justify-center flex-col gap-2 mt-4">

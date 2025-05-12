@@ -1,7 +1,6 @@
 import type {Metadata} from "next";
 import "./globals.css";
 import "./acrylic.css";
-import "./highlight.css";
 import "flag-icons/css/flag-icons.min.css";
 
 import {hasLocale, NextIntlClientProvider} from 'next-intl';
@@ -12,6 +11,7 @@ import Header from "@/components/header";
 import {getTranslations} from "next-intl/server";
 import { Analytics } from "@vercel/analytics/next"
 import {Toaster} from "@/components/ui/sonner";
+import Footer from "@/components/footer";
 
 export const generateMetadata = async ({
                                            params
@@ -58,6 +58,8 @@ export default async function LocaleLayout({
                     {children}
                     </div>
                     <Toaster />
+                    <div className="h-16"/>
+                    <Footer/>
                 </NextIntlClientProvider>
             </div>
         </div>

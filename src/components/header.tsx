@@ -38,9 +38,7 @@ const Header = () => {
     return (
         <header className="fixed top-0 right-0 left-0 px-4 xl:px-0 mt-4 z-50">
             <div
-                className={
-                    "flex items-center justify-between p-2 rounded-lg border border-gray-600 text-white shadow-lg bg-black/30 backdrop-blur-sm z-50 lg:max-w-7xl w-full mx-auto"
-                }
+                className={"flex items-center justify-between p-2 rounded-lg border border-gray-600 text-white shadow-lg bg-black/30 backdrop-blur-sm z-50 lg:max-w-7xl w-full mx-auto"}
             >
                 <Link href={"/"} className="flex items-center gap-2">
                     <Logo />

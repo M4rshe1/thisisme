@@ -1,0 +1,121 @@
+code[class*='language-'] {
+    color: theme('colors.white');
+    margin-top: 1.25rem !important;
+}
+
+.token.tag,
+.token.class-name,
+.token.selector,
+.token.selector .class,
+.token.selector.class,
+.token.function {
+    color: #eb6f92; /* rose pine red */
+}
+
+.token.attr-name,
+.token.keyword,
+.token.rule,
+.token.pseudo-class,
+.token.important {
+    color: #3e8fb0; /* rose pine blue */
+}
+
+.token.module {
+    color: #c4a7e7; /* rose pine purple */
+}
+
+.token.attr-value {
+    color: #9ccfd8; /* rose pine cyan */
+}
+
+.token.string {
+    color: #f6c177; /* rose pine yellow */
+}
+
+.token.class {
+    color: #ea9a97; /* rose pine coral */
+}
+
+.token.punctuation,
+.token.attr-equals {
+    color: #908caa; /* rose pine muted */
+}
+
+.token.unit,
+.language-css .token.function {
+    color: #9ccfd8; /* rose pine cyan */
+}
+
+.token.comment {
+    color: #6e6a86; /* rose pine subtle */
+    opacity: 0.7;
+    font-style: italic;
+}
+
+.token.property,
+.token.operator,
+.token.combinator {
+    color: #e0def4; /* rose pine text */
+}
+
+.code-highlight {
+    float: left;
+    min-width: 100%;
+}
+
+.code-line {
+    display: block;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: -16px;
+    margin-right: -16px;
+    border-left: 4px solid rgba(0, 0, 0, 0);
+    line-height: 1.5rem;
+}
+
+.code-line.inserted {
+    background-color: #9ccfd826; /* rose pine cyan with opacity */
+}
+
+.code-line.deleted {
+    background-color: #eb6f9226; /* rose pine red with opacity */
+}
+
+.highlight-line {
+    margin-left: -14px;
+    margin-right: -16px;
+    background-color: #817c9c26; /* rose pine highlight med */
+    border-left: 2px solid #ea9a97; /* rose pine coral */
+}
+
+.line-number::before {
+    display: inline-block;
+    width: 1rem;
+    text-align: right;
+    margin-right: 16px;
+    margin-left: -8px;
+    color: #908caa;
+    content: attr(line);
+}
+
+.rehype-code-title {
+    margin: 0 !important;
+    display: inline-flex;
+    top: .5rem;
+    color: theme('colors.white');
+    left: .5rem;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 0.25rem .5rem;
+    border-radius: .25rem   ;
+    font-size: theme('fontSize.xs');
+    z-index: 10;
+}
+
+
+.code-line.inserted {
+    background-color: theme('colors.emerald.900'); /* Set inserted line (+) color */
+}
+
+.code-line.deleted {
+    background-color: theme('colors.red.900'); /* Set deleted line (-) color */
+}

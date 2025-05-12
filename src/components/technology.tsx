@@ -2,7 +2,7 @@ import { useTranslations} from "next-intl";
 import Dot from "@/components/dot";
 import React from "react";
 import TechnologyBadge from "@/components/technology-badge";
-import {TECH} from "@/lib/settings";
+import {TECH} from "@/config/settings";
 
 const Technology = () => {
     const t = useTranslations("technologies");

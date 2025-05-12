@@ -1,6 +1,9 @@
 @import 'tailwindcss';
 @import "tw-animate-css";
-@import '@wooorm/starry-night/style/dark'; /* Or another theme you prefer */
+@import '@wooorm/starry-night/style/dark';
+@import "./highlight.css";
+@import 'tailwindcss/utilities';
+@import "./prism.css";
 
 @custom-variant dark (&:is(.dark *));
 

@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image";
-import {Social} from "@/lib/settings";
+import {Social} from "@/config/settings";
 import {Link} from "@/i18n/navigation";
 import {ArrowRight} from "lucide-react";
 import React from "react";

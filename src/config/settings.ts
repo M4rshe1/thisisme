@@ -1,7 +1,8 @@
 import {IconBrandDiscord, IconBrandGithub, IconBrandLinkedin, IconBrandYoutube, TablerIcon} from "@tabler/icons-react";
 import {AtSignIcon, LucideIcon} from "lucide-react";
+import {technologyNames} from "@/lib/technologies";
 
-export const TECH: string[] = [
+export const TECH: technologyNames[] = [
     "javascript",
     "typescript",
     "nodejs",
@@ -95,3 +96,5 @@ export const SOCIALS: Social[] = [
         color: "#5865F2"
     }
 ]
+
+export const URL = "https://colin.heggli.dev"
