@@ -207,7 +207,7 @@ const About = () => {
                 </AnimatePresence>
                 <Link
                     href={"/resume.pdf"}
-                    className={buttonVariants({ variant: "outline" })}
+                    className={buttonVariants({ variant: "accent" })}
                 >
                     {t("about.downloadResume")}
                     <Download/>
