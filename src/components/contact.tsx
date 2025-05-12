@@ -69,7 +69,7 @@ const Contact = () => {
                 action={handleSubmit}
                 className="flex flex-col gap-2 mt-4 w-full bg-black/30 rounded-md border border-gray-600 p-4 shadow-lg backdrop-blur-sm lg:grid lg:grid-cols-2 lg:gap-4">
                 <div className="space-y-2">
-                    <Label htmlFor="name" className="text-gray-400 ">
+                    <Label htmlFor="name" className="text-gray-200 ">
                         {t("form.name")}
                         <span className="text-red-500">*</span>
                     </Label>
@@ -82,7 +82,7 @@ const Contact = () => {
                     />
                 </div>
                 <div className={"space-y-2"}>
-                    <Label htmlFor="email" className="text-gray-400">
+                    <Label htmlFor="email" className="text-gray-200">
                         {t("form.email")}
                         <span className="text-red-500">*</span>
                     </Label>
@@ -95,7 +95,7 @@ const Contact = () => {
                     />
                 </div>
                 <div className="lg:col-span-2 space-y-2">
-                    <Label htmlFor="message" className="text-gray-400">
+                    <Label htmlFor="message" className="text-gray-200">
                         {t("form.message")}
                             <span className="text-red-500">*</span>
                     </Label>
