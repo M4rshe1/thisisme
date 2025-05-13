@@ -15,9 +15,11 @@ const Settings = () => {
     const router = useRouter();
 
     const changeLanguage = (lang: string) => {
-        if (locale !== lang) {
-            router.push(`/${lang}`);
-        }
+        const currentPath = window.location.pathname;
+        const currentSearch = window.location.search;
+        const currentHash = window.location.hash;
+        const newPath = `/${lang}${currentPath.replace(`/${locale}`, "")}${currentSearch}${currentHash}`;
+        router.push(newPath);
     }
 
     return (
