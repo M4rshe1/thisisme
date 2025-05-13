@@ -14,17 +14,17 @@ type Props = {
 
 export async function generateMetadata({params}: Props): Promise<Metadata> {
     const {slug, locale} = await params;
-    const post = getBlogPosts(locale).find((post) => post.slug === slug);
+    const post = (await getBlogPosts(locale)).find((post) => post.slug === slug);
 
     if (!post) return {};
 
-    const {title, publishedAt: publishedTime, summary: description, hero} = post.metadata;
+    const {title, publishedAt: publishedTime, summary: description, image} = post.metadata;
 
     return {
         title: `${title} | ${post.metadata.author} | ${post.metadata.publishedAt}`,
         description,
         openGraph: {
-            images: hero ? `${URL}/${hero}` : `/og?title=${encodeURIComponent(title)}`,
+            images: image ? `${URL}/${image}` : `/og?title=${encodeURIComponent(title)}`,
             title,
             description,
             type: "article",
@@ -41,7 +41,7 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
 
 export default async function Blog({params}: Props) {
     const {slug, locale} = await params;
-    const post = getBlogPosts(locale).find((post) => post.slug === slug);
+    const post = (await getBlogPosts(locale)).find((post) => post.slug === slug);
     const t = await getTranslations("blog");
     if (!post) notFound();
 
@@ -72,10 +72,10 @@ export default async function Blog({params}: Props) {
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(auto,640px)_256px]">
                     <div>
                         {
-                            post.metadata.hero &&
+                            post.metadata.image &&
                             <div className="relative mb-6 h-96 w-full overflow-hidden rounded-lg">
                                 <Image
-                                    src={post.metadata.hero}
+                                    src={post.metadata.image}
                                     alt={post.metadata.title}
                                     fill
                                     className="object-cover"

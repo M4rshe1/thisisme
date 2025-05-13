@@ -7,7 +7,7 @@ import {parseISO} from "@/lib/utils";
 import Image from "next/image";
 
 const Posts = async ({locale}: {locale: string}) => {
-    const posts = getBlogPosts(locale).sort((a, b) => Number(new Date(b.metadata.publishedAt)) - Number(new Date(a.metadata.publishedAt)));
+    const posts = (await getBlogPosts(locale)).sort((a, b) => Number(new Date(b.metadata.publishedAt)) - Number(new Date(a.metadata.publishedAt)));
     const t = await getTranslations("blog")
 
     return (
@@ -51,10 +51,10 @@ const Posts = async ({locale}: {locale: string}) => {
                         </p>
                       </div>
                         {
-                            post.metadata.hero &&
+                            post.metadata.image &&
                             <div className="w-92 overflow-hidden rounded-lg">
                                 <Image
-                                    src={post.metadata.hero}
+                                    src={post.metadata.image}
                                     alt={post.metadata.title}
                                     width={720}
                                     height={480}

@@ -81,17 +81,17 @@
         "link": "https://youtu.be/eJs1toIXj5k?si=9PiRkNPdJdO5Xo1a",
         "linkText": "Watch the video",
         "image": "/images/nordkapp.jpg",
-        "description": "1.5 years ago my Dad sade to me: \"Colin, when your 18 and you have your driving license, we will go to Nordkapp\". I sad: \"Sure, why not\". And this is how the idea was born.",
-        "date": "2025-04-19",
+        "summary": "1.5 years ago my Dad sade to me: \"Colin, when your 18 and you have your driving license, we will go to Nordkapp\". I sad: \"Sure, why not\". And this is how the idea was born.",
+        "publishedAt": "2025-04-19",
         "newPage": true
       },
       {
         "title": "This is ME",
         "link": "https://colin.heggli.dev",
         "linkText": "This Portfolio",
-        "date": "2025-05-12",
+        "publishedAt": "2025-05-12",
         "image": "/images/thisisme.png",
-        "description": "This is my personal website where I showcase my projects and skills. I built it using Next.js, TypeScript, Tailwind CSS and many more."
+        "summary": "This is my personal website where I showcase my projects and skills. I built it using Next.js, TypeScript, Tailwind CSS and many more."
       }
     ]
   },
@@ -298,5 +298,20 @@
         "description": "This is the education I am doing as part of my apprenticeship at Georg Fischer."
       }
     ]
+  },
+  "footer": {
+    "links": {
+      "home": "Home",
+      "projects": "Projects",
+      "blog": "Blog",
+      "contact": "Contact",
+      "career": "Career",
+      "uses": "What i use"
+    },
+    "category": {
+      "other": "Other",
+      "importantLinks": "Important Links",
+      "socials": "Socials"
+    }
   }
 }

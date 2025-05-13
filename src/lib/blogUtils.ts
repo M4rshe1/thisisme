@@ -1,3 +1,5 @@
+"use server";
+
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
@@ -10,8 +12,9 @@ export type BlogPostMetadata = {
     author: string;
     summary: string;
     tags?: string[];
-    hero?: string;
-    image?: string;
+    image: string;
+    link?: string;
+    linkText?: string;
 };
 
 export type OtherPageMetadata = {
@@ -73,10 +76,15 @@ function getMDXData<T>(dir: string): Array<{
     });
 }
 
-export function getBlogPosts(locale: string) {
+export const getLatestBlogPost = async (locale: string, count: number = 1) => {
+    const blogPosts = getMDXData<BlogPostMetadata>(path.join(process.cwd(), "src", "content", "blog", locale));
+    return blogPosts.sort((a, b) => new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime()).slice(0, count);
+}
+
+export async function getBlogPosts(locale: string) {
     return getMDXData<BlogPostMetadata>(path.join(process.cwd(), "src", "content", "blog", locale));
 }
 
-export function getOtherPages(locale: string) {
+export async function getOtherPages(locale: string) {
     return getMDXData<OtherPageMetadata>(path.join(process.cwd(), "src", "content", "other", locale));
 }

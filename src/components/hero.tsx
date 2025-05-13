@@ -1,20 +1,50 @@
 'use client';
 
-import {useMessages, useTranslations, useFormatter} from "next-intl";
+import {useFormatter, useMessages, useTranslations} from "next-intl";
 import {useEffect, useState} from "react";
 import {ArrowDown, ArrowRight, ChevronLeft, ChevronRight} from "lucide-react";
 import Image from "next/image";
 import {cn} from "@/lib/utils";
 import {buttonVariants} from "@/components/ui/button";
 import {Link} from "@/i18n/navigation";
+import {getLatestBlogPost} from "@/lib/blogUtils";
+import {useLocale} from "use-intl";
+
+interface RotaryItem {
+    type: string;
+    link?: string;
+    title: string;
+    linkText?: string;
+    summary: string;
+    image: string;
+    publishedAt: string;
+    newPage?: boolean;
+}
 
 
 const Hero = () => {
+    const locale = useLocale();
     const messages = useMessages();
     const rotary = messages.hero.rotary;
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
-    const items = [{type: 'about'}, ...rotary];
+    const [items, setItems] = useState<RotaryItem[]>([{type: 'about'}, ...rotary]);
+
+    useEffect(() => {
+        const fetchLatestPosts = async () => {
+            const posts = await getLatestBlogPost(locale);
+            setItems((prev) => {
+                const newItems = [...prev];
+                newItems.splice(1, 0, ...posts.map(post => ({
+                    type: 'blog',
+                    ...post.metadata,
+                })));
+                return newItems;
+            });
+        };
+
+        fetchLatestPosts().then(r => r);
+    }, [locale]);
 
     useEffect(() => {
         if (!isPaused) {
@@ -105,21 +135,21 @@ const RotaryItem = ({
                         title,
                         link,
                         linkText,
-                        description,
+                        summary,
                         image,
-                        date,
+                        publishedAt,
                         newPage = false,
                     }: {
-    link: string;
+    link?: string;
     title: string;
-    linkText: string;
-    description: string;
+    linkText?: string;
+    summary: string;
     image: string;
-    date: string;
+    publishedAt: string;
     newPage?: boolean;
 }) => {
     const format = useFormatter();
-    const dateObj = new Date(date);
+    const dateObj = new Date(publishedAt);
     const formattedDate = format.dateTime(dateObj, {
         dateStyle: "long",
         timeZone: "UTC",
@@ -136,19 +166,22 @@ const RotaryItem = ({
 
             <div className="absolute inset-0 flex flex-col justify-center p-6">
                 <div className={"w-fit shadow bg-black/30 backdrop-blur-sm rounded-md p-3"}>
-                    <p>{date && <span className="text-sm font-semibold text-gray-400">{formattedDate}</span>}</p>
+                    <p>{publishedAt && <span className="text-sm font-semibold text-gray-400">{formattedDate}</span>}</p>
                     <h1 className="mt-1 text-4xl font-bold">{title}</h1>
-                    <p className="mt-3 max-w-md text-lg">{description}</p>
+                    <p className="mt-3 max-w-md text-lg">{summary}</p>
                 </div>
 
-                <Link
-                    target={newPage ? "_blank" : undefined}
-                    href={link}
-                    className={cn("mt-4 text-gray-200 hover:text-white w-fit group", buttonVariants({variant: "default"}))}
-                >
-                    {linkText} <ArrowRight
-                    className={"group-hover:translate-x-0.5 transition-transform duration-200"}/>
-                </Link>
+                {
+                    link &&
+                    <Link
+                        target={newPage ? "_blank" : undefined}
+                        href={link}
+                        className={cn("mt-4 text-gray-200 hover:text-white w-fit group", buttonVariants({variant: "default"}))}
+                    >
+                        {linkText} <ArrowRight
+                        className={"group-hover:translate-x-0.5 transition-transform duration-200"}/>
+                    </Link>
+                }
             </div>
         </div>
     )

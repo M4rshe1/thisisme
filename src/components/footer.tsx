@@ -1,32 +1,33 @@
 import React from "react";
 import {SOCIALS} from "@/config/settings";
+import {useTranslations} from "next-intl";
 
 const Footer = () => {
-
+    const t = useTranslations("footer");
     const links = [
         {
-            category: "Important Links",
+            category: t("category.importantLinks"),
             children: [
                 {
-                    name: "Home",
+                    name: t("links.home"),
                     link: "/",
                 },
                 {
-                    name: "Projects",
+                    name: t("links.projects"),
                     link: "/projects",
                 },
                 {
-                    name: "Blog",
+                    name: t("links.blog"),
                     link: "/blog",
                 },
                 {
-                    name: "Career",
+                    name: t("links.career"),
                     link: "/career",
                 },
             ]
         },
         {
-            category: "Social",
+            category: t("category.socials"),
             children: SOCIALS.map((social) => {
                 return {
                     name: social.name,
@@ -35,14 +36,14 @@ const Footer = () => {
             }),
         },
         {
-            category: "Other",
+            category: t("category.other"),
             children: [
                 {
-                    name: "Contact",
+                    name: t("links.contact"),
                     link: "/contact",
                 },
                 {
-                    name: "What i use",
+                    name: t("links.uses"),
                     link: "/uses",
                 },
             ]

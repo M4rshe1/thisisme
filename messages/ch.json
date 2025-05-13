@@ -1,3 +1,317 @@
 {
-
+  "meta": {
+    "title": "Colin Heggli - Full Stack Developer | Software Engineer | IT-Spezialist",
+    "description": "Das isch d'schweizerdütschi Übereetzig für die Website.",
+    "keywords": "Colin Heggli, Software Engineer, Full Stack Developer, IT-Spezialist, Webentwickler, Portfolio, Projekt, Blog, Kontakt",
+    "author": "Colin Heggli",
+    "language": "gsw"
+  },
+  "header": {
+    "home": "Home",
+    "about": "Über mich",
+    "projects": "Projekt",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "career ": "Karriere ",
+    "github": {
+      "title": "GitHub",
+      "description": "Mi GitHub-Profil und mini Repositories aaluege",
+      "link": "https://github.com/m4rshe1"
+    },
+    "linkedin": {
+      "title": "LinkedIn",
+      "description": "Mi LinkedIn-Profil aaluege und dich mit mir verbünde",
+      "link": "https://www.linkedin.com/in/colin-heggli/"
+    },
+    "youtube": {
+      "title": "YouTube",
+      "description": "Mi YouTube-Kanal aaluege und abonniere für News",
+      "link": "https://www.youtube.com/channel/UCU0bh2sZt9NQmUbn6jLJl3g"
+    }
+  },
+  "about": {
+    "keys": {
+      "age": "Alter",
+      "name": "Name",
+      "location": "Ort",
+      "jobTitle": "Beruef",
+      "learning": "Lehre",
+      "interests": "Interesse",
+      "languages": "Sprache",
+      "description": "Beschriibig",
+      "days": "Täg",
+      "years": "Johr",
+      "months": "Mönäd",
+      "hours": "Stunde",
+      "minutes": "Minutä",
+      "seconds": "Sekunde"
+    },
+    "title": "Über mich",
+    "name": "Colin Heggli",
+    "birthday": "2007-01-22",
+    "jobTitle": "Informatiker i Uusbildig",
+    "location": "Schaffhuuse, Schwiiz",
+    "firstName": "Colin",
+    "lastName": "Heggli",
+    "learning": "Cyber Security",
+    "interests": [
+      "Programmiere",
+      "Drooneflüüge",
+      "Chlettre"
+    ],
+    "languages": {
+      "german": "Muetersprach",
+      "english": "Fliessend"
+    },
+    "downloadResume": "Läbenslauf abelade",
+    "description": "Ich programmiere sit über 4 Johr, mini Reise hät afoh 2021. Zuerst han ich HTML, CSS und JavaScript glehrt, zum Websites z'mache.\n\nMis ersti Projekt isch eifachi Website gsi mit HTML, CSS und JavaScript gmacht (~Mittels 2021).\nNachem ich Fortschritti gmacht han, han ich mich zuerst uf React.js konzentriert und bin nachem chli Ziit uf Next.js gwächslet.\n\nAktuell mach ich au e Uusbildig als Informatiker bi de Georg Fischer AG, wo ich viel drüber lehr, wie grossi Firme funktioniered."
+  },
+  "hero": {
+    "linkText": "Meh erfahre",
+    "link": "/#readmore",
+    "name": "Colin Heggli",
+    "title": "Das bin ICH",
+    "image": "/images/nordkapp.jpg",
+    "bio": "Ich liebe s'Programmiere, neui Technologiä z'lehrne und Droone z'flüüge. Ich bin en Softwareentwickler mit ere Lideschaft drfür, alles z'baue, wo Spass macht.",
+    "welcome": "Hoi, ich bin de Colin",
+    "description": "Ich bin en Softwareentwickler mit ere Lideschaft zum Webapplikatione baue. Ich liebe s'Programmiere und neui Technologiä z'lehrne.",
+    "rotary": [
+      {
+        "title": "Nordkapp Reis 2025",
+        "link": "https://youtu.be/eJs1toIXj5k?si=9PiRkNPdJdO5Xo1a",
+        "linkText": "Video aaluege",
+        "image": "/images/nordkapp.jpg",
+        "summary": "Vor 1,5 Johr hät mi Vater zu mir gseit: \"Colin, wenn de 18 bisch und de Füehrerschiin häsch, fahred mir zum Nordkapp\". Ich han gseit: \"Sicher, warum ned\". Und so isch die Idee entstande.",
+        "publishedAt": "2025-04-19",
+        "newPage": true
+      },
+      {
+        "title": "Das bin ICH",
+        "link": "https://colin.heggli.dev",
+        "linkText": "Das Portfolio do",
+        "publishedAt": "2025-05-12",
+        "image": "/images/thisisme.png",
+        "summary": "Das isch mini persöönlichi Website, wo ich mini Projekt und mini Fähigkeite zeig. Ich han die mit Next.js, TypeScript, Tailwind CSS und vielne andere Technologiä baut."
+      }
+    ]
+  },
+  "buttons": {
+    "readMore": "Meh erfahre",
+    "contact": "Nimm Kontakt uf",
+    "downloadResume": "Läbenslauf abelade",
+    "viewProjects": "Projekt aaluege",
+    "viewCode": "Code aaluege",
+    "viewGithub": "Mi GitHub aaluege",
+    "viewLinkedIn": "Mi LinkedIn aaluege",
+    "visitWebsite": "Website bsueche",
+    "viewAll": "Alli aaluege",
+    "sendMessage": "Nachricht schicke",
+    "send": "Schicke",
+    "close": "Schlüsse",
+    "learnMore": "Meh erfahre",
+    "backToTop": "Ufe",
+    "myWork": "Mini Arbeit",
+    "myProjects": "Mini Projekt",
+    "blog": "Blog",
+    "projects": "Projekt",
+    "home": "Home",
+    "more": "Meh"
+  },
+  "projects": {
+    "noEndDate": "jetzt",
+    "seeMore": "Willsch meh gseh?",
+    "viewAll": "Alli Projekt aaluege",
+    "viewGithub": "Uf GitHub aaluege",
+    "visitWebsite": "Website bsueche",
+    "title": "Mini Projekt",
+    "description": "Entdeck do e paar vo mine neueste oder nöd so neueste Projekt. Für meh lueg uf mis GitHub-Profil.",
+    "projects": [
+      {
+        "name": "Das bin ICH",
+        "description": "Das isch mini persöönlichi Website, wo ich mini Projekt und mini Fähigkeite zeig.",
+        "image": "/images/thisisme.png",
+        "link": "https://colin.heggli.dev",
+        "github": "https://github.com/m4rshe1/thisisme",
+        "startDate": "2025-05-11",
+        "technologies": [
+          "nextjs",
+          "typescript",
+          "tailwindcss",
+          "lucide-react",
+          "i18n",
+          "shadcnui",
+          "turbopack"
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "title": "Iistellige",
+    "language": "Sprach",
+    "theme": "Design",
+    "darkMode": "Dunkelmodus",
+    "lightMode": "Hellmodus",
+    "systemDefault": "Systemstandard",
+    "save": "Iistellige speichere",
+    "description": "Do chasch dini Iistellige ändere, zum Bispel s'Website-Design oder Dekoratioone."
+  },
+  "technologies": {
+    "title": "Technologiä wo ich bruuche",
+    "description": "Im Lauf vo de Johr han ich mit vielne Technologiä gschaffet. Do sind e paar vo de Technologiä, wo ich Erfahrig mit han:"
+  },
+  "contact": {
+    "title": "Nimm Kontakt uf",
+    "description": "Ich bin immer dra, neui Mööglichkeite z'erforsche und spannendi Projekt azpacke. Wenn de es Projekt im Sinn häsch oder eifach Hoi säge willsch, chasch mir gärn e Nachricht schicke.",
+    "otherOptions": "Oder nimm Kontakt uf über...",
+    "form": {
+      "name": "Name",
+      "placeholderName": "Din Name",
+      "email": "E-Mail",
+      "placeholderEmail": "richi@srf.ch",
+      "message": "Nachricht",
+      "placeholderMessage": "Hoi, ich wett dich froge zu...",
+      "send": "Nachricht schicke",
+      "success": "Dini Nachricht isch erfolgriich gschickt worde!",
+      "error": "Es isch en Fehler ufträtte bim Schicke vo dinere Nachricht. Bitte versuechs spöter no mal.",
+      "loading": "Nachricht wird gschickt...",
+      "emptyName": "Bitte gib din Name i.",
+      "emptyEmail": "Bitte gib dini E-Mail-Adrässe i.",
+      "invalidEmail": "Bitte gib e gültigi E-Mail-Adrässe i.",
+      "emptyMessage": "Bitte gib dini Nachricht i.",
+      "somethingEmpty": "Bitte füll alli Felder uus.",
+      "characters": "Zeiche",
+      "maxLength": "Maximali Längi isch 500 Zeiche."
+    }
+  },
+  "wakatime": {
+    "title": "Wakatime Statistik",
+    "description": "Wakatime isch es Tool, wo d'Ziit erfasst, wo ich mit Programmiere verbringe. Do sind mini Statistik für alli Ziite.",
+    "languages": "Sprache",
+    "editors": "Editore",
+    "os": "Betriebssystem",
+    "overall": "Gsammtaktivität",
+    "topEditors": "Top Editore i Stunde",
+    "topLanguages": "Top Sprache i Stunde",
+    "totalLanguages": "Gsamti Aal Sprachä",
+    "totalTime": "Gsamti Ziit",
+    "topOperatingSystems": "Top Betriebssystem i Stunde",
+    "codingActivity": "Coding-Aktivität",
+    "lastWeek": "Letschti Wuche",
+    "noStats": "Kei Wakatime-Date verfüegbar.",
+    "loading": "Lade Wakatime-Statistik...",
+    "dailyAverage": "Tagesdurchnitt",
+    "totalCodingTime": "Gsamti Coding-Statistik sit {startDate}",
+    "noLanguageDate": "Kei Sprachdate verfüegbar.",
+    "noEditorData": "Kei Editordate verfüegbar.",
+    "noOperatingSystemData": "Kei Betriebssystemdate verfüegbar.",
+    "time": "Ziit",
+    "hours": "Stunde"
+  },
+  "blog": {
+    "title": "Tech Blog",
+    "description": "En Blog über Technologie, Programmiere und verschiedeni interessanti Themene. Do teil ich mini Erfahrige, Projekt und Meinige.",
+    "keywords": "blog, Technologie, Programmiere, Softwareentwicklig, Webentwicklig, Coding, Tutorials, Aaligge",
+    "readMore": "Meh erfahre",
+    "noPosts": "Kei Blogiiträg verfüegbar.",
+    "loading": "Lade Blogiiträg...",
+    "seeAllPosts": "Alli Biiträg aaluege",
+    "seeAllCategories": "Alli Kategorie aaluege",
+    "allPosts": "Alli Biiträg",
+    "words": "Wörter",
+    "published": "Veröffentlicht",
+    "by": "vo",
+    "on": "am",
+    "read": "läse",
+    "tableOfContents": "Inhaltsverzäichnis"
+  },
+  "career": {
+    "title": "Mini Karriere",
+    "description": "Mini Karriere bisher. Do sind e paar vo de Firme, für die ich gschaffet han, und die Rolle, wo ich gha han.",
+    "experienceTitle": "Erfahrig",
+    "educationTitle": "Uusbildig",
+    "present": "Aktuell",
+    "experience": [
+      {
+        "company": "Wibilea",
+        "department": "Basisjahr",
+        "role": "Informatiker i Uusbildig",
+        "startDate": "2022-08-01",
+        "endDate": "2023-07-31",
+        "tech": [
+          "office",
+          "excel",
+          "word",
+          "powerpoint",
+          "html",
+          "css",
+          "javascript",
+          "php",
+          "mysql"
+        ],
+        "description": "Am Afang vo minere Lehr han ich s'Wibilea Basisjahr i Neuhausen bsuecht. Ich han viel über d'Grundlage vo de IT und de Wirtschaft glehrt."
+      },
+      {
+        "company": "Georg Fischer AG",
+        "department": "Lokali IT",
+        "role": "Informatiker i Uusbildig",
+        "startDate": "2023-08-01",
+        "tech": [
+          "office",
+          "excel",
+          "word",
+          "servicenow",
+          "powershell"
+        ],
+        "endDate": "2024-07-31",
+        "description": "Ich schaffe i de IT-Abteilig und bin zueständig für de Support für d'Mitarbeiter. Ich schaffe au an Projekt und lehr viel über d'IT-Infrastruktur vo ere grosse Firma."
+      },
+      {
+        "company": "Georg Fischer AG",
+        "department": "Operational Excellence & Production IT",
+        "role": "Informatiker i Uusbildig",
+        "startDate": "2024-08-01",
+        "endDate": null,
+        "tech": [
+          "python",
+          "sql",
+          "excel",
+          "zabbix",
+          "powershell",
+          "powerplatform",
+          "mssql",
+          "docker",
+          "windows",
+          "debian",
+          "linux",
+          "rhel",
+          "powerbi"
+        ],
+        "description": "Schaffe an verschiedne Projekt mit Schwärpunkt uf Datenanalyse und Datenwüsseschaftsinitiative. Aktivi Entwicklig vo Fachkenntnis i de Implementierig vo Microsoft Power BI und Power Platform für Business Intelligence Löösige. Ab und zue leist ich au Unterstützig für d'Infrastruktur i de Produktion."
+      }
+    ],
+    "education": [
+      {
+        "school": "BBZ Schaffhuuse",
+        "degree": "Informatiker EFZ",
+        "startDate": "2022-08-01",
+        "endDate": null,
+        "description": "Das isch d'Uusbildig, wo ich im Rahme vo minere Lehr bi de Georg Fischer mach."
+      }
+    ]
+  },
+  "footer": {
+    "links": {
+      "home": "Startsite",
+      "projects": "Projekt",
+      "blog": "Blog",
+      "contact": "Kontakt",
+      "career": "Karriere",
+      "uses": "Was ich bruuche"
+    },
+    "category": {
+      "other": "Andere",
+      "importantLinks": "Wichtigi Links",
+      "socials": "Socialmedia"
+    }
+  }
 }
