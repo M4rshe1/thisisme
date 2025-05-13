@@ -175,7 +175,7 @@ const CareerTimeline = async ({ locale }: { locale: string }) => {
                     <h2 className="text-lg font-semibold text-gray-200 mb-4 pl-6">
                         {t("experienceTitle")}
                     </h2>
-                    <TooltipProvider>
+                    <TooltipProvider delayDuration={0}>
                         {itemsWithColumns
                             .filter((item) => item.type === "experience")
                             .map((item, index) => {
@@ -194,7 +194,7 @@ const CareerTimeline = async ({ locale }: { locale: string }) => {
 
                                 return (
                                     <Tooltip key={`experience-${index}`}>
-                                        <TooltipTrigger>
+                                        <TooltipTrigger asChild>
                                             <div
                                                 className="absolute left-0 group"
                                                 style={{
@@ -219,6 +219,7 @@ const CareerTimeline = async ({ locale }: { locale: string }) => {
                                         <TooltipContent
                                             side="right"
                                             className="max-w-md bg-black/30 backdrop-blur-lg text-gray-200 border-gray-600 border"
+                                            sideOffset={5}
                                         >
                                             <div className="p-2">
                                                 <h3 className="font-bold text-lg mb-2">
@@ -254,7 +255,7 @@ const CareerTimeline = async ({ locale }: { locale: string }) => {
                     <h2 className="text-lg font-semibold text-gray-200 mb-4 pl-6">
                         {t("educationTitle")}
                     </h2>
-                    <TooltipProvider>
+                    <TooltipProvider delayDuration={0}>
                         {itemsWithColumns
                             .filter((item) => item.type === "education")
                             .map((item, index) => {
@@ -273,7 +274,7 @@ const CareerTimeline = async ({ locale }: { locale: string }) => {
 
                                 return (
                                     <Tooltip key={`education-${index}`}>
-                                        <TooltipTrigger>
+                                        <TooltipTrigger asChild>
                                             <div
                                                 className="absolute left-0 group"
                                                 style={{
@@ -296,6 +297,7 @@ const CareerTimeline = async ({ locale }: { locale: string }) => {
                                         <TooltipContent
                                             side="right"
                                             className="max-w-md bg-black/30 backdrop-blur-lg text-gray-200 border-gray-600 border"
+                                            sideOffset={5}
                                         >
                                             <div className="p-2">
                                                 <h3 className="font-bold text-lg mb-2">
