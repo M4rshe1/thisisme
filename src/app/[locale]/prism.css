@@ -3,6 +3,16 @@ code[class*='language-'] {
     margin-top: 1.25rem !important;
 }
 
+code:not(pre > div > code) {
+    padding: 0.25rem 0.5rem;
+    border-radius: theme('borderRadius.sm');
+    font-size: theme('fontSize.xs');
+    font-weight: theme('fontWeight.bold');
+    color: theme('colors.yellow.200');
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+
 .token.tag,
 .token.class-name,
 .token.selector,

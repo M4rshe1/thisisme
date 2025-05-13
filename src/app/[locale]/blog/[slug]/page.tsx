@@ -6,6 +6,7 @@ import {Link} from "@/i18n/navigation"
 import {getBlogPosts} from "@/lib/blogUtils";
 import {cn, parseISO} from "@/lib/utils";
 import {getTranslations} from "next-intl/server";
+import Image from "next/image";
 
 type Props = {
     params: Promise<{ slug: string, locale: string }>;
@@ -17,12 +18,13 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
 
     if (!post) return {};
 
-    const {title, publishedAt: publishedTime, summary: description} = post.metadata;
+    const {title, publishedAt: publishedTime, summary: description, hero} = post.metadata;
 
     return {
-        title,
+        title: `${title} | ${post.metadata.author} | ${post.metadata.publishedAt}`,
         description,
         openGraph: {
+            images: hero ? `${URL}/${hero}` : `/og?title=${encodeURIComponent(title)}`,
             title,
             description,
             type: "article",
@@ -69,7 +71,18 @@ export default async function Blog({params}: Props) {
 
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(auto,640px)_256px]">
                     <div>
-                        <header className="mb-6 w-full">
+                        {
+                            post.metadata.hero &&
+                            <div className="relative mb-6 h-96 w-full overflow-hidden rounded-lg">
+                                <Image
+                                    src={post.metadata.hero}
+                                    alt={post.metadata.title}
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                        }
+                        <div className="mb-6 w-full">
                             <Header1>{post.metadata.title}</Header1>
                             <div className="mt-4 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
                                 <div className="flex items-center">
@@ -83,7 +96,7 @@ export default async function Blog({params}: Props) {
                                     {post.wordCount} {t("words")} • {Math.round((post.readingTime?.time || 1) / 1000 / 60)} min {t("read")}
                                 </p>
                             </div>
-                        </header>
+                        </div>
                         <MDXComponent source={post.content}/>
                     </div>
                     <aside className="order-first lg:order-none">

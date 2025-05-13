@@ -4,6 +4,7 @@ import {Description, Header1, Header2} from "@/components/ui/headers";
 import {Link} from "@/i18n/navigation";
 import {Calendar} from "lucide-react";
 import {parseISO} from "@/lib/utils";
+import Image from "next/image";
 
 const Posts = async ({locale}: {locale: string}) => {
     const posts = getBlogPosts(locale).sort((a, b) => Number(new Date(b.metadata.publishedAt)) - Number(new Date(a.metadata.publishedAt)));
@@ -26,8 +27,10 @@ const Posts = async ({locale}: {locale: string}) => {
                 className="relative mt-3 ml-3 flex flex-col items-start justify-center border-l border-gray-600">
                 {posts.map((post, index) => (
                     <Link href={`/blog/${post.slug}`} key={`/blog/${post.slug}`}
-                          className="-mt-px mb-10 ml-6 rounded-lg border border-gray-600 hover:border-gray-400 px-6 py-3 duration-200 motion-reduce:transition-none bg-black/30 backdrop-blur-sm">
-                      <span
+                          className="-mt-px mb-10 flex ml-6 rounded-lg border border-gray-600 hover:border-gray-400 pl-6 pr-3 py-3 duration-200 motion-reduce:transition-none bg-black/30 backdrop-blur-sm">
+                      <div>
+
+                        <span
                           className="absolute -left-[38px] -mt-3 flex size-6 shrink-0 items-center justify-center rounded-full border bg-gray-600 p-1 text-primary">
                        <Calendar className="size-3 text-gray-200" />
                       </span>
@@ -46,6 +49,19 @@ const Posts = async ({locale}: {locale: string}) => {
                         <p className="inline-flex text-sm font-bold text-primary transition duration-200 hover:underline">
                             {t("readMore")}
                         </p>
+                      </div>
+                        {
+                            post.metadata.hero &&
+                            <div className="w-92 overflow-hidden rounded-lg">
+                                <Image
+                                    src={post.metadata.hero}
+                                    alt={post.metadata.title}
+                                    width={720}
+                                    height={480}
+                                    className="h-full w-full object-cover"
+                                />
+                            </div>
+                        }
                     </Link>
                 ))}
             </div>

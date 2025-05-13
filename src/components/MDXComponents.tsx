@@ -7,6 +7,7 @@ import {MDXRemote} from "next-mdx-remote/rsc";
 import React from "react";
 import {Link} from "@/i18n/navigation";
 import {cn, slugify} from "@/lib/utils";
+import TechnologyBadge from "@/components/technology-badge";
 
 function createHeading(level: number) {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -61,22 +62,41 @@ const components: MDXComponents = {
             </pre>
         );
     },
+    blockquote: ({children}) => {
+        const newChildren = React.Children.map(children, (child) => {
+            if (typeof child === 'string') {
+                return child.replace(/\n/g, '');
+            }
+            return child;
+        });
+
+        return <blockquote
+            className="border-gray-600 pl-4 before:content-[''] before:absolute before:-left-0 before:rounded-full before:top-0 before:h-full before:w-1 before:bg-gray-600 relative bg-gray-800/30 rounded p-2 my-4">
+            <pre className={"h-fit"}>
+            {newChildren}
+            </pre>
+        </blockquote>
+    },
 };
 
-export function MDXComponent(props: React.ComponentPropsWithoutRef<typeof MDXRemote>) {
+export function MDXComponent(
+    props: React.ComponentPropsWithoutRef<typeof MDXRemote>,
+) {
     return (
         <div
-            className="prose prose-neutral prose-a:underline-offset-6 max-w-5xl prose-a:hover:underline-offset-auto prose-img:m-0 prose-a:font-bold prose-a:hover:decoration-wavy">
+            className="prose prose-neutral prose-a:underline-offset-6 max-w-5xl prose-a:hover:underline-offset-auto prose-img:m-0 prose-a:font-bold prose-a:hover:decoration-wavy flex flex-col [&>*]:w-fit [&>pre]:w-full [&>blockquote]:w-full"
+        >
             <MDXRemote
                 {...props}
-                components={{...components, ...(props.components || {})}}
+                components={{
+                    ...components,
+                    TechnologyBadge, // Pass the TechnologyBadge component here
+                    ...(props.components || {}),
+                }}
                 options={{
                     mdxOptions: {
                         format: "mdx",
-                        rehypePlugins: [
-                            rehypeCodeTitles,
-                            rehypePrism,
-                        ],
+                        rehypePlugins: [rehypeCodeTitles, rehypePrism],
                     },
                 }}
             />

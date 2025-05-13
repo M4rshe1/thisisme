@@ -9,6 +9,8 @@ export type BlogPostMetadata = {
     publishedAt: string;
     author: string;
     summary: string;
+    tags?: string[];
+    hero?: string;
     image?: string;
 };
 
