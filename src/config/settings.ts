@@ -40,6 +40,7 @@ export const TECH: technologyNames[] = [
     "jetbrains",
     "visualstudio",
     "powershell",
+    "i18n",
 ]
 
 export type Social = SocialWithIcon | SocialWithImage
@@ -96,5 +97,13 @@ export const SOCIALS: Social[] = [
         color: "#5865F2"
     }
 ]
+
+export const META = {
+    firstName: "Colin",
+    lastName: "Heggli",
+    name: "Colin Heggli",
+    title: "Full Stack Developer",
+    url: process.env.VERCEL_URL || "https://colin.heggli.dev",
+}
 
 export const URL = "https://colin.heggli.dev"

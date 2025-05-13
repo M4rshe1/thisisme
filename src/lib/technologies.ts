@@ -54,7 +54,7 @@ const technologies: Record<string, TechnologyDef> = {
         name: 'Tailwind CSS',
         icon: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg',
         type: 'css framework',
-        color: '#38B2AC',
+        color: '#38bdf8',
     },
     express: {
         name: 'Express',
@@ -184,7 +184,7 @@ const technologies: Record<string, TechnologyDef> = {
     },
     mssql: {
         name: 'MSSQL',
-        icon: 'https://www.google.com/s2/favicons?domain=microsoft.com&sz=256',
+        icon: '/images/tech/mssql.png',
         type: 'database',
         color: '#CC2927',
     },
@@ -241,6 +241,12 @@ const technologies: Record<string, TechnologyDef> = {
         icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/506px-Tux.svg.png?20220320193426',
         type: 'operating system',
         color: '#FCC624',
+    },
+    rhel: {
+        name: 'Red Hat',
+        icon: 'https://www.google.com/s2/favicons?domain=redhat.com&sz=256',
+        type: 'operating system',
+        color: '#CC0000',
     },
     debian: {
         name: 'Debian',
@@ -360,7 +366,7 @@ const technologies: Record<string, TechnologyDef> = {
         name: 'Webpack',
         icon: 'https://www.google.com/s2/favicons?domain=webpack.js.org&sz=256',
         type: 'build tool',
-        color: '#8CC84B',
+        color: '#2376b5',
     },
     wordpress: {
         name: 'WordPress',

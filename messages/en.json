@@ -229,6 +229,7 @@
     "description": "My career journey so far. Here are some of the companies I have worked for and the roles I have held.",
     "experienceTitle": "Experience",
     "educationTitle": "Education",
+    "present": "Present",
     "experience": [
       {
         "company": "Wibilea",
@@ -244,9 +245,10 @@
           "html",
           "css",
           "javascript",
+          "php",
           "mysql"
         ],
-        "description": "I attended the Wibilea Basis Year in Neuhausen. I learned a lot about the basics of IT and business."
+        "description": "At the beginning of my apprentice I attended the Wibilea Basis Year in Neuhausen. I learned a lot about the basics of IT and business."
       },
       {
         "company": "Georg Fischer AG",
@@ -276,6 +278,12 @@
           "zabbix",
           "powershell",
           "powerplatform",
+          "mssql",
+          "docker",
+          "windows",
+          "debian",
+          "linux",
+          "rhel",
           "powerbi"
         ],
         "description": "Working on various projects focused on data analysis and data science initiatives. Actively developing expertise in Microsoft Power BI and Power Platform implementation for business intelligence solutions. Now and then I also doing support for the Infrastructure in the production"
@@ -286,7 +294,7 @@
         "school": "BBZ Schaffhausen",
         "degree": "Business IT specialist EFZ",
         "startDate": "2022-08-01",
-        "endDate": "2026-07-31",
+        "endDate": null,
         "description": "This is the education I am doing as part of my apprenticeship at Georg Fischer."
       }
     ]
