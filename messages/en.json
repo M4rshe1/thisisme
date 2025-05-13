@@ -228,12 +228,11 @@
     "title": "My Career",
     "description": "My career journey so far. Here are some of the companies I have worked for and the roles I have held.",
     "experienceTitle": "Experience",
-    "timelineTitle": "Timeline",
     "educationTitle": "Education",
     "experience": [
       {
         "company": "Wibilea",
-        "department": "local IT",
+        "department": "Base Year",
         "role": "IT Guy in apprentice",
         "startDate": "2022-08-01",
         "endDate": "2023-07-31",
