@@ -180,6 +180,7 @@
       "emptyMessage": "Bitte gib dini Nachricht i.",
       "somethingEmpty": "Bitte füll alli Felder uus.",
       "characters": "Zeiche",
+      "charactersLeft": "Zeiche übrig",
       "maxLength": "Maximali Längi isch 500 Zeiche."
     }
   },

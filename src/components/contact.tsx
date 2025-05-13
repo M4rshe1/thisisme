@@ -114,7 +114,7 @@ const Contact = () => {
                             aria-live="polite"
                         >
                             <span className="tabular-nums">{limit - characterCount}</span>{" "}
-                            characters left
+                            {t("form.charactersLeft")}
                         </p>
                     </div>
                 </div>

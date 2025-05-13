@@ -180,6 +180,7 @@
       "emptyMessage": "Please enter your message.",
       "somethingEmpty": "Please fill out all fields.",
       "characters": "characters",
+      "charactersLeft": "characters left",
       "maxLength": "Maximum length is 500 characters."
     }
   },
