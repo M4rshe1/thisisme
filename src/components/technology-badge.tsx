@@ -11,7 +11,7 @@ export const TechnologyBadge = ({tech}: { tech: string }) => {
 
     return (
         <div
-            className="flex items-center border rounded border-gray-800 p-1 mb-2 max-w-2xl shadow transition-all duration-300 ease-in-out cursor-default"
+            className="flex items-center border rounded border-gray-800 p-1 max-w-2xl shadow transition-all duration-300 ease-in-out cursor-default"
             style={{
                 borderColor: `${content.color}33`,
                 backgroundColor: `${content.color}15`,

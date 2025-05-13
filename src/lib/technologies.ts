@@ -478,7 +478,7 @@ const technologies: Record<string, TechnologyDef> = {
     },
     zabbix: {
         name: 'Zabbix',
-        icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Zabbix_logo.svg/1200px-Zabbix_logo.svg.png?20200420123345',
+        icon: '/images/tech/zabbix.webp',
         type: 'monitoring',
         color: '#d50808',
     },
@@ -487,6 +487,12 @@ const technologies: Record<string, TechnologyDef> = {
         icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Microsoft_Power_Platform_logo.svg/768px-Microsoft_Power_Platform_logo.svg.png?20231122081707',
         type: 'business intelligence',
         color: '#33b67b',
+    },
+    servicenow: {
+        name: 'ServiceNow',
+        icon: 'https://www.google.com/s2/favicons?domain=servicenow.com&sz=256',
+        type: 'business intelligence',
+        color: '#62d84e',
     }
 }
 

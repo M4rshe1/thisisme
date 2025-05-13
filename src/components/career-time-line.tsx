@@ -124,7 +124,7 @@ const CareerTimeline = async () => {
                                                 }}
                                             >
                                                 <div
-                                                    className="w-full bg-gray-800/50 rounded-r-md flex flex-col justify-center items-center h-full border-l-4 border-blue-500 px-4 mx-2 transition-colors group-hover:bg-gray-800/80">
+                                                    className="w-full bg-gray-800/50 flex flex-col justify-center items-center h-full border-l-4 border-blue-500 px-4 mx-2 transition-colors group-hover:bg-gray-800/80">
                                                     <p className="text-sm font-medium text-gray-200">
                                                         {item.role}
                                                     </p>
@@ -205,7 +205,7 @@ const CareerTimeline = async () => {
                                                 }}
                                             >
                                                 <div
-                                                    className="w-full bg-gray-800/50 rounded-r-md flex flex-col justify-center items-center h-full border-l-4 border-green-500 px-4 mx-2 transition-colors group-hover:bg-gray-800/80">
+                                                    className="w-full bg-gray-800/50 flex flex-col justify-center items-center h-full border-l-4 border-green-500 px-4 mx-2 transition-colors group-hover:bg-gray-800/80">
                                                     <p className="text-sm font-medium text-gray-200">
                                                         {item.degree}
                                                     </p>
