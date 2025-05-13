@@ -89,7 +89,7 @@ export default async function Blog({params}: Props) {
                                     {/*<Image alt={meta.title} height={24} width={24} src={} className="rounded-full" />*/}
                                     <time className="ml-2 text-sm text-neutral-700 dark:text-neutral-300"
                                           dateTime={new Date(post.metadata.publishedAt).toUTCString()}>
-                                        {post.metadata.author} / {parseISO(post.metadata.publishedAt)}
+                                        {post.metadata.author} / {parseISO(post.metadata.publishedAt, locale)}
                                     </time>
                                 </div>
                                 <p className="mt-2 min-w-32 text-sm text-neutral-700 md:mt-0 dark:text-neutral-300">

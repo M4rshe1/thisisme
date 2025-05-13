@@ -42,7 +42,7 @@ const Posts = async ({locale}: {locale: string}) => {
                             <time
                                 className="mb-2 block text-sm leading-none font-normal text-gray-600"
                                 dateTime={new Date(post.metadata.publishedAt).toUTCString()}>
-                                {parseISO(post.metadata.publishedAt)}
+                                {parseISO(post.metadata.publishedAt, locale)}
                             </time>
                         </div>
                         <p className="mb-2 text-base font-normal text-gray-400">{post.metadata.summary}</p>

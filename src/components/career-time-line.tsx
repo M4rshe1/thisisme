@@ -30,7 +30,7 @@ interface CareerData {
 }
 
 
-const CareerTimeline = async () => {
+const CareerTimeline = async ({locale}: {locale: string}) => {
     const t = await getTranslations("career");
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
@@ -145,14 +145,16 @@ const CareerTimeline = async () => {
                                                 </h3>
                                                 <p className="text-sm text-gray-400 mb-2">
                                                     {parseISO(
-                                                        item.startDate.toISOString()
+                                                        item.startDate.toISOString(),
+                                                        locale
                                                     )}{" "}
                                                     -{" "}
                                                     {item.endDate.getTime() ===
                                                     new Date().getTime()
                                                         ? t("present")
                                                         : parseISO(
-                                                            item.endDate.toISOString()
+                                                            item.endDate.toISOString(),
+                                                            locale
                                                         )}
                                                 </p>
                                                 <p className="text-sm mb-2">
@@ -225,14 +227,16 @@ const CareerTimeline = async () => {
                                                 </h3>
                                                 <p className="text-sm text-gray-400 mb-2">
                                                     {parseISO(
-                                                        item.startDate.toISOString()
+                                                        item.startDate.toISOString(),
+                                                        locale
                                                     )}{" "}
                                                     -{" "}
                                                     {item.endDate.getTime() ===
                                                     new Date().getTime()
                                                         ? t("present")
                                                         : parseISO(
-                                                            item.endDate.toISOString()
+                                                            item.endDate.toISOString(),
+                                                            locale
                                                         )}
                                                 </p>
                                                 <p className="text-sm">

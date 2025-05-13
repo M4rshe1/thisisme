@@ -32,9 +32,11 @@ export const ConvertNumber = (number: number): string => {
     }).format(number);
 };
 
-export const parseISO = (date: string): string => {
+export const parseISO = (date: string, locale?: string): string => {
     const formatted = new Date(date);
-    return `${formatted.toLocaleString("en-us", {
+    const language = locale === "de" ? "de-de" : locale === "ch" ? "de-ch" : "en-us";
+
+    return `${formatted.toLocaleString(language, {
         month: "long",
     })} ${formatted.getUTCDate()}, ${formatted.getFullYear()}`;
 };
