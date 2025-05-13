@@ -156,6 +156,9 @@ const WakaTimeStats = () => {
                                             stroke="#9ca3af"
                                             fontSize={12}
                                             tickLine={false}
+                                            angle={-90}
+                                            textAnchor="end"
+                                            height={70}
                                         />
                                         <YAxis
                                             tickFormatter={
@@ -199,7 +202,7 @@ const WakaTimeStats = () => {
                         {stats.editors.length > 0 ? (
                             <div className="h-[400px]">
                                 <ResponsiveContainer width="100%" height="100%">
-                                    <BarChart data={stats.editors.slice(0, 10)}
+                                    <BarChart data={stats.editors.slice(0, 5)}
 
                                     >
                                         <CartesianGrid
@@ -211,6 +214,9 @@ const WakaTimeStats = () => {
                                             stroke="#9ca3af"
                                             fontSize={12}
                                             tickLine={false}
+                                            angle={-90}
+                                            textAnchor="end"
+                                            height={70}
                                         />
                                         <YAxis
                                             tickFormatter={

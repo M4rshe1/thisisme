@@ -49,7 +49,7 @@ export default async function LocaleLayout({
         <Analytics/>
         <body className="min-h-screen m-0 p-0">
         <div className="min-h-screen grid grid-cols-1 grid-rows-1">
-            <div className="h-full w-full bg-black opacity-60 backdrop-blur-sm -z-5 col-start-1 row-start-1"/>
+            <div className="h-full w-full bg-black opacity-80 backdrop-blur-sm -z-5 col-start-1 row-start-1"/>
             <div className="h-full w-full acrylic-bg min-h-screen bg-opacity-10 backdrop-blur-sm -z-10 col-start-1 row-start-1"/>
             <div className="col-start-1 row-start-1 min-h-screen flex flex-col w-full h-full items-center ">
                 <NextIntlClientProvider>
