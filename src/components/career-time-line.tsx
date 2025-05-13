@@ -40,7 +40,13 @@ interface TimelineItem {
     endDate: Date;
     column?: number;
     isOverlapping?: boolean;
-    [key: string]: unknown;
+    company?: string;
+    department?: string;
+    role?: string;
+    school?: string;
+    degree?: string;
+    tech?: string[];
+    description?: string;
 }
 
 const CareerTimeline = async ({ locale }: { locale: string }) => {
