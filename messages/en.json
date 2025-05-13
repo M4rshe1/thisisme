@@ -223,5 +223,73 @@
     "on": "on",
     "read": "read",
     "tableOfContents": "Table of Contents"
+  },
+  "career": {
+    "title": "My Career",
+    "description": "My career journey so far. Here are some of the companies I have worked for and the roles I have held.",
+    "experienceTitle": "Experience",
+    "timelineTitle": "Timeline",
+    "educationTitle": "Education",
+    "experience": [
+      {
+        "company": "Wibilea",
+        "department": "local IT",
+        "role": "IT Guy in apprentice",
+        "startDate": "2022-08-01",
+        "endDate": "2023-07-31",
+        "tech": [
+          "office",
+          "excel",
+          "word",
+          "powerpoint",
+          "html",
+          "css",
+          "javascript",
+          "mysql"
+        ],
+        "description": "I attended the Wibilea Basis Year in Neuhausen. I learned a lot about the basics of IT and business."
+      },
+      {
+        "company": "Georg Fischer AG",
+        "department": "Local IT",
+        "role": "IT Guy in apprentice",
+        "startDate": "2023-08-01",
+        "tech": [
+          "office",
+          "excel",
+          "word",
+          "powerpoint",
+          "powershell"
+        ],
+        "endDate": "2024-07-31",
+        "description": "I am working in the IT department and I am responsible for the support of the employees. I am also working on projects and I am learning a lot about the IT infrastructure of a big company."
+      },
+      {
+        "company": "Georg Fischer AG",
+        "department": "Operational Excellence & Production IT",
+        "role": "IT Guy in apprentice",
+        "startDate": "2024-08-01",
+        "endDate": null,
+        "tech": [
+          "python",
+          "sql",
+          "excel",
+          "zabbix",
+          "powershell",
+          "powerplatform",
+          "powerbi"
+        ],
+        "description": "Working on various projects focused on data analysis and data science initiatives. Actively developing expertise in Microsoft Power BI and Power Platform implementation for business intelligence solutions. Now and then I also doing support for the Infrastructure in the production"
+      }
+    ],
+    "education": [
+      {
+        "school": "BBZ Schaffhausen",
+        "degree": "Business IT specialist EFZ",
+        "startDate": "2022-08-01",
+        "endDate": "2026-07-31",
+        "description": "This is the education I am doing as part of my apprenticeship at Georg Fischer."
+      }
+    ]
   }
 }

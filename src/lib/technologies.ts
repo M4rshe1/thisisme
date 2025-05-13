@@ -166,15 +166,15 @@ const technologies: Record<string, TechnologyDef> = {
     },
     html: {
         name: 'HTML',
-        icon: 'https://www.google.com/s2/favicons?domain=www.w3.org&sz=256',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/768px-HTML5_logo_and_wordmark.svg.png',
         type: 'markup',
         color: '#E34F26',
     },
     css: {
         name: 'CSS',
-        icon: 'https://www.google.com/s2/favicons?domain=www.w3.org&sz=256',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/768px-CSS3_logo.svg.png?20210705212817',
         type: 'css',
-        color: '#1572B6',
+        color: '#306af1',
     },
     mysql: {
         name: 'MySQL',
@@ -182,9 +182,15 @@ const technologies: Record<string, TechnologyDef> = {
         type: 'database',
         color: '#4479A1',
     },
+    mssql: {
+        name: 'MSSQL',
+        icon: 'https://www.google.com/s2/favicons?domain=microsoft.com&sz=256',
+        type: 'database',
+        color: '#CC2927',
+    },
     sqlite: {
         name: 'SQLite',
-        icon: 'https://www.google.com/s2/favicons?domain=www.sqlite.org&sz=256',
+        icon: '/images/tech/mssql.png',
         type: 'database',
         color: '#003B57',
     },
@@ -470,6 +476,18 @@ const technologies: Record<string, TechnologyDef> = {
         type: 'editor',
         color: '#e77136',
     },
+    zabbix: {
+        name: 'Zabbix',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Zabbix_logo.svg/1200px-Zabbix_logo.svg.png?20200420123345',
+        type: 'monitoring',
+        color: '#d50808',
+    },
+    powerplatform: {
+        name: 'Power Platform',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Microsoft_Power_Platform_logo.svg/768px-Microsoft_Power_Platform_logo.svg.png?20231122081707',
+        type: 'business intelligence',
+        color: '#33b67b',
+    }
 }
 
 export default technologies
