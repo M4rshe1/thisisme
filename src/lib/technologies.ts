@@ -104,6 +104,12 @@ const technologies: Record<string, TechnologyDef> = {
         type: 'frontend',
         color: '#DD0031',
     },
+    lucide: {
+        name: 'Lucide',
+        icon: 'https://www.google.com/s2/favicons?domain=lucide.dev&sz=256',
+        type: 'icons',
+        color: '#f56565',
+    },
     flutter: {
         name: 'Flutter',
         icon: 'https://www.google.com/s2/favicons?domain=flutter.dev&sz=256',
