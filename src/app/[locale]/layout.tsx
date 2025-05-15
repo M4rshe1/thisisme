@@ -12,6 +12,7 @@ import {getTranslations} from "next-intl/server";
 import { Analytics } from "@vercel/analytics/next"
 import {Toaster} from "@/components/ui/sonner";
 import Footer from "@/components/footer";
+import BackToTop from "@/components/back-to-top";
 
 export const generateMetadata = async ({
                                            params
@@ -61,6 +62,7 @@ export default async function LocaleLayout({
                     <div className="h-16"/>
                     <Footer/>
                 </NextIntlClientProvider>
+                <BackToTop/>
             </div>
         </div>
         </body>

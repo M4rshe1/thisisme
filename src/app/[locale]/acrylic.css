@@ -67,16 +67,17 @@
         );
     }
 }
-
 @keyframes moveTexture {
-    0% {
-        transform: translate(0, 0);
+        0% {
+            transform: translate(0, 0) scale(1);
+        }
+        50% {
+            transform: translate(15px, 15px) scale(1.1);
+        }
+        100% {
+            transform: translate(30px, 30px) scale(1);
+        }
     }
-    100% {
-        transform: translate(30px, 30px);
-    }
-}
-
 /* Dark mode adjustments (mirroring the ellipse change) */
 @media (prefers-color-scheme: dark) {
     .acrylic-bg {
