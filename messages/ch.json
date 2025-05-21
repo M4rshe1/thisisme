@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Colin Heggli - Full Stack Developer | Software Engineer | IT-Spezialist",
+    "title": "{name} - Full Stack Developer | Software Engineer | IT-Spezialist",
     "description": "Das isch d'schweizerdütschi Übereetzig für die Website.",
-    "keywords": "Colin Heggli, Software Engineer, Full Stack Developer, IT-Spezialist, Webentwickler, Portfolio, Projekt, Blog, Kontakt",
-    "author": "Colin Heggli",
-    "language": "gsw"
+    "keywords": "{name}, Software Engineer, Full Stack Developer, IT-Spezialist, Webentwickler, Portfolio, Projekt, Blog, Kontakt",
+    "author": "{name}",
+    "language": "de"
   },
   "header": {
     "home": "Home",
@@ -15,18 +15,15 @@
     "career ": "Karriere ",
     "github": {
       "title": "GitHub",
-      "description": "Mis GitHub-Profil und mini Repositories aaluege",
-      "link": "https://github.com/m4rshe1"
+      "description": "Mis GitHub-Profil und mini Repositories aaluege"
     },
     "linkedin": {
       "title": "LinkedIn",
-      "description": "Mis LinkedIn-Profil aaluege und dich mit mir verbünde",
-      "link": "https://www.linkedin.com/in/colin-heggli/"
+      "description": "Mis LinkedIn-Profil aaluege und dich mit mir verbünde"
     },
     "youtube": {
       "title": "YouTube",
-      "description": "Mis YouTube-Kanal aaluege und abonniere für News",
-      "link": "https://www.youtube.com/channel/UCU0bh2sZt9NQmUbn6jLJl3g"
+      "description": "Mis YouTube-Kanal aaluege und abonniere für News"
     }
   },
   "about": {
@@ -47,12 +44,9 @@
       "seconds": "Sekunde"
     },
     "title": "Über mich",
-    "name": "Colin Heggli",
     "birthday": "2007-01-22",
     "jobTitle": "Informatiker i Uusbildig",
     "location": "Schaffhuuse, Schwiiz",
-    "firstName": "Colin",
-    "lastName": "Heggli",
     "learning": "Cyber Security",
     "interests": [
       "Programmiere",
@@ -69,7 +63,6 @@
   "hero": {
     "linkText": "Meh erfahre",
     "link": "/#readmore",
-    "name": "Colin Heggli",
     "title": "Das bin ICH",
     "image": "/images/nordkapp.jpg",
     "bio": "Ich tue gern Programmiere, neui Technologiä lehrne und Droone z'flüüge. Ich bin en Softwareentwickler mit ere Lideschaft drfür, alles z'baue, wo Spass macht.",
@@ -230,6 +223,7 @@
     "description": "Mini Karriere bisher. Do sind e paar vo de Firme, für die ich gschaffet han, und d'Rolle, wo ich döte gha han.",
     "experienceTitle": "Erfahrig",
     "educationTitle": "Uusbildig",
+    "now": "Jetzt",
     "present": "Aktuell",
     "experience": [
       {
@@ -268,10 +262,10 @@
       },
       {
         "company": "Georg Fischer AG",
-        "department": "Operational Excellence & Production IT",
+        "department": "OpEx & Production IT",
         "role": "Informatiker i Uusbildig",
         "startDate": "2024-08-01",
-        "endDate": null,
+        "endDate": "2025-07-31",
         "tech": [
           "python",
           "sql",
@@ -285,9 +279,32 @@
           "debian",
           "linux",
           "rhel",
-          "powerbi"
+          "powerbi",
+          "codabix",
+          "azuredevops",
+          "csharp"
         ],
         "description": "Schaffe an verschiedne Projekt mit Schwärpunkt uf Datenanalyse und IoT. Aktivi Entwicklig vo Microsoft Power BI und Power Platform für Business Intelligence Löösige. Zuesetzlich hilf ich au no bi de IT Infrastruktur i de Produktion."
+      },
+      {
+        "company": "Georg Fischer AG",
+        "department": "DZS IT",
+        "role": "Informatiker i Uusbildig",
+        "startDate": "2025-08-01",
+        "endDate": "2026-07-31",
+        "tech": [
+          "java",
+          "oracle",
+          "visualstudio",
+          "zabbix",
+          "powershell",
+          "mssql",
+          "docker",
+          "windows",
+          "debian",
+          "linux"
+        ],
+        "description": ""
       }
     ],
     "education": [
@@ -295,7 +312,7 @@
         "school": "BBZ Schaffhuuse",
         "degree": "Informatiker EFZ",
         "startDate": "2022-08-01",
-        "endDate": null,
+        "endDate": "2026-07-31",
         "description": "Das isch d'Uusbildig, wo ich im Rahme vo minere Lehr bi de Georg Fischer mach."
       }
     ]

@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Colin Heggli - Full Stack Developer | Software Engineer | IT Guy",
+    "title": "{name} - Full Stack Developer | Software Engineer | IT Guy",
     "description": "This is the English translation file for the website.",
-    "keywords": "Colin Heggli, Software Engineer, Full Stack Developer, IT Guy, Web Developer, Portfolio, Projects, Blog, Contact",
-    "author": "Colin Heggli",
+    "keywords": "{name}, Software Engineer, Full Stack Developer, IT Guy, Web Developer, Portfolio, Projects, Blog, Contact",
+    "author": "{name}",
     "language": "en"
   },
   "header": {
@@ -15,18 +15,15 @@
     "career ": "Career ",
     "github": {
       "title": "GitHub",
-      "description": "View my GitHub profile and repositories",
-      "link": "https://github.com/m4rshe1"
+      "description": "View my GitHub profile and repositories"
     },
     "linkedin": {
       "title": "LinkedIn",
-      "description": "View my LinkedIn profile and connect with me",
-      "link": "https://www.linkedin.com/in/colin-heggli/"
+      "description": "View my LinkedIn profile and connect with me"
     },
     "youtube": {
       "title": "YouTube",
-      "description": "View my YouTube channel and subscribe for updates",
-      "link": "https://www.youtube.com/channel/UCU0bh2sZt9NQmUbn6jLJl3g"
+      "description": "View my YouTube channel and subscribe for updates"
     }
   },
   "about": {
@@ -47,12 +44,9 @@
       "seconds": "seconds"
     },
     "title": "About Me",
-    "name": "Colin Heggli",
     "birthday": "2007-01-22",
     "jobTitle": "IT Guy in apprentice",
     "location": "Schaffhausen, Switzerland",
-    "firstName": "Colin",
-    "lastName": "Heggli",
     "learning": "Cyber Security",
     "interests": [
       "Coding",
@@ -69,7 +63,6 @@
   "hero": {
     "linkText": "Read More",
     "link": "/#readmore",
-    "name": "Colin Heggli",
     "title": "This is ME",
     "image": "/images/nordkapp.jpg",
     "bio": "I love coding, learning new technologies and flying drone. I am a software engineer with a passion for building anything that is fun.",
@@ -230,6 +223,7 @@
     "description": "My career journey so far. Here are some of the companies I have worked for and the roles I have held.",
     "experienceTitle": "Experience",
     "educationTitle": "Education",
+    "now": "Now",
     "present": "Present",
     "experience": [
       {
@@ -268,10 +262,10 @@
       },
       {
         "company": "Georg Fischer AG",
-        "department": "Operational Excellence & Production IT",
+        "department": "OpEx & Production IT",
         "role": "IT Guy in apprentice",
         "startDate": "2024-08-01",
-        "endDate": null,
+        "endDate": "2025-07-31",
         "tech": [
           "python",
           "sql",
@@ -285,9 +279,32 @@
           "debian",
           "linux",
           "rhel",
-          "powerbi"
+          "powerbi",
+          "codabix",
+          "azuredevops",
+            "csharp"
         ],
         "description": "Working on various projects focused on data analysis and data science initiatives. Actively developing expertise in Microsoft Power BI and Power Platform implementation for business intelligence solutions. Now and then I also doing support for the Infrastructure in the production"
+      },
+      {
+        "company": "Georg Fischer AG",
+        "department": "DZS IT",
+        "role": "IT Guy in apprentice",
+        "startDate": "2025-08-01",
+        "endDate": "2026-07-31",
+        "tech": [
+          "java",
+          "oracle",
+          "visualstudio",
+          "zabbix",
+          "powershell",
+          "mssql",
+          "docker",
+          "windows",
+          "debian",
+          "linux"
+        ],
+        "description": ""
       }
     ],
     "education": [
@@ -295,7 +312,7 @@
         "school": "BBZ Schaffhausen",
         "degree": "Business IT specialist EFZ",
         "startDate": "2022-08-01",
-        "endDate": null,
+        "endDate": "2026-07-31",
         "description": "This is the education I am doing as part of my apprenticeship at Georg Fischer."
       }
     ]

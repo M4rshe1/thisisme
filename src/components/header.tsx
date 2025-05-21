@@ -9,6 +9,7 @@ import {ChevronDown, LucideIcon, Menu, X} from "lucide-react";
 import {useState} from "react";
 import {IconBrandGithub, IconBrandLinkedin, IconBrandYoutube, TablerIcon} from "@tabler/icons-react";
 import {cn} from "@/lib/utils";
+import {META} from "@/config/settings";
 
 const Header = () => {
     const t = useTranslations();
@@ -17,19 +18,19 @@ const Header = () => {
     const moreLinks = [
         {
             label: t("header.github.title"),
-            href: t("header.github.link"),
+            href: `https://github.com/${META.profiles.github}`,
             icon: IconBrandGithub,
             description: t("header.github.description"),
         },
         {
             label: t("header.linkedin.title"),
-            href: t("header.linkedin.link"),
+            href: `https://www.linkedin.com/in/${META.profiles.linkedin}`,
             icon: IconBrandLinkedin,
             description: t("header.linkedin.description"),
         },
         {
             label: t("header.youtube.title"),
-            href: t("header.youtube.link"),
+            href: `https://www.youtube.com/@${META.profiles.youtube}`,
             description: t("header.youtube.description"),
             icon: IconBrandYoutube,
         }
@@ -43,7 +44,7 @@ const Header = () => {
                 <Link href={"/"} className="flex items-center gap-2">
                     <Logo />
                     <span className="text-lg font-bold hidden sm:block">
-            {t("meta.author")}
+            {t("meta.author", {name: META.name,})}
           </span>
                 </Link>
                 <div className="flex items-center gap-4 sm:gap-8 lg:gap-12">
@@ -81,6 +82,7 @@ const Header = () => {
                                 <Link
                                     key={index}
                                     href={link.href}
+                                    target="_blank"
                                     className="flex items-center gap-2 p-2 rounded transition duration-300 ease-in-out hover:bg-gray-800/50 hover:text-gray-200 text-gray-400"
                                 >
                                     <div
@@ -151,6 +153,7 @@ const HeaderMoreLink = ({links}: HeaderMoreLinkProps) => {
                         <Link
                             key={index}
                             href={link.href}
+                            target="_blank"
                             className="flex items-center gap-2 p-2 rounded transition duration-300 ease-in-out hover:bg-gray-800/50 hover:text-gray-200 text-gray-400"
                         >
                             <div

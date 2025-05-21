@@ -1,6 +1,7 @@
 import type {Metadata} from "next";
 import "./globals.css";
 import "./acrylic.css";
+import "./custom.css";
 import "flag-icons/css/flag-icons.min.css";
 
 import {hasLocale, NextIntlClientProvider} from 'next-intl';
@@ -13,6 +14,7 @@ import { Analytics } from "@vercel/analytics/next"
 import {Toaster} from "@/components/ui/sonner";
 import Footer from "@/components/footer";
 import BackToTop from "@/components/back-to-top";
+import {META} from "@/config/settings";
 
 export const generateMetadata = async ({
                                            params
@@ -23,9 +25,9 @@ export const generateMetadata = async ({
     const t = await getTranslations({locale, namespace: "meta"})
 
     return {
-        title: t("title"),
+        title: t("title", {name: META.name}),
         description: t("description"),
-        keywords: t("keywords"),
+        keywords: t("keywords", {name: META.name}),
     };
 }
 

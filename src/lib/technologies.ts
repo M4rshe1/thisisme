@@ -280,15 +280,15 @@ const technologies: Record<string, TechnologyDef> = {
     },
     csharp: {
         name: 'C#',
-        icon: 'https://www.google.com/s2/favicons?domain=www.iso.org&sz=256',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Logo_C_sharp.svg/256px-Logo_C_sharp.svg.png?20221121173824',
         type: 'language',
-        color: '#239120',
+        color: '#360092',
     },
     java: {
         name: 'Java',
         icon: 'https://www.google.com/s2/favicons?domain=www.oracle.com&sz=256',
         type: 'language',
-        color: '#007396',
+        color: '#f29020',
     },
     dotnet: {
         name: '.NET',
@@ -505,6 +505,30 @@ const technologies: Record<string, TechnologyDef> = {
         icon: 'https://www.google.com/s2/favicons?domain=servicenow.com&sz=256',
         type: 'business intelligence',
         color: '#62d84e',
+    },
+    codabix: {
+        name: 'CodaBix',
+        icon: 'https://www.google.com/s2/favicons?domain=www.codabix.com&sz=256',
+        type: 'business intelligence',
+        color: '#f5a623',
+    },
+    azure: {
+        name: 'Azure',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/150px-Microsoft_Azure.svg.png',
+        type: 'cloud',
+        color: '#0089D6',
+    },
+    azuredevops: {
+        name: 'Azure DevOps',
+        icon: '/images/tech/azuredevops.svg',
+        type: 'cloud',
+        color: '#0078D4',
+    },
+    aws: {
+        name: 'AWS',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/512px-Amazon_Web_Services_Logo.svg.png',
+        type: 'cloud',
+        color: '#FF9900',
     }
 }
 

@@ -1,0 +1,9 @@
+.diagonal-striped-background {
+    background: repeating-linear-gradient(
+            -45deg,
+            rgba(245, 245, 245, 0.2),
+            rgba(245, 245, 245, 0.2) 5px,
+            #cccccc33 5px,
+            #cccccc33 10px
+    );
+}

@@ -1,13 +1,14 @@
 "use server"
 
-const WAKATIME_USERNAME = process.env.NEXT_PUBLIC_WAKATIME_USERNAME;
+
+import {META} from "@/config/settings";
 
 const fetchWakatimeStats = async () => {
     "use cache";
 
     try {
         const response = await fetch(
-            `https://wakatime.com/api/v1/users/${WAKATIME_USERNAME}/stats/all_time`
+            `https://wakatime.com/api/v1/users/${META.profiles.wakatime}/stats/all_time`
         );
 
         if (!response.ok) {

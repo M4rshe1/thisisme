@@ -1,16 +1,17 @@
 "use client"
 
 import Image from "next/image";
-import {Social} from "@/config/settings";
+import {META, Social} from "@/config/settings";
 import {Link} from "@/i18n/navigation";
 import {ArrowRight} from "lucide-react";
 import React from "react";
+
 
 const SocialBadge = ({social}: { social: Social }) => {
 
     return (
         <Link
-            href={social.link}
+            href={social.template.replace("{{username}}", META.profiles[social.key] ?? "")}
             target="_blank"
             className="flex items-center cursor-pointer border rounded border-gray-800 p-2 mb-2 max-w-2xl mx-auto shadow transition-all duration-300 ease-in-out cursor-default group"
             style={{

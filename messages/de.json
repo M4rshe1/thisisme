@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Colin Heggli - Full Stack Developer | Software Engineer | IT-Spezialist",
+    "title": "{name} - Full Stack Developer | Software Engineer | IT-Spezialist",
     "description": "Dies ist die deutsche Übersetzungsdatei für die Website.",
-    "keywords": "Colin Heggli, Software Engineer, Full Stack Developer, IT-Spezialist, Webentwickler, Portfolio, Projekte, Blog, Kontakt",
-    "author": "Colin Heggli",
+    "keywords": "{name}, Software Engineer, Full Stack Developer, IT-Spezialist, Webentwickler, Portfolio, Projekte, Blog, Kontakt",
+    "author": "{name}",
     "language": "de"
   },
   "header": {
@@ -15,18 +15,15 @@
     "career ": "Karriere ",
     "github": {
       "title": "GitHub",
-      "description": "Mein GitHub-Profil und Repositories anzeigen",
-      "link": "https://github.com/m4rshe1"
+      "description": "Mein GitHub-Profil und Repositories anzeigen"
     },
     "linkedin": {
       "title": "LinkedIn",
-      "description": "Mein LinkedIn-Profil anzeigen und mit mir verbinden",
-      "link": "https://www.linkedin.com/in/colin-heggli/"
+      "description": "Mein LinkedIn-Profil anzeigen und mit mir verbinden"
     },
     "youtube": {
       "title": "YouTube",
-      "description": "Meinen YouTube-Kanal anzeigen und für Updates abonnieren",
-      "link": "https://www.youtube.com/channel/UCU0bh2sZt9NQmUbn6jLJl3g"
+      "description": "Meinen YouTube-Kanal anzeigen und für Updates abonnieren"
     }
   },
   "about": {
@@ -47,12 +44,9 @@
       "seconds": "Sekunden"
     },
     "title": "Über mich",
-    "name": "Colin Heggli",
     "birthday": "2007-01-22",
     "jobTitle": "Informatiker in Ausbildung",
     "location": "Schaffhausen, Schweiz",
-    "firstName": "Colin",
-    "lastName": "Heggli",
     "learning": "Cyber Security",
     "interests": [
       "Programmieren",
@@ -69,7 +63,6 @@
   "hero": {
     "linkText": "Mehr erfahren",
     "link": "/#readmore",
-    "name": "Colin Heggli",
     "title": "Das bin ICH",
     "image": "/images/nordkapp.jpg",
     "bio": "Ich liebe es zu programmieren, neue Technologien zu lernen und Drohne zu fliegen. Ich bin ein Softwareentwickler mit einer Leidenschaft dafür, alles zu bauen, was Spass macht.",
@@ -230,6 +223,7 @@
     "description": "Meine bisherige Karriere. Hier sind einige der Unternehmen, für die ich gearbeitet habe, und die Rollen, die ich innehatte.",
     "experienceTitle": "Erfahrung",
     "educationTitle": "Ausbildung",
+    "now": "Jetzt",
     "present": "Aktuell",
     "experience": [
       {
@@ -268,10 +262,10 @@
       },
       {
         "company": "Georg Fischer AG",
-        "department": "Operational Excellence & Production IT",
+        "department": "OpEx & Production IT",
         "role": "Informatiker in Ausbildung",
         "startDate": "2024-08-01",
-        "endDate": null,
+        "endDate": "2025-07-31",
         "tech": [
           "python",
           "sql",
@@ -285,17 +279,40 @@
           "debian",
           "linux",
           "rhel",
-          "powerbi"
+          "powerbi",
+          "codabix",
+          "azuredevops",
+          "csharp"
         ],
         "description": "Arbeit an verschiedenen Projekten mit Schwerpunkt auf Datenanalyse und Datenwissenschaftsinitiativen. Aktive Entwicklung von Fachkenntnissen in der Implementierung von Microsoft Power BI und Power Platform für Business Intelligence Lösungen. Ab und zu leiste ich auch Unterstützung für die Infrastruktur in der Produktion."
-      }
+      },
+        {
+            "company": "Georg Fischer AG",
+            "department": "DZS IT",
+            "role": "Informatiker in Ausbildung",
+            "startDate": "2025-08-01",
+            "endDate": "2026-07-31",
+            "tech": [
+              "java",
+              "oracle",
+              "visualstudio",
+              "zabbix",
+              "powershell",
+              "mssql",
+              "docker",
+              "windows",
+              "debian",
+              "linux"
+            ],
+            "description": ""
+        }
     ],
     "education": [
       {
         "school": "BBZ Schaffhausen",
         "degree": "Informatiker EFZ",
         "startDate": "2022-08-01",
-        "endDate": null,
+        "endDate": "2026-07-31",
         "description": "Dies ist die Ausbildung, die ich im Rahmen meiner Lehre bei Georg Fischer absolviere."
       }
     ]

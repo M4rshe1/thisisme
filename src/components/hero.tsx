@@ -9,6 +9,7 @@ import {buttonVariants} from "@/components/ui/button";
 import {Link} from "@/i18n/navigation";
 import {getLatestBlogPost} from "@/lib/blogUtils";
 import {useLocale} from "use-intl";
+import {META} from "@/config/settings";
 
 interface RotaryItem {
     type: string;
@@ -104,7 +105,7 @@ const HeroMe = () => {
         <div className="relative rounded-lg text-white overflow-hidden">
             <Image
                 src={t("image")}
-                alt={t("name")}
+                alt={META.name}
                 width={1920}
                 height={1080}
                 className="rounded-lg shadow-lg w-full aspect-video object-cover"

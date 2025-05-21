@@ -6,6 +6,7 @@ import {buttonVariants} from "@/components/ui/button";
 import {cn} from "@/lib/utils";
 import Dot from "@/components/dot";
 import React from "react";
+import {META} from "@/config/settings";
 
 const Projects = ({count}: {count?: number}) => {
     const t = useTranslations("projects");
@@ -43,7 +44,7 @@ const Projects = ({count}: {count?: number}) => {
                     <Link href={"/projects"} className={cn(buttonVariants({variant: "outline"}), "group")}>
                         {t("viewAll")} <ArrowRight className={"group-hover:translate-x-0.5 transition-transform duration-200"}/>
                     </Link>
-                    <Link href={"https://githhub.com/m4rshe1"} className={cn(buttonVariants({variant: "accent"}), "group")}>
+                    <Link href={`https://githhub.com/${META.profiles.github}`} className={cn(buttonVariants({variant: "accent"}), "group")}>
                         {t("viewGithub")} <ArrowRight className={"group-hover:translate-x-0.5 transition-transform duration-200"}/>
                     </Link>
                 </div>

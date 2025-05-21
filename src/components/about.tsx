@@ -10,6 +10,7 @@ import { highlight } from "sugar-high";
 import Dot from "@/components/dot";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import {META} from "@/config/settings";
 
 const About = () => {
     const t = useTranslations();
@@ -85,7 +86,7 @@ const About = () => {
                 </p>
                 <div className="mt-4 flex items-center gap-4 gap-2">
                     <Link
-                        href={"https://githhub.com/m4rshe1"}
+                        href={`https://githhub.com/${META.profiles.github}`}
                         className={cn(buttonVariants({ variant: "accent" }), "group")}
                     >
                         {t("buttons.viewGithub")}
@@ -181,7 +182,7 @@ const About = () => {
                             __html: highlight(
                                 JSON.stringify(
                                     {
-                                        [t("about.keys.name")]: t("about.name"),
+                                        [t("about.keys.name")]: META.name,
                                         [t("about.keys.jobTitle")]: t(
                                             "about.jobTitle",
                                         ),

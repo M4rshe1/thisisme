@@ -46,9 +46,10 @@ export const TECH: technologyNames[] = [
 export type Social = SocialWithIcon | SocialWithImage
 
 interface BaseSocial {
-    link: string
     name: string
     color: string
+    key: string
+    template: string
 }
 
 interface SocialWithIcon extends BaseSocial {
@@ -59,51 +60,80 @@ interface SocialWithImage extends BaseSocial {
     image: string
 }
 
+
+export interface Meta {
+    name: string
+    title: string
+    url: string
+    profiles: {
+        [key: string]: string
+    }
+}
+
 export const SOCIALS: Social[] = [
     {
         name: "Email",
         icon: AtSignIcon,
-        link: "mailto:colin@heggli.dev",
-        color: "#fefefe"
+        color: "#fefefe",
+        key: "email",
+        template: "mailto:{{username}}",
     },
     {
         name: "Github",
         icon: IconBrandGithub,
-        link: "https://github.com/m4rshe1",
-        color: "#ffffff"
+        color: "#ffffff",
+        key: "github",
+        template: "https://github.com/{{username}}",
     },
     {
         name: "LinkedIn",
         icon: IconBrandLinkedin,
-        link: "https://www.linkedin.com/in/colin-heggli/",
-        color: "#0A66C2"
+        color: "#0A66C2",
+        key: "linkedin",
+        template: "https://www.linkedin.com/in/{{username}}",
     },
     {
         name: "Instagram",
         image: "/images/tech/instagram.svg",
-        link: "https://www.instagram.com/m4rshe1_/",
-        color: "#E4405F"
+        color: "#E4405F",
+        key: "instagram",
+        template: "https://www.instagram.com/{{username}}",
     },
     {
         name: "Youtube",
         icon: IconBrandYoutube,
-        link: "https://www.youtube.com/channel/UCU0bh2sZt9NQmUbn6jLJl3g",
-        color: "#FF0000"
+        color: "#FF0000",
+        key: "youtube",
+        template: "https://www.youtube.com/@{{username}}",
     },
     {
         name: "Discord",
         icon: IconBrandDiscord,
-        link: "https://discord.com/users/633749833747922959",
-        color: "#5865F2"
+        color: "#5865F2",
+        key: "discord",
+        template: "https://discord.com/users/{{username}}",
     }
 ]
 
-export const META = {
-    firstName: "Colin",
-    lastName: "Heggli",
+export const SETTINGS = {
+    career: {
+        showNowLine: true,
+        showNowLineText: true,
+        showFutureOverlay: true,
+    }
+}
+
+export const META: Meta = {
     name: "Colin Heggli",
     title: "Full Stack Developer",
     url: process.env.VERCEL_URL || "https://colin.heggli.dev",
+    profiles: {
+        email: "colin@heggli.dev",
+        github: "M4rshe1",
+        linkedin: "colin-heggli",
+        discord: "633749833747922959",
+        instagram: "m4rshe1_",
+        youtube: "ColinHeggli",
+        wakatime: "M4rshe1",
+    },
 }
-
-export const URL = "https://colin.heggli.dev"

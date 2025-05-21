@@ -5,12 +5,13 @@ import About from "@/components/about";
 import Technology from "@/components/technology";
 import WakaTimeStats from "@/components/waka-time-stats";
 import Contact from "@/components/contact";
+import {META} from "@/config/settings";
 
 export default function HomePage() {
     return (
         <>
             <Hero/>
-            <GithubStats username={"m4rshe1"}/>
+            <GithubStats username={META.profiles.github} />
             <div className="h-4"/>
             <div id={"readmore"}/>
             <About/>

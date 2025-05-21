@@ -7,6 +7,7 @@ import {useFormatter, useTranslations} from "next-intl";
 import Dot from "@/components/dot";
 import {Link} from "@/i18n/navigation";
 import {SquareArrowOutUpRight} from "lucide-react";
+import {META} from "@/config/settings";
 
 interface WakaTimeStatsDef {
     total_seconds: number;
@@ -89,7 +90,7 @@ const WakaTimeStats = () => {
         <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black p-6 rounded-lg relative">
             <div className="absolute inset-0 bg-gradient-to-br from-gray-900/0 to-gray-800 opacity-50 blur-lg pointer-events-none"></div>
             <Link
-                href={`https://wakatime.com/@${process.env.NEXT_PUBLIC_WAKATIME_USERNAME}`}
+                href={`https://wakatime.com/@${META.profiles.wakatime}`}
                 target="_blank"
                 className="absolute top-4 right-4 rounded-full bg-black/30 p-2 text-gray-200 transition hover:bg-black/50"
             >
