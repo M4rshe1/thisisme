@@ -47,7 +47,10 @@
     "birthday": "2007-01-22",
     "jobTitle": "Informatiker i Uusbildig",
     "location": "Schaffhuuse, Schwiiz",
-    "learning": "Cyber Security",
+    "learning": [
+      "Cyber Security",
+      "Java"
+    ],
     "interests": [
       "Programmiere",
       "Drooneflüüge",
@@ -146,7 +149,10 @@
     "lightMode": "Hellmodus",
     "systemDefault": "Systemstandard",
     "save": "Iistellige speichere",
-    "description": "Do chasch dini Iistellige ändere, zum Bispel s'Website-Design oder Dekoratioone."
+    "description": "Do chasch dini Iistellige ändere, zum Bispel s'Website-Design oder Dekoratioone.",
+    "mouseShadow": "Muus-Schatte",
+    "mouseShadowOn": "Ii",
+    "mouseShadowOff": "Us"
   },
   "technologies": {
     "title": "Technologiä wo ich bruuche",
@@ -190,11 +196,13 @@
     "totalTime": "Gsamti Ziit",
     "topOperatingSystems": "Top Betriebssystem i Stunde",
     "codingActivity": "Coding-Aktivität",
-    "lastWeek": "Letschti Wuche",
+    "last7Days": "Letschti 7 Tage",
+    "allTime": "Alli Ziit",
     "noStats": "Kei Wakatime-Date verfüegbar.",
     "loading": "Lade Wakatime-Statistik...",
     "dailyAverage": "Tagesdurchnitt",
     "totalCodingTime": "Gsamti Coding-Statistik sit {startDate}",
+    "totalCodingTimeWeek": "Gsamti Coding-Statistik vo de letschti 7 Tage",
     "noLanguageDate": "Kei Sprachdate verfüegbar.",
     "noEditorData": "Kei Editordate verfüegbar.",
     "noOperatingSystemData": "Kei Betriebssystemdate verfüegbar.",
@@ -297,14 +305,18 @@
           "oracle",
           "visualstudio",
           "zabbix",
+          "rhel",
           "powershell",
           "mssql",
+          "postgresql",
+          "subversion",
           "docker",
           "windows",
           "debian",
-          "linux"
+          "linux",
+          "eclipse"
         ],
-        "description": ""
+        "description": "Fähler behebig, neui Funktioone i UniWare LVS implementiere und Benutzer vom Distributions Zentrum unterstütze."
       }
     ],
     "education": [

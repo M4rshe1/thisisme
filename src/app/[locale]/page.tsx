@@ -5,24 +5,35 @@ import About from "@/components/about";
 import Technology from "@/components/technology";
 import WakaTimeStats from "@/components/waka-time-stats";
 import Contact from "@/components/contact";
-import {META} from "@/config/settings";
+import { META } from "@/config/settings";
+import { Suspense } from "react";
 
 export default function HomePage() {
-    return (
-        <>
-            <Hero/>
-            <GithubStats username={META.profiles.github} />
-            <div className="h-4"/>
-            <div id={"readmore"}/>
-            <About/>
-            <div className="h-16"/>
-            <Projects count={3}/>
-            <div className="h-16"/>
-            <WakaTimeStats/>
-            <div className="h-16"/>
-            <Technology/>
-            <div className="h-16"/>
-            <Contact/>
-        </>
-    );
+  return (
+    <>
+      <Hero />
+      <Suspense
+        fallback={
+          <div
+            className={"h-12 flex items-center justify-center text-gray-500"}
+          >
+            Loading GitHub Stats...
+          </div>
+        }
+      >
+        <GithubStats username={META.profiles.github} />
+      </Suspense>
+      <div className="h-4" />
+      <div id={"readmore"} />
+      <About />
+      <div className="h-16" />
+      <Projects count={3} />
+      <div className="h-16" />
+      <WakaTimeStats />
+      <div className="h-16" />
+      <Technology />
+      <div className="h-16" />
+      <Contact />
+    </>
+  );
 }

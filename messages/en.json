@@ -47,7 +47,10 @@
     "birthday": "2007-01-22",
     "jobTitle": "IT Guy in apprentice",
     "location": "Schaffhausen, Switzerland",
-    "learning": "Cyber Security",
+    "learning": [
+      "Cyber Security",
+      "Java"
+    ],
     "interests": [
       "Coding",
       "Flying drone",
@@ -146,7 +149,10 @@
     "lightMode": "Light Mode",
     "systemDefault": "System Default",
     "save": "Save Settings",
-    "description": "Here you can change your settings, like website theme or decorations."
+    "description": "Here you can change your settings, like website theme or decorations.",
+    "mouseShadow": "Mouse Shadow",
+    "mouseShadowOn": "On",
+    "mouseShadowOff": "Off"
   },
   "technologies": {
     "title": "Technology I use",
@@ -179,7 +185,8 @@
   },
   "wakatime": {
     "title": "Wakatime Stats",
-    "description": "Wakatime is a tool that tracks the time I spend coding. Here are my stats for all time.",
+    "descriptionYear": "Wakatime is a tool that tracks the time I spend coding. Here are my stats for all time.",
+    "descriptionWeek": "Wakatime is a tool that tracks the time I spend coding. Here are my stats for the last 7 days.",
     "languages": "Languages",
     "editors": "Editors",
     "os": "Operating Systems",
@@ -190,11 +197,14 @@
     "totalTime": "Total time",
     "topOperatingSystems": "Top Operating Systems in hours",
     "codingActivity": "Coding Activity",
+    "last7Days": "Last 7 Days",
+    "allTime": "All Time",
     "lastWeek": "Last Week",
     "noStats": "No Wakatime data available.",
     "loading": "Loading Wakatime stats...",
     "dailyAverage": "Daily Average",
     "totalCodingTime": "Total coding statistics since {startDate}",
+    "totalCodingTimeWeek": "Total coding statistics of the last 7 days",
     "noLanguageDate": "No language data available.",
     "noEditorData": "No editor data available.",
     "noOperatingSystemData": "No operating system data available.",
@@ -282,7 +292,7 @@
           "powerbi",
           "codabix",
           "azuredevops",
-            "csharp"
+          "csharp"
         ],
         "description": "Working on various projects focused on data analysis and data science initiatives. Actively developing expertise in Microsoft Power BI and Power Platform implementation for business intelligence solutions. Now and then I also doing support for the Infrastructure in the production"
       },
@@ -297,14 +307,18 @@
           "oracle",
           "visualstudio",
           "zabbix",
+          "rhel",
           "powershell",
           "mssql",
+          "postgresql",
+          "subversion",
           "docker",
           "windows",
           "debian",
-          "linux"
+          "linux",
+          "eclipse"
         ],
-        "description": ""
+        "description": "Fixing bugs, implementing new features into UniWare LVS and support the users of the Distribution Center."
       }
     ],
     "education": [

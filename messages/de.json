@@ -47,7 +47,10 @@
     "birthday": "2007-01-22",
     "jobTitle": "Informatiker in Ausbildung",
     "location": "Schaffhausen, Schweiz",
-    "learning": "Cyber Security",
+    "learning": [
+      "Cyber Security",
+      "Java"
+    ],
     "interests": [
       "Programmieren",
       "Drohne fliegen",
@@ -146,7 +149,10 @@
     "lightMode": "Hellmodus",
     "systemDefault": "Systemstandard",
     "save": "Einstellungen speichern",
-    "description": "Hier können Sie Ihre Einstellungen ändern, wie z. B. das Website-Design oder Dekorationen."
+    "description": "Hier können Sie Ihre Einstellungen ändern, wie z. B. das Website-Design oder Dekorationen.",
+    "mouseShadow": "Mausschatten",
+    "mouseShadowOn": "Ein",
+    "mouseShadowOff": "Aus"
   },
   "technologies": {
     "title": "Technologien, die ich verwende",
@@ -190,11 +196,13 @@
     "totalTime": "Gesamtzeit",
     "topOperatingSystems": "Top Betriebssysteme in Stunden",
     "codingActivity": "Coding-Aktivität",
-    "lastWeek": "Letzte Woche",
+    "last7Days": "Letzte 7 Tage",
+    "allTime": "Alle Zeiten",
     "noStats": "Keine Wakatime-Daten verfügbar.",
     "loading": "Lade Wakatime-Statistiken...",
     "dailyAverage": "Tagesdurchschnitt",
     "totalCodingTime": "Gesamt-Coding-Statistik seit {startDate}",
+    "totalCodingTimeWeek": "Gesamt-Coding-Statistik der letzten 7 Tage",
     "noLanguageDate": "Keine Sprachdaten verfügbar.",
     "noEditorData": "Keine Editordaten verfügbar.",
     "noOperatingSystemData": "Keine Betriebssystemdaten verfügbar.",
@@ -286,26 +294,30 @@
         ],
         "description": "Arbeit an verschiedenen Projekten mit Schwerpunkt auf Datenanalyse und Datenwissenschaftsinitiativen. Aktive Entwicklung von Fachkenntnissen in der Implementierung von Microsoft Power BI und Power Platform für Business Intelligence Lösungen. Ab und zu leiste ich auch Unterstützung für die Infrastruktur in der Produktion."
       },
-        {
-            "company": "Georg Fischer AG",
-            "department": "DZS IT",
-            "role": "Informatiker in Ausbildung",
-            "startDate": "2025-08-01",
-            "endDate": "2026-07-31",
-            "tech": [
-              "java",
-              "oracle",
-              "visualstudio",
-              "zabbix",
-              "powershell",
-              "mssql",
-              "docker",
-              "windows",
-              "debian",
-              "linux"
-            ],
-            "description": ""
-        }
+      {
+        "company": "Georg Fischer AG",
+        "department": "DZS IT",
+        "role": "Informatiker in Ausbildung",
+        "startDate": "2025-08-01",
+        "endDate": "2026-07-31",
+        "tech": [
+          "java",
+          "oracle",
+          "visualstudio",
+          "zabbix",
+          "rhel",
+          "powershell",
+          "mssql",
+          "postgresql",
+          "subversion",
+          "docker",
+          "windows",
+          "debian",
+          "linux",
+          "eclipse"
+        ],
+        "description": "Fehlerbehebung, Implementierung neuer Funktionen in UniWare LVS und Unterstützung der Benutzer des Distributions Zentrums."
+      }
     ],
     "education": [
       {

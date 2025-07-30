@@ -1,78 +1,118 @@
 "use client";
 
-import {Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger} from "@/components/ui/dialog";
-import {Label} from "@/components/ui/label";
-import {Button} from "@/components/ui/button";
-import {SettingsIcon} from "lucide-react";
-import {useRouter} from "next/navigation";
-import {useLocale} from "use-intl";
-import {useTranslations} from "next-intl";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
+import { SettingsIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useLocale } from "use-intl";
+import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
 const Settings = () => {
-    const locale = useLocale();
-    const t = useTranslations();
+  const locale = useLocale();
+  const t = useTranslations();
+  const [mouseShadow, setMouseShadow] = useState(false);
+  const router = useRouter();
 
-    const router = useRouter();
+  const changeLanguage = (lang: string) => {
+    const currentPath = window.location.pathname;
+    const currentSearch = window.location.search;
+    const currentHash = window.location.hash;
+    const newPath = `/${lang}${currentPath.replace(`/${locale}`, "")}${currentSearch}${currentHash}`;
+    router.push(newPath);
+  };
 
-    const changeLanguage = (lang: string) => {
-        const currentPath = window.location.pathname;
-        const currentSearch = window.location.search;
-        const currentHash = window.location.hash;
-        const newPath = `/${lang}${currentPath.replace(`/${locale}`, "")}${currentSearch}${currentHash}`;
-        router.push(newPath);
+  useEffect(() => {
+    const storage = localStorage.getItem("mouse-shadow");
+    const value = storage === "true";
+    setMouseShadow(value);
+  }, []);
+
+  useEffect(() => {
+    if (mouseShadow) {
+      localStorage.setItem("mouse-shadow", "true");
+    } else {
+      localStorage.setItem("mouse-shadow", "false");
     }
+    window.dispatchEvent(
+      new CustomEvent("localStorageChange", {
+        detail: { key: "mouse-shadow", newValue: mouseShadow.toString() },
+      })
+    );
+  }, [mouseShadow]);
 
-    return (
-        <Dialog>
-            <DialogTrigger asChild>
-                <Button variant={"accent"}><SettingsIcon/></Button>
-            </DialogTrigger>
-            <DialogContent className="sm:max-w-lg">
-                <DialogHeader>
-                    <DialogTitle>
-                        {t("settings.title")}
-                    </DialogTitle>
-                    <DialogDescription>
-                        {t("settings.description")}
-                    </DialogDescription>
-                </DialogHeader>
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant={"accent"}>
+          <SettingsIcon />
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-lg">
+        <DialogHeader>
+          <DialogTitle>{t("settings.title")}</DialogTitle>
+          <DialogDescription>{t("settings.description")}</DialogDescription>
+        </DialogHeader>
 
-                <div className="flex flex-col gap-4 py-4">
-                    <div className="flex flex-col gap-2">
-                        <Label>
-                            {t("settings.language")}
-                        </Label>
-                        <div className="flex gap-2">
-                            <Button
-                                variant={locale === "en" ? "accent" : "outline"}
-                                onClick={() => changeLanguage("en")}
-                                className="flex items-center gap-2"
-                            >
-                                <span className="fi fi-gb"></span>
-                                English
-                            </Button>
-                            <Button
-                                variant={locale === "de" ? "accent" : "outline"}
-                                onClick={() => changeLanguage("de")}
-                                className="flex items-center gap-2"
-                            >
-                                <span className="fi fi-de"></span>
-                                Deutsch
-                            </Button>
-                            <Button
-                                variant={locale === "ch" ? "accent" : "outline"}
-                                onClick={() => changeLanguage("ch")}
-                                className="flex items-center gap-2"
-                            >
-                                <span className="fi fi-ch"></span>
-                                Schwiizertütsch
-                            </Button>
-                        </div>
-                    </div>
-                </div>
-            </DialogContent>
-        </Dialog>
-    )
-}
+        <div className="flex flex-col gap-4 py-4">
+          <div className="flex flex-col gap-2">
+            <Label>{t("settings.mouseShadow")}</Label>
+            <div className="flex gap-2">
+              <Button
+                variant={mouseShadow ? "accent" : "outline"}
+                onClick={() => setMouseShadow(true)}
+              >
+                {t("settings.mouseShadowOn")}{" "}
+              </Button>
+              <Button
+                variant={mouseShadow ? "outline" : "accent"}
+                onClick={() => setMouseShadow(false)}
+              >
+                {t("settings.mouseShadowOff")}
+              </Button>
+            </div>
+          </div>
+          <div className="flex flex-col gap-2">
+            <Label>{t("settings.language")}</Label>
+            <div className="flex gap-2">
+              <Button
+                variant={locale === "en" ? "accent" : "outline"}
+                onClick={() => changeLanguage("en")}
+                className="flex items-center gap-2"
+              >
+                <span className="fi fi-gb"></span>
+                English
+              </Button>
+              <Button
+                variant={locale === "de" ? "accent" : "outline"}
+                onClick={() => changeLanguage("de")}
+                className="flex items-center gap-2"
+              >
+                <span className="fi fi-de"></span>
+                Deutsch
+              </Button>
+              <Button
+                variant={locale === "ch" ? "accent" : "outline"}
+                onClick={() => changeLanguage("ch")}
+                className="flex items-center gap-2"
+              >
+                <span className="fi fi-ch"></span>
+                Schwiizertütsch
+              </Button>
+            </div>
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+};
 
 export default Settings;
