@@ -152,7 +152,10 @@
     "description": "Hier können Sie Ihre Einstellungen ändern, wie z. B. das Website-Design oder Dekorationen.",
     "mouseShadow": "Mausschatten",
     "mouseShadowOn": "Ein",
-    "mouseShadowOff": "Aus"
+    "mouseShadowOff": "Aus",
+    "acrylicAnimation": "Hintergrund-Animation",
+    "acrylicAnimationOn": "Ein",
+    "acrylicAnimationOff": "Aus"
   },
   "technologies": {
     "title": "Technologien, die ich verwende",

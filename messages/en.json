@@ -152,7 +152,10 @@
     "description": "Here you can change your settings, like website theme or decorations.",
     "mouseShadow": "Mouse Shadow",
     "mouseShadowOn": "On",
-    "mouseShadowOff": "Off"
+    "mouseShadowOff": "Off",
+    "acrylicAnimation": "Background Animation",
+    "acrylicAnimationOn": "On",
+    "acrylicAnimationOff": "Off"
   },
   "technologies": {
     "title": "Technology I use",

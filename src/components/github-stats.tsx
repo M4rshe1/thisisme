@@ -6,8 +6,6 @@ import { Link } from "@/i18n/navigation";
 import { getUserDataAction } from "@/actions/github";
 import { useQuery } from "@tanstack/react-query";
 
-// Define the shape of the data we expect from the API
-
 interface GithubStatsProps {
   username: string;
 }
@@ -23,77 +21,77 @@ export default function GithubStats({ username }: GithubStatsProps) {
     staleTime: 1000 * 60 * 60,
   });
 
-  if (isPending) {
-    return (
-      <div className="flex h-screen items-center justify-center">
-        <div className="rounded-lg bg-black/30 p-8">
-          <p className="text-lg text-gray-300">Loading...</p>
-        </div>
+  const StatsSkeleton = ({ message }: { message: string }) => (
+    <div className="md:flex md:flex-row grid grid-cols-2 justify-between items-center rounded-md p-4 text-gray-400 text-sm">
+      <div className="flex items-center space-x-2 mb-2 md:mb-0 opacity-60">
+        <FolderOpen className="w-5 h-5 animate-pulse" />
+        <span className="font-bold bg-gray-700/40 rounded w-8 h-5 inline-block animate-pulse" />
+        <span>Repos</span>
       </div>
-    );
+      <div className="flex items-center space-x-2 mb-2 md:mb-0 opacity-60">
+        <Star className="w-5 h-5 animate-pulse" />
+        <span className="font-bold bg-gray-700/40 rounded w-8 h-5 inline-block animate-pulse" />
+        <span>Stars</span>
+      </div>
+      <div className="flex items-center space-x-2 mb-2 md:mb-0 opacity-60">
+        <Users className="w-5 h-5 animate-pulse" />
+        <span className="font-bold bg-gray-700/40 rounded w-8 h-5 inline-block animate-pulse" />
+        <span>Followers</span>
+      </div>
+      <div className="flex items-center space-x-2 opacity-60">
+        <GitCommit className="w-5 h-5 animate-pulse" />
+        <span className="font-bold bg-gray-700/40 rounded w-8 h-5 inline-block animate-pulse" />
+        <span>Commits</span>
+      </div>
+    </div>
+  );
+
+  if (isPending) {
+    return <StatsSkeleton message="Loading..." />;
   }
 
   if (error) {
-    return (
-      <div className="flex h-screen items-center justify-center">
-        <div className="rounded-lg bg-black/30 p-8">
-          <p className="text-lg text-gray-300">
-            Error loading stats: {error.message}
-          </p>
-        </div>
-      </div>
-    );
+    return <StatsSkeleton message={`Error loading stats: ${error.message}`} />;
   }
 
   if (!stats) {
-    return (
-      <div className="flex h-screen items-center justify-center">
-        <div className="rounded-lg bg-black/30 p-8">
-          <p className="text-lg text-gray-300">No stats found.</p>
-        </div>
-      </div>
-    );
+    return <StatsSkeleton message="No stats found." />;
   }
 
   return (
     <div className="md:flex md:flex-row grid grid-cols-2 justify-between items-center rounded-md p-4 text-gray-400 text-sm">
       <Link
         href={`https://github.com/${username}?tab=repositories`}
-        className="flex items-center space-x-2 mb-2 md:mb-0 hover:text-gray-200 transition-colors duration-200 font-bold"
+        className="flex items-center space-x-2 mb-2 md:mb-0 hover:text-gray-200 transition-colors duration-200"
       >
         <FolderOpen className="w-5 h-5" />
-        <span className="font-bold">{humanReadable(stats.public_repos)}</span>
+        <span>{humanReadable(stats.public_repos)}</span>
         <span>Repos</span>
       </Link>
-
       <Link
         href={`https://github.com/${username}?tab=stars`}
-        className="flex items-center space-x-2 mb-2 md:mb-0 hover:text-gray-200 transition-colors duration-200 font-bold"
+        className="flex items-center space-x-2 mb-2 md:mb-0 hover:text-gray-200 transition-colors duration-200"
       >
         <Star className="w-5 h-5" />
-        <span className="font-bold">
-          {humanReadable(stats.starred_repos || 0)}
-        </span>
+        <span>{humanReadable(stats.starred_repos || 0)}</span>
         <span>Stars</span>
       </Link>
 
       <Link
         href={`https://github.com/${username}?tab=followers`}
-        className="flex items-center space-x-2 mb-2 md:mb-0 hover:text-gray-200 transition-colors duration-200 font-bold"
+        className="flex items-center space-x-2 mb-2 md:mb-0 hover:text-gray-200 transition-colors duration-200"
       >
         <Users className="w-5 h-5" />
-        <span className="font-bold">{humanReadable(stats.followers)}</span>
+        <span>{humanReadable(stats.followers)}</span>
         <span>Followers</span>
       </Link>
 
       <Link
         href={`https://github.com/${username}`}
-        className="flex items-center space-x-2 hover:text-gray-200 transition-colors duration-200 font-bold"
+        className="flex items-center space-x-2 hover:text-gray-200 transition-colors duration-200"
       >
         <GitCommit className="w-5 h-5" />
-        <span className="font-bold">
-          {humanReadable(stats.total_contributions || 0, 1)}
-        </span>
+        <span>{humanReadable(stats.total_contributions || 0, 1)}</span>
         <span>Commits</span>
       </Link>
     </div>

@@ -152,7 +152,10 @@
     "description": "Do chasch dini Iistellige ändere, zum Bispel s'Website-Design oder Dekoratioone.",
     "mouseShadow": "Muus-Schatte",
     "mouseShadowOn": "Ii",
-    "mouseShadowOff": "Us"
+    "mouseShadowOff": "Us",
+    "acrylicAnimation": "Hintergrund-Animation",
+    "acrylicAnimationOn": "Ii",
+    "acrylicAnimationOff": "Us"
   },
   "technologies": {
     "title": "Technologiä wo ich bruuche",

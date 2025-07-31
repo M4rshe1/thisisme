@@ -20,6 +20,7 @@ const Settings = () => {
   const locale = useLocale();
   const t = useTranslations();
   const [mouseShadow, setMouseShadow] = useState(false);
+  const [acrylicAnimation, setAcrylicAnimation] = useState(true);
   const router = useRouter();
 
   const changeLanguage = (lang: string) => {
@@ -31,23 +32,34 @@ const Settings = () => {
   };
 
   useEffect(() => {
-    const storage = localStorage.getItem("mouse-shadow");
-    const value = storage === "true";
-    setMouseShadow(value);
+    const mouseShadowStorage = localStorage.getItem("mouse-shadow");
+    const acrylicAnimationStorage = localStorage.getItem("acrylic-animation");
+    const mouseShadowValue = mouseShadowStorage === "true";
+    const acrylicAnimationValue = acrylicAnimationStorage !== "false"; // Default to true
+    setMouseShadow(mouseShadowValue);
+    setAcrylicAnimation(acrylicAnimationValue);
   }, []);
 
   useEffect(() => {
-    if (mouseShadow) {
-      localStorage.setItem("mouse-shadow", "true");
-    } else {
-      localStorage.setItem("mouse-shadow", "false");
-    }
+    localStorage.setItem("mouse-shadow", mouseShadow.toString());
     window.dispatchEvent(
       new CustomEvent("localStorageChange", {
         detail: { key: "mouse-shadow", newValue: mouseShadow.toString() },
       })
     );
   }, [mouseShadow]);
+
+  useEffect(() => {
+    localStorage.setItem("acrylic-animation", acrylicAnimation.toString());
+    window.dispatchEvent(
+      new CustomEvent("localStorageChange", {
+        detail: {
+          key: "acrylic-animation",
+          newValue: acrylicAnimation.toString(),
+        },
+      })
+    );
+  }, [acrylicAnimation]);
 
   return (
     <Dialog>
@@ -62,7 +74,7 @@ const Settings = () => {
           <DialogDescription>{t("settings.description")}</DialogDescription>
         </DialogHeader>
 
-        <div className="flex flex-col gap-4 py-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-4">
           <div className="flex flex-col gap-2">
             <Label>{t("settings.mouseShadow")}</Label>
             <div className="flex gap-2">
@@ -70,19 +82,36 @@ const Settings = () => {
                 variant={mouseShadow ? "accent" : "outline"}
                 onClick={() => setMouseShadow(true)}
               >
-                {t("settings.mouseShadowOn")}{" "}
+                {t("settings.mouseShadowOn")}
               </Button>
               <Button
-                variant={mouseShadow ? "outline" : "accent"}
+                variant={!mouseShadow ? "accent" : "outline"}
                 onClick={() => setMouseShadow(false)}
               >
                 {t("settings.mouseShadowOff")}
               </Button>
             </div>
           </div>
-          <div className="flex flex-col gap-2">
-            <Label>{t("settings.language")}</Label>
+          <div className="flex flex-col gap-2 max-md:col-span-2">
+            <Label>{t("settings.acrylicAnimation")}</Label>
             <div className="flex gap-2">
+              <Button
+                variant={acrylicAnimation ? "accent" : "outline"}
+                onClick={() => setAcrylicAnimation(true)}
+              >
+                {t("settings.acrylicAnimationOn")}
+              </Button>
+              <Button
+                variant={!acrylicAnimation ? "accent" : "outline"}
+                onClick={() => setAcrylicAnimation(false)}
+              >
+                {t("settings.acrylicAnimationOff")}
+              </Button>
+            </div>
+          </div>
+          <div className="flex flex-col gap-2 w-full col-span-2">
+            <Label>{t("settings.language")}</Label>
+            <div className="flex gap-2 w-full flex-wrap">
               <Button
                 variant={locale === "en" ? "accent" : "outline"}
                 onClick={() => changeLanguage("en")}

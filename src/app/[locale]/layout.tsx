@@ -17,6 +17,7 @@ import BackToTop from "@/components/back-to-top";
 import { META } from "@/config/settings";
 import { ReactQueryProvider } from "@/components/react-query-provider";
 import MouseShadow from "@/components/mouse-shadow";
+import AcrylicBackground from "@/components/acrylic-background";
 
 export const generateMetadata = async ({
   params,
@@ -51,7 +52,7 @@ export default async function LocaleLayout({
       <body className="min-h-screen m-0 p-0">
         <div className="min-h-screen grid grid-cols-1 grid-rows-1">
           <div className="h-full w-full bg-black opacity-80 -z-5 col-start-1 row-start-1" />
-          <div className="h-full w-full acrylic-bg min-h-screen bg-opacity-10 -z-10 col-start-1 row-start-1" />
+          <AcrylicBackground />
           <MouseShadow />
           <div className="col-start-1 row-start-1 min-h-screen flex flex-col w-full h-full items-center ">
             <NextIntlClientProvider>
