@@ -73,7 +73,8 @@ const MouseShadow = () => {
 
   useEffect(() => {
     const storage = localStorage.getItem("mouse-shadow");
-    const value = storage === "true";
+    const value =
+      storage === "true" || storage === null || storage === undefined;
     setIsVisible(value);
   }, []);
 
