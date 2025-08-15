@@ -28,27 +28,24 @@
       rgba(130, 89, 169, 0.75) 50%,
       rgba(3, 149, 254, 0.75) 100%
     );
-    transform: scale(1);
   }
-  33% {
+  40% {
     opacity: 1;
     background: radial-gradient(
-      ellipse at 60% 40%,
+      ellipse at 50% 50%,
       rgba(254, 30, 87, 0.85) 0%,
       rgba(130, 89, 169, 0.65) 50%,
       rgba(3, 149, 254, 0.85) 100%
     );
-    transform: scale(1.02);
   }
-  66% {
+  60% {
     opacity: 1;
     background: radial-gradient(
-      ellipse at 40% 60%,
-      rgba(254, 30, 87, 0.65) 0%,
-      rgba(130, 89, 169, 0.85) 50%,
-      rgba(3, 149, 254, 0.65) 100%
+      ellipse at 50% 50%,
+      rgba(254, 30, 87, 0.85) 0%,
+      rgba(130, 89, 169, 0.65) 50%,
+      rgba(3, 149, 254, 0.85) 100%
     );
-    transform: scale(1.04);
   }
   100% {
     opacity: 0.7;
@@ -58,21 +55,20 @@
       rgba(130, 89, 169, 0.75) 50%,
       rgba(3, 149, 254, 0.75) 100%
     );
-    transform: scale(1);
   }
 }
 
 .acrylic-bg::after {
+  mix-blend-mode: lighten;
+  opacity: 0.8;
   background: radial-gradient(
     ellipse at 50% 50%,
     rgba(254, 30, 87, 0.75) 0%,
     rgba(130, 89, 169, 0.75) 50%,
     rgba(3, 149, 254, 0.75) 100%
   );
-  mix-blend-mode: lighten;
-  opacity: 0.8;
   animation: acrylic-pulse 5s ease-in-out infinite;
-  will-change: opacity, transform;
+  will-change: opacity;
 }
 
 /* Disable animation when class is applied */

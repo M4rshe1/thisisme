@@ -2,11 +2,20 @@
 title: "How I built my website"
 publishedAt: "2025-05-12"
 author: "Colin Heggli"
+tech:
+  [
+    "nextjs",
+    "typescript",
+    "tailwindcss",
+    "lucide-react",
+    "i18n",
+    "shadcnui",
+    "turbopack",
+  ]
 image: "/images/thisisme.png"
 tags: ["Tech/Next.js", "Tech/Tailwind CSS"]
 summary: "A bit about how I built this site along with the blog and some new things and technologies I learned while rebuilding my portfolio."
 ---
-
 
 I have put a lot of time and effort into rebuilding this site, as well as this blog you are reading right now.
 My old portfolio was built with React.js and was made at the beginning of my coding journey. It did look okay, and it was somewhat usable.. So, I decided to change that.
@@ -14,10 +23,11 @@ My old portfolio was built with React.js and was made at the beginning of my cod
 ## The Idea
 
 > hello
->> memo
->> memo
-> memo
-> memo
+>
+> > memo
+> > memo
+> > memo
+> > memo
 
 I wanted to build a website that would be easy to maintain and update, look modern and reflect my skills. I also wanted to make it look nice and be easy to use. I also wanted to learn more about Next.JS and test out some libraries and features.
 
@@ -45,8 +55,11 @@ Next.js has several options for rendering pages:
 
 With Tailwind, you don't have to leave the HTML file to add styles to elements. Tailwind will generate the corresponding CSS classes during production and optimize them - no duplicates and no worries about load time.
 
-<a href="https://tailwindcss.com/" className="mb-6 inline-block cursor-pointer rounded-sm bg-blue-500 py-2 px-4 font-bold text-white! duration-200 hover:bg-blue-600">
- <span>Tailwind</span>
+<a
+  href="https://tailwindcss.com/"
+  className="mb-6 inline-block cursor-pointer rounded-sm bg-blue-500 py-2 px-4 font-bold text-white! duration-200 hover:bg-blue-600"
+>
+  <span>Tailwind</span>
 </a>
 
 ```js:page.tsx {1} showLineNumbers

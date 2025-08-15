@@ -560,6 +560,18 @@ const technologies: Record<string, TechnologyDef> = {
     type: "database",
     color: "#f80000",
   },
+  typst: {
+    name: "Typst",
+    icon: "/images/tech/typst.png",
+    type: "document",
+    color: "#36b2a9",
+  },
+  yml: {
+    name: "YAML",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Official_YAML_Logo.svg/512px-Official_YAML_Logo.svg.png?20220206165621",
+    type: "language",
+    color: "#cc1018",
+  },
 };
 
 export default technologies;

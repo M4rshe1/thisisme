@@ -47,6 +47,11 @@ export const TECH: technologyNames[] = [
   "visualstudio",
   "powershell",
   "i18n",
+  "typst",
+  "cursor",
+  "eclipse",
+  "subversion",
+  "java",
 ];
 
 export type Social = SocialWithIcon | SocialWithImage;
