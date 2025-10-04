@@ -48,18 +48,18 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className="min-h-screen m-0 p-0 font-mono dark">
-      <OpenPanelComponent
-        clientId={process.env.NEXT_PUBLIC_OPENPANEL_CLIENT_ID as string}
-        trackScreenViews={true}
-        trackOutgoingLinks={true}
-        trackAttributes={true}
-        apiUrl="/api/op"
-        // trackAttributes={true}
-        // trackOutgoingLinks={true}
-        // If you have a user id, you can pass it here to identify the user
-        // profileId={'123'}
-      />
       <body className="min-h-screen m-0 p-0">
+        <OpenPanelComponent
+          clientId={process.env.NEXT_PUBLIC_OPENPANEL_CLIENT_ID as string}
+          trackScreenViews={true}
+          trackOutgoingLinks={true}
+          trackAttributes={true}
+          apiUrl="/api/op"
+          // trackAttributes={true}
+          // trackOutgoingLinks={true}
+          // If you have a user id, you can pass it here to identify the user
+          // profileId={'123'}
+        />
         <div className="min-h-screen grid grid-cols-1 grid-rows-1">
           <div className="h-full w-full bg-black opacity-80 -z-5 col-start-1 row-start-1" />
           <AcrylicBackground />
