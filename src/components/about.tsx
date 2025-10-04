@@ -85,7 +85,7 @@ const About = () => {
         </p>
         <div className="mt-4 flex items-center gap-4 gap-2">
           <Link
-            href={`https://github.com/${META.profiles.github}`}
+            href={`https://github.com/${META.socials.github}`}
             className={cn(buttonVariants({ variant: "accent" }), "group")}
           >
             {t("buttons.viewGithub")}

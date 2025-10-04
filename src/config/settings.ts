@@ -76,8 +76,14 @@ export interface Meta {
   title: string;
   url: string;
   email: string;
-  profiles: {
-    [key: string]: string;
+  socials: {
+    email?: string;
+    github?: string;
+    linkedin?: string;
+    instagram?: string;
+    youtube?: string;
+    discord?: string;
+    wakatime?: string;
   };
 }
 
@@ -139,7 +145,7 @@ export const META: Meta = {
   title: "Full Stack Developer",
   email: "colin@heggli.dev",
   url: process.env.VERCEL_URL || "https://colin.heggli.dev",
-  profiles: {
+  socials: {
     email: "colin@heggli.dev",
     github: "M4rshe1",
     linkedin: "colin-heggli",

@@ -21,7 +21,7 @@ export default function HomePage() {
           </div>
         }
       >
-        <GithubStats username={META.profiles.github} />
+        <GithubStats username={META?.socials?.github as string} />
       </Suspense>
       <div className="h-4" />
       <div id={"readmore"} />

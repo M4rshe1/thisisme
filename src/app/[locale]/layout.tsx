@@ -10,7 +10,6 @@ import { routing } from "@/i18n/routing";
 import React from "react";
 import Header from "@/components/header";
 import { getTranslations } from "next-intl/server";
-import { Analytics } from "@vercel/analytics/next";
 import { Toaster } from "@/components/ui/sonner";
 import Footer from "@/components/footer";
 import BackToTop from "@/components/back-to-top";
@@ -18,6 +17,7 @@ import { META } from "@/config/settings";
 import { ReactQueryProvider } from "@/components/react-query-provider";
 import MouseShadow from "@/components/mouse-shadow";
 import AcrylicBackground from "@/components/acrylic-background";
+import { OpenPanelComponent } from "@openpanel/nextjs";
 
 export const generateMetadata = async ({
   params,
@@ -48,7 +48,17 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className="min-h-screen m-0 p-0 font-mono dark">
-      <Analytics />
+      <OpenPanelComponent
+        clientId={process.env.NEXT_PUBLIC_OPENPANEL_CLIENT_ID as string}
+        trackScreenViews={true}
+        trackOutgoingLinks={true}
+        trackAttributes={true}
+        apiUrl="/api/op"
+        // trackAttributes={true}
+        // trackOutgoingLinks={true}
+        // If you have a user id, you can pass it here to identify the user
+        // profileId={'123'}
+      />
       <body className="min-h-screen m-0 p-0">
         <div className="min-h-screen grid grid-cols-1 grid-rows-1">
           <div className="h-full w-full bg-black opacity-80 -z-5 col-start-1 row-start-1" />

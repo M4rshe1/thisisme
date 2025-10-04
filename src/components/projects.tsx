@@ -40,7 +40,7 @@ const Projects = ({ count }: { count?: number }) => {
             />
           </Link>
           <Link
-            href={`https://github.com/${META.profiles.github}`}
+            href={`https://github.com/${META.socials.github}`}
             className={cn(buttonVariants({ variant: "accent" }), "group")}
           >
             {t("viewGithub")}{" "}

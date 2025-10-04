@@ -5,7 +5,7 @@ import { META } from "@/config/settings";
 const fetchWakatimeStatsAllTime = async () => {
   try {
     const response = await fetch(
-      `https://wakatime.com/api/v1/users/${META.profiles.wakatime}/stats/all_time`
+      `https://wakatime.com/api/v1/users/${META.socials.wakatime}/stats/all_time`
     );
 
     if (!response.ok) {
