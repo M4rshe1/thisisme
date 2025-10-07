@@ -13,6 +13,7 @@ import { useMessages, useTranslations } from "next-intl";
 import React, { useState } from "react";
 import { Button } from "./ui/button";
 import { AllergyCircle } from "./allergy-circle";
+import Dot from "@/components/dot";
 
 const Recipe = (props: {
   slug: string;
@@ -41,7 +42,10 @@ const Recipe = (props: {
     <div className="flex flex-col gap-6">
       <div className="h-8" />
       <div className="flex flex-col gap-2">
-        <h1 className="text-4xl font-bold">{displayName}</h1>
+        <h1 className="text-4xl font-bold">
+          {displayName}
+          <Dot className={"ml-1"} />
+        </h1>
         {description && <p className="text-gray-400">{description}</p>}
       </div>
 
