@@ -94,3 +94,12 @@ export const slugify = (str: string) => {
     .replace(/[^\w\-]+/g, "") // Remove all non-word characters except for -
     .replace(/--+/g, "-"); // Replace multiple - with single -
 };
+
+export function toTitleCase(slug: string): string {
+  return slug
+    .replace(/([a-z])([A-Z])/g, "$1 $2")
+    .replace(/[-_]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substring(1));
+}

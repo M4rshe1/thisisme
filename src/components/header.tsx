@@ -61,8 +61,9 @@ const Header = () => {
         <div className="flex items-center gap-4 sm:gap-8 lg:gap-12">
           <div className="hidden sm:flex items-center gap-4 lg:gap-8">
             <HeaderLink path={"/projects"} text={t("header.projects")} />
-            <HeaderLink path={"/blog"} text={t("header.blog")} />
+            {/* <HeaderLink path={"/blog"} text={t("header.blog")} /> */}
             <HeaderLink path={"/contact"} text={t("header.contact")} />
+            <HeaderLink path={"/recipes"} text={t("header.recipes")} />
             <HeaderLink path={"/career "} text={t("header.career ")} />
             <HeaderMoreLink links={moreLinks} />
           </div>
@@ -85,8 +86,9 @@ const Header = () => {
         <div className="sm:hidden fixed inset-x-0 top-20 p-4 bg-black/95 backdrop-blur-sm border-b border-gray-600">
           <div className="flex flex-col gap-4">
             <HeaderLink path={"/projects"} text={t("header.projects")} />
-            <HeaderLink path={"/blog"} text={t("header.blog")} />
+            {/* <HeaderLink path={"/blog"} text={t("header.blog")} /> */}
             <HeaderLink path={"/contact"} text={t("header.contact")} />
+            <HeaderLink path={"/recipes"} text={t("header.recipes")} />
             <div className="border-t border-gray-600 pt-4">
               <p className="text-sm text-gray-400 mb-2">{t("buttons.more")}</p>
               {moreLinks.map((link, index) => (

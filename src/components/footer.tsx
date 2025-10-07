@@ -24,6 +24,10 @@ const Footer = () => {
           name: t("links.career"),
           link: "/career",
         },
+        {
+          name: t("links.recipes"),
+          link: "/recipes",
+        },
       ],
     },
     {
