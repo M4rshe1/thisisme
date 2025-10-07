@@ -376,10 +376,10 @@ export default {
       sortBy: "Sort by",
       order: "Order",
       resetFilters: "Reset Filters",
-      sortByName: "Name",
+      sortOrder: "Sort Order",
       sortByTime: "Time",
       sortByKitchen: "Kitchen",
-      sortOrder: "Sort Order",
+      sortByName: "Name",
       sortOrderAsc: "Ascending",
       sortOrderDesc: "Descending",
       noRecipesMatchFilters: "No recipes match your filters.",
@@ -485,8 +485,7 @@ export default {
       },
       riceCookerOnePot: {
         name: "Rice Cooker One Pot",
-        description:
-          "Rice Cooker One Pot is a delicious dish that is made with rice and chicken.",
+        description: "Simple and easy rice cooker recipe.",
         instructions: [
           "Wash the rice and drain the rice with cold water.",
           "Add the rice and water to the rice cooker.",
@@ -494,6 +493,7 @@ export default {
           "Add chopped chicken breast and spring onion to the rice cooker and spread it evenly.",
           "Start the rice cooker and wait 10 minutes.",
           "Whisk the eggs and pour them on top of the rest.",
+          "Wait until the rice is cooked and serve.",
         ],
       },
     },

@@ -12,7 +12,7 @@ import { notFound } from "next/navigation";
 import { useMessages, useTranslations } from "next-intl";
 import React, { useState } from "react";
 import { Button } from "./ui/button";
-import { AllergyCircle } from "./allergy-cercle";
+import { AllergyCircle } from "./allergy-circle";
 
 const Recipe = (props: {
   slug: string;
@@ -45,13 +45,13 @@ const Recipe = (props: {
         {description && <p className="text-gray-400">{description}</p>}
       </div>
 
-      <div className="relative w-full overflow-hidden rounded-xl border border-gray-800">
+      <div className="relative w-full overflow-hidden rounded-xl border border-gray-800 aspect-video">
         <Image
           alt={displayName}
           src={`/images/recipes/${props.slug}.jpg`}
           width={1200}
           height={600}
-          className="h-auto w-full object-cover"
+          className="h-auto w-full object-cover aspect-video"
         />
       </div>
 
@@ -77,7 +77,7 @@ const Recipe = (props: {
             className={cn("pl-6 space-y-2 grid grid-cols-[auto_1fr] gap-x-4")}
           >
             {recipe.ingredients.map((ing: RecipeIngredient, idx: number) => {
-              const q = Math.round(ing.quantity * scale);
+              const q = Math.round(ing.quantity * scale * 10) / 10;
               const name =
                 t(`ingredients.${ing.ingredient}`) ??
                 toTitleCase(ing.ingredient);

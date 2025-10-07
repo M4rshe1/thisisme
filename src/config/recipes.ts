@@ -88,7 +88,7 @@ export const RECIPES: Record<string, Recipe> = {
         ingredient: "rice",
       },
       {
-        quantity: 2,
+        quantity: 2.5,
         unit: "cup",
         ingredient: "water",
       },
@@ -119,8 +119,7 @@ export const RECIPES: Record<string, Recipe> = {
       },
     ],
     preparationTime: 5,
-    cookingTime: 5,
-    totalTime: 40,
+    cookingTime: 40,
+    totalTime: 45,
   },
-  
 };

@@ -20,7 +20,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { AllergyCircle } from "./allergy-cercle";
+import { AllergyCircle } from "./allergy-circle";
 import { Allergies } from "@/lib/recipes";
 
 type RecipeEntry = {
@@ -60,8 +60,8 @@ const Recipes: React.FC = () => {
   const [excludeEgg, setExcludeEgg] = useState(false);
   const [excludeSoy, setExcludeSoy] = useState(false);
   const [excludeNuts, setExcludeNuts] = useState(false);
-  const [sortBy, setSortBy] = useState<"name" | "time" | "kitchen">("name");
-  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
+  const [sortBy, setSortBy] = useState<"Name" | "Time" | "Kitchen">("Name");
+  const [sortOrder, setSortOrder] = useState<"Asc" | "Desc">("Asc");
 
   useEffect(() => {
     const id = setTimeout(() => setDebouncedQuery(query), 250);
@@ -99,7 +99,7 @@ const Recipes: React.FC = () => {
     });
 
     const sorted = [...f].sort((a, b) => {
-      if (sortBy === "name") {
+      if (sortBy === "Name") {
         const an = (
           namedRecipes?.[a.slug]?.name ?? toTitleCase(a.slug)
         ).toLowerCase();
@@ -108,7 +108,7 @@ const Recipes: React.FC = () => {
         ).toLowerCase();
         return an.localeCompare(bn);
       }
-      if (sortBy === "kitchen") {
+      if (sortBy === "Kitchen") {
         const ak = String(a.data.kitchen).toLowerCase();
         const bk = String(b.data.kitchen).toLowerCase();
         return ak.localeCompare(bk);
@@ -117,7 +117,7 @@ const Recipes: React.FC = () => {
       return Number(a.data.totalTime) - Number(b.data.totalTime);
     });
 
-    return sortOrder === "asc" ? sorted : sorted.reverse();
+    return sortOrder === "Asc" ? sorted : sorted.reverse();
   }, [
     allRecipes,
     debouncedQuery,
@@ -274,12 +274,12 @@ const Recipes: React.FC = () => {
             </DropdownMenu>
           </div>
 
-          <div className="flex items-center gap-2 md:col-span-3">
+          <div className="flex items-center gap-2 w-full md:col-span-3">
             <label className="text-sm text-gray-400">{t("filter.sort")}</label>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" className="justify-between">
-                  {t("filter.sort")}: {sortBy}
+                  {t(`filter.sortBy${sortBy}`)}
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start">
@@ -288,43 +288,45 @@ const Recipes: React.FC = () => {
                   value={sortBy}
                   onValueChange={(v: string) => setSortBy(v as any)}
                 >
-                  <DropdownMenuRadioItem value="name">
+                  <DropdownMenuRadioItem value="Name">
                     {t("filter.sortByName")}
                   </DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="time">
+                  <DropdownMenuRadioItem value="Time">
                     {t("filter.sortByTime")}
                   </DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="kitchen">
+                  <DropdownMenuRadioItem value="Kitchen">
                     {t("filter.sortByKitchen")}
                   </DropdownMenuRadioItem>
                 </DropdownMenuRadioGroup>
               </DropdownMenuContent>
             </DropdownMenu>
-          </div>
-          <div className="flex items-center gap-2 md:col-span-3">
-            <Button
-              variant="outline"
-              onClick={() => setSortOrder(sortOrder === "asc" ? "desc" : "asc")}
-            >
-              {t("filter.sortOrder")}: {sortOrder}
-            </Button>
-            <Button
-              variant="outline"
-              className="ml-auto"
-              onClick={() => {
-                setQuery("");
-                setKitchenFilter("all");
-                setExcludeEgg(false);
-                setExcludeGluten(false);
-                setExcludeLactose(false);
-                setExcludeNuts(false);
-                setExcludeSoy(false);
-                setSortBy("name");
-                setSortOrder("asc");
-              }}
-            >
-              {t("filter.resetFilters")}
-            </Button>
+            <div className="flex items-center gap-2 w-full">
+              <Button
+                variant="outline"
+                onClick={() =>
+                  setSortOrder(sortOrder === "Asc" ? "Desc" : "Asc")
+                }
+              >
+                {t(`filter.sortOrder${sortOrder}`)}
+              </Button>
+              <Button
+                variant="outline"
+                className="ml-auto"
+                onClick={() => {
+                  setQuery("");
+                  setKitchenFilter("all");
+                  setExcludeEgg(false);
+                  setExcludeGluten(false);
+                  setExcludeLactose(false);
+                  setExcludeNuts(false);
+                  setExcludeSoy(false);
+                  setSortBy("Name");
+                  setSortOrder("Asc");
+                }}
+              >
+                {t("filter.resetFilters")}
+              </Button>
+            </div>
           </div>
         </div>
       </div>
