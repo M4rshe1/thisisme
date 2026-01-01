@@ -53,8 +53,8 @@ const Recipe = (props: {
         <Image
           alt={displayName}
           src={`/images/recipes/${props.slug}.jpg`}
-          width={1200}
-          height={600}
+          width={600}
+          height={300}
           className="h-auto w-full object-cover aspect-video"
         />
       </div>

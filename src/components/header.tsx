@@ -89,6 +89,7 @@ const Header = () => {
             {/* <HeaderLink path={"/blog"} text={t("header.blog")} /> */}
             <HeaderLink path={"/contact"} text={t("header.contact")} />
             <HeaderLink path={"/recipes"} text={t("header.recipes")} />
+            <HeaderLink path={"/career"} text={t("header.career")} />
             <div className="border-t border-gray-600 pt-4">
               <p className="text-sm text-gray-400 mb-2">{t("buttons.more")}</p>
               {moreLinks.map((link, index) => (

@@ -60,7 +60,9 @@ const Recipes: React.FC = () => {
   const [excludeEgg, setExcludeEgg] = useState(false);
   const [excludeSoy, setExcludeSoy] = useState(false);
   const [excludeNuts, setExcludeNuts] = useState(false);
-  const [sortBy, setSortBy] = useState<"Name" | "Time" | "Kitchen">("Name");
+  const [sortBy, setSortBy] = useState<"Name" | "Time" | "Kitchen" | "Created">(
+    "Name"
+  );
   const [sortOrder, setSortOrder] = useState<"Asc" | "Desc">("Asc");
 
   useEffect(() => {
@@ -112,6 +114,11 @@ const Recipes: React.FC = () => {
         const ak = String(a.data.kitchen).toLowerCase();
         const bk = String(b.data.kitchen).toLowerCase();
         return ak.localeCompare(bk);
+      }
+      if (sortBy === "Created") {
+        const ad = a.data.dateCreated;
+        const bd = b.data.dateCreated;
+        return ad.localeCompare(bd);
       }
       // time
       return Number(a.data.totalTime) - Number(b.data.totalTime);
@@ -184,7 +191,7 @@ const Recipes: React.FC = () => {
                   </DropdownMenuRadioItem>
                   {kitchens.map((k) => (
                     <DropdownMenuRadioItem key={k} value={k}>
-                      {toTitleCase(k)}
+                      {t(`kitchen.${k}`) ?? toTitleCase(k)}
                     </DropdownMenuRadioItem>
                   ))}
                 </DropdownMenuRadioGroup>
@@ -297,6 +304,9 @@ const Recipes: React.FC = () => {
                   <DropdownMenuRadioItem value="Kitchen">
                     {t("filter.sortByKitchen")}
                   </DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="Created">
+                    {t("filter.sortByCreated")}
+                  </DropdownMenuRadioItem>
                 </DropdownMenuRadioGroup>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -340,7 +350,7 @@ const Recipes: React.FC = () => {
               key={slug}
               href={`/recipes/${slug}`}
               className={cn(
-                "group overflow-hidden rounded-xl border border-gray-800 hover:border-gray-700 transition-colors",
+                "group overflow-hidden flex flex-col rounded-xl border border-gray-800 hover:border-gray-700 transition-colors",
                 "bg-black/30"
               )}
             >
@@ -353,16 +363,18 @@ const Recipes: React.FC = () => {
                   className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                 />
               </div>
-              <div className="p-4 flex flex-col gap-2">
-                <h3 className="text-lg font-semibold group-hover:underline">
-                  {displayName}
-                </h3>
-                {description && (
-                  <p className="text-sm text-gray-400 line-clamp-2">
-                    {description}
-                  </p>
-                )}
-                <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-gray-400">
+              <div className="p-4 flex flex-col justify-between gap-2 flex-1 w-full">
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-lg font-semibold group-hover:underline">
+                    {displayName}
+                  </h3>
+                  {description && (
+                    <p className="text-sm text-gray-400 line-clamp-2">
+                      {description}
+                    </p>
+                  )}
+                </div>
+                <div className="mt-auto flex flex-wrap items-center gap-2 text-xs text-gray-400">
                   <span className="rounded-full border border-gray-700 px-2 py-0.5">
                     {toTitleCase(data.kitchen)}
                   </span>

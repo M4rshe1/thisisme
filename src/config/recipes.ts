@@ -2,7 +2,7 @@ import { Recipe } from "@/lib/recipes";
 
 export const RECIPES: Record<string, Recipe> = {
   indianButterChicken: {
-    dateCreated: "2025-01-01",
+    dateCreated: "2025-10-02",
     relatedRecipes: ["naanBread", "rice"],
     kitchen: "indian",
     allergies: {
@@ -73,7 +73,7 @@ export const RECIPES: Record<string, Recipe> = {
     totalTime: 30,
   },
   riceCookerOnePot: {
-    dateCreated: "2025-01-01",
+    dateCreated: "2025-10-02",
     relatedRecipes: ["rice"],
     kitchen: "japanese",
     allergies: {
@@ -121,5 +121,44 @@ export const RECIPES: Record<string, Recipe> = {
     preparationTime: 5,
     cookingTime: 40,
     totalTime: 45,
+  },
+  paprikaRice: {
+    dateCreated: "2025-10-14",
+    relatedRecipes: ["rice"],
+    kitchen: "selfmade",
+    preparationTime: 10,
+    cookingTime: 40,
+    totalTime: 40,
+    allergies: {
+      lactose: true,
+    },
+    servings: 4,
+    ingredients: [
+      {
+        quantity: 3,
+        unit: "cup",
+        ingredient: "rice",
+      },
+      {
+        quantity: 3,
+        unit: "cup",
+        ingredient: "water",
+      },
+      {
+        quantity: 500,
+        unit: "g",
+        ingredient: "chickenBreast",
+      },
+      {
+        quantity: 1,
+        unit: "can",
+        ingredient: "zweifelPaprikaPowder",
+      },
+      {
+        quantity: 250,
+        unit: "ml",
+        ingredient: "cream",
+      },
+    ],
   },
 };

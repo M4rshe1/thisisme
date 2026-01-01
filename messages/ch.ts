@@ -378,6 +378,7 @@ export default {
       sortByTime: "Zyt",
       sortByKitchen: "Chuchi",
       sortByName: "Name",
+      sortByCreated: "Erstellt",
       sortOrderAsc: "Ufstigend",
       sortOrderDesc: "Abstigend",
       noRecipesMatchFilters: "Kei Rezäpt entspräche dine Filter.",
@@ -428,6 +429,19 @@ export default {
       blender: "Mixer",
       riceCooker: "Ryschocher",
     },
+    kitchen: {
+      indian: "Indisch",
+      japanese: "Japanisch",
+      western: "Westlich",
+      asian: "Asiatisch",
+      latinAmerican: "Lateinamerikanisch",
+      middleEastern: "Mittelmeerisch",
+      african: "Afrikanisch",
+      oceanic: "Ozeanisch",
+      caribbean: "Karibisch",
+      swiss: "Schweizerisch",
+      selfmade: "Selbstgemacht",
+    },
     ingredients: {
       chickenBreast: "Hüehnerbruest",
       garlic: "Chnobli",
@@ -446,6 +460,7 @@ export default {
       water: "Wasser",
       soySauce: "Sojasauce",
       salt: "Salz",
+      zweifelPaprikaPowder: "Zweifel Paprika Pulver",
     },
     recipes: {
       indianButterChicken: {

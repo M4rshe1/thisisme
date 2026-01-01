@@ -19,6 +19,7 @@ const RECIPE_ARBITRARY_UNITS = {
   pcs: 1,
   pinch: 1,
   cup: 1,
+  can: 1,
 };
 
 const RECIPE_INGREDIENT_UNITS = {
