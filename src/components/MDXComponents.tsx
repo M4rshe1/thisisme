@@ -1,5 +1,8 @@
-import rehypePrism from "rehype-prism-plus";
+import rehypeHighlight from "rehype-highlight";
+import rehypePrism from 'rehype-prism-plus';
 import rehypeCodeTitles from "rehype-code-titles";
+import rehypeTypst from '@myriaddreamin/rehype-typst';
+import remarkMath from 'remark-math';
 import type { MDXComponents } from "mdx/types";
 import Image, { ImageProps } from "next/image";
 import type { LinkProps } from "next/link";
@@ -86,7 +89,7 @@ const components: MDXComponents = {
     });
 
     return (
-      <blockquote className="border-gray-600 pl-4 before:content-[''] before:absolute before:-left-0 before:rounded-full before:top-0 before:h-full before:w-1 before:bg-gray-600 relative bg-gray-800/30 rounded p-2 my-4">
+      <blockquote className="border-gray-600 pl-4 before:content-[''] before:absolute before:left-0 before:rounded-full before:top-0 before:h-full before:w-1 before:bg-gray-600 relative bg-gray-800/30 rounded p-2 my-4">
         <pre className={"h-fit"}>{newChildren}</pre>
       </blockquote>
     );
@@ -103,13 +106,20 @@ export function MDXComponent(
         {...props}
         components={{
           ...components,
-          TechnologyBadge, // Pass the TechnologyBadge component here
+          TechnologyBadge,
           ...(props.components || {}),
         }}
         options={{
           mdxOptions: {
             format: "mdx",
-            rehypePlugins: [rehypeCodeTitles, rehypePrism],
+            rehypePlugins: [[rehypeHighlight, {
+              ignoreMissing: true,
+            }], [rehypeCodeTitles, {
+              ignoreMissing: true,
+            }], [rehypePrism, {
+              ignoreMissing: true,
+            }], rehypeTypst],
+            remarkPlugins: [remarkMath],
           },
         }}
       />

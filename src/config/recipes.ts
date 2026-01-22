@@ -161,4 +161,58 @@ export const RECIPES: Record<string, Recipe> = {
       },
     ],
   },
+  coreaRice: {
+    dateCreated: "2026-01-21",
+    relatedRecipes: ["rice"],
+    kitchen: "selfmade",
+    preparationTime: 10,
+    cookingTime: 40,
+    totalTime: 40,
+    allergies: {
+      soy: true,
+    },
+    servings: 5,
+    ingredients: [
+      {
+        quantity: 2,
+        unit: "cup",
+        ingredient: "rice",
+      },
+      {
+        quantity: 2,
+        unit: "cup",
+        ingredient: "water",
+      },
+      {
+        quantity: 3,
+        unit: "pcs",
+        ingredient: "carrot",
+      },
+      {
+        quantity: 800,
+        unit: "g",
+        ingredient: "beefMince",
+      },
+      {
+        quantity: 2,
+        unit: "pcs",
+        ingredient: "zucchini",
+      },
+      {
+        quantity: 3,
+        unit: "pcs",
+        ingredient: "noriSeaweed",
+      },
+      {
+        quantity: 4,
+        unit: "pcs",
+        ingredient: "springOnion",
+      },
+      {
+        quantity: 4,
+        unit: "tbsp",
+        ingredient: "soySauce",
+      },
+    ],
+  },
 };

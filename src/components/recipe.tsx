@@ -10,10 +10,20 @@ import { cn, toTitleCase } from "@/lib/utils";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { useMessages, useTranslations } from "next-intl";
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { Button } from "./ui/button";
 import { AllergyCircle } from "./allergy-circle";
 import Dot from "@/components/dot";
+import ShoppingList from "./shopping-list";
+import { createShoppingList } from "@/lib/shopping-list";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./ui/dialog";
+import { ShoppingCart } from "lucide-react";
 
 const Recipe = (props: {
   slug: string;
@@ -37,6 +47,26 @@ const Recipe = (props: {
   const displayName =
     namedRecipes?.[props.slug]?.name ?? toTitleCase(props.slug);
   const description = namedRecipes?.[props.slug]?.description ?? "";
+  const story = namedRecipes?.[props.slug]?.story ?? "";
+
+  const shoppingListItems = useMemo(() => {
+    return createShoppingList([
+      { slug: props.slug, recipe, servings },
+    ]);
+  }, [props.slug, recipe, servings]);
+
+  const [checkedItems, setCheckedItems] = useState<Set<string>>(new Set());
+  const [showShoppingList, setShowShoppingList] = useState(false);
+
+  const handleItemToggle = (ingredient: string, checked: boolean) => {
+    const newChecked = new Set(checkedItems);
+    if (checked) {
+      newChecked.add(ingredient);
+    } else {
+      newChecked.delete(ingredient);
+    }
+    setCheckedItems(newChecked);
+  };
 
   return (
     <div className="flex flex-col gap-6">
@@ -76,6 +106,30 @@ const Recipe = (props: {
                 />
               ))}
             </div>
+            <Dialog open={showShoppingList} onOpenChange={setShowShoppingList}>
+              <DialogTrigger asChild>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="ml-auto flex items-center gap-2"
+                >
+                  <ShoppingCart className="h-4 w-4" />
+                  {t("shoppingList.viewList") ?? "View Shopping List"}
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle>
+                    {t("shoppingList.title") ?? "Shopping List"}
+                  </DialogTitle>
+                </DialogHeader>
+                <ShoppingList
+                  items={shoppingListItems}
+                  onItemToggle={handleItemToggle}
+                  checkedItems={checkedItems}
+                />
+              </DialogContent>
+            </Dialog>
           </div>
           <div
             className={cn("pl-6 space-y-2 grid grid-cols-[auto_1fr] gap-x-4")}
@@ -184,6 +238,17 @@ const Recipe = (props: {
           </div>
         </div>
       </div>
+
+      {story && (
+        <div className="rounded-md border border-gray-800/50 bg-black/20 p-4 mt-2">
+          <h3 className="text-sm text-gray-400 mb-2 font-bold">
+            {t("titles.story") ?? "The Story"}
+          </h3>
+          <p className="text-gray-400 text-sm leading-relaxed whitespace-pre-line">
+            {story}
+          </p>
+        </div>
+      )}
     </div>
   );
 };

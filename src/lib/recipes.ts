@@ -1,3 +1,5 @@
+import { INGREDIENT_REGISTRY } from "@/lib/ingredients";
+
 const RECIPE_FLUID_UNITS = {
   ml: 1,
   cl: 10,
@@ -92,7 +94,7 @@ export function getUnitType(unit: RecipeUnit): RecipeUnitType | undefined {
 }
 
 export interface RecipeIngredient {
-  ingredient: string;
+  ingredient: keyof typeof INGREDIENT_REGISTRY;
   quantity: number;
   optional?: boolean;
   unit: RecipeUnit;

@@ -239,31 +239,31 @@ const technologies: Record<string, TechnologyDef> = {
   windows: {
     name: "Windows",
     icon: "/images/tech/windows.svg",
-    type: "operating system",
+    type: "os",
     color: "#0078D6",
   },
   linux: {
     name: "Linux",
     icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/506px-Tux.svg.png?20220320193426",
-    type: "operating system",
+    type: "os",
     color: "#FCC624",
   },
   rhel: {
     name: "Red Hat",
     icon: "https://www.google.com/s2/favicons?domain=redhat.com&sz=256",
-    type: "operating system",
+    type: "os",
     color: "#CC0000",
   },
   debian: {
     name: "Debian",
     icon: "https://www.google.com/s2/favicons?domain=debian.org&sz=256",
-    type: "operating system",
+    type: "os",
     color: "#A81D33",
   },
   ubuntu: {
     name: "Ubuntu",
     icon: "https://www.google.com/s2/favicons?domain=ubuntu.com&sz=256",
-    type: "operating system",
+    type: "os",
     color: "#E95420",
   },
   c: {
@@ -571,6 +571,12 @@ const technologies: Record<string, TechnologyDef> = {
     icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Official_YAML_Logo.svg/512px-Official_YAML_Logo.svg.png?20220206165621",
     type: "language",
     color: "#cc1018",
+  },
+  nixos: {
+    name: "NixOS",
+    icon: "/images/tech/nixos.png",
+    type: "os",
+    color: "#5277C3",
   },
 };
 

@@ -5,10 +5,10 @@ import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { ArrowRight, Braces, Download, FileJson } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { highlight } from "sugar-high";
 import Dot from "@/components/dot";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react"
 import Image from "next/image";
 import { META } from "@/config/settings";
 
@@ -112,7 +112,7 @@ const About = () => {
       <div
         className={cn(
           "flex h-fit w-full flex-col gap-2 rounded-lg border border-gray-600 bg-black/30 p-4 shadow-lg backdrop-blur-sm"
-          // We'll let framer-motion handle the height based on displayMode
+          // We'll let motion handle the height based on displayMode
         )}
       >
         <AnimatePresence mode="wait">

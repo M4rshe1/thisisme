@@ -64,7 +64,7 @@ const Header = () => {
             {/* <HeaderLink path={"/blog"} text={t("header.blog")} /> */}
             <HeaderLink path={"/contact"} text={t("header.contact")} />
             <HeaderLink path={"/recipes"} text={t("header.recipes")} />
-            <HeaderLink path={"/career "} text={t("header.career ")} />
+            <HeaderLink path={"/career"} text={t("header.career")} />
             <HeaderMoreLink links={moreLinks} />
           </div>
           <Settings />

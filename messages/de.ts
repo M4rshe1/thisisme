@@ -14,7 +14,7 @@ export default {
     recipes: "Rezepte",
     blog: "Blog",
     contact: "Kontakt",
-    "career ": "Karriere ",
+    career: "Karriere",
     github: {
       title: "GitHub",
       description: "Mein GitHub-Profil und Repositories anzeigen",

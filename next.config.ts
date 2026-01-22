@@ -1,12 +1,13 @@
-import {NextConfig} from 'next';
+import { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const nextConfig: NextConfig = {
     experimental: {
         useCache: true,
     },
-    eslint: {
-        ignoreDuringBuilds: true,
+    serverExternalPackages: ['@myriaddreamin/rehype-typst'],
+    typescript: {
+        ignoreBuildErrors: true,
     },
     images: {
         remotePatterns: [

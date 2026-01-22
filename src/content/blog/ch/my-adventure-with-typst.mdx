@@ -1,0 +1,144 @@
+---
+title: "Mis Abenteuer mit Typst"
+publishedAt: "2025-08-15"
+author: "Colin Heggli"
+tech: ["typst", "yml", "cursor"]
+image: "/images/blog/typst.png"
+summary: "Wie ich Typst entdeckt ha und wie es Word als mini Standardmethode zur Dokumentenerstellig ersetzt het"
+---
+
+# De Aafang
+
+Bevor mer üs damit beschäftige, wie mis Abenteuer mit Typst verlofe isch, luege mer zerscht, wie ichs entdeckt ha und au en Kolleg damit bekannt gmacht ha (wo no begeisterter gsi isch als ich).
+
+Wie üblich bi ich hüt Morge go schaffe gange. Wüu ich en Lehrling bi, wechsle ich oft d Abteilige.
+Und ich bi kürzlich zu enere neue gwechslet.
+
+Usserdem mues ich als Teil vo minere Lehr e Dokumentation über das mache, was ich glernt ha.
+
+## De Gedanke
+
+Also ha ich agfange, es Word-Dokument mit minere Vorlag z erstelle, wie in allne 3 Jahr vo minere Lehr vorher.
+Aber denn het michs troffe: "Was wär, wänn ich mini Dokumentation in LaTeX erstelle würd?".
+Ich ha de Gedanke scho e Wili im Chopf gha, wüu en Fründ vo mir mich damit bekannt gmacht het und ich au [Overleaf](https://overleaf.com) wott usprobiere.
+
+## LaTeX & Overleaf
+
+Am Abe, nach de Schicht, ha ich agfange z tüftle und en Overleaf Docker-Container uf mim Heimserver gstartet.
+Ich ha es e Wili usprobiert, aber schnell agfange, d Art und Wiis z möge, wie LaTeX funktioniert het und wie d Syntax strukturiert gsi isch.
+
+Also bi ich go schlafe gange...
+
+# Liebi uf de erste Blick
+
+Am nächste Morge, wo ich ufgwacht bi, ha ich no chli Zit gha, bis ich go schaffe ha müesse, also ha ich YouTube gluegt und genau do ischs passiert.
+Ich ha es [Video](https://www.youtube.com/watch?v=kI2e0o3sIVM) in mim Feed gseh...
+
+Während ich s Video agluegt ha, isch mir klar worde, dass das genau das gsi isch, was ich mir vo LaTeX erhofft ha.
+Eifach Text schriibe, funktional gstaltet, liicht lesbari Syntax und nöd all de Ballast, wo LaTeX mit sich bringt.
+Ich ha mich sofort drin verliebt.
+
+Wo ich uf de Schicht acho bi, ha ich agfange, mis Word-Dokument in Typst z konvertiere, und oh Junge, isch das grossartig gsi.
+
+Agfange het es damit, wie mer s Layout vo eme Dokument definiert, benutzerdefinierti Vorlage, Formatierig vo spezifische Teil und Element, d funktional Syntax und wie eifach es isch z schriibe, wänn mer mal iigrichtet isch.
+
+# Bispil
+
+Lah mich dir es paar Bispil zeige:
+
+## Grundlegendi Dokumentstruktur
+
+Eins vo de erste Sache, wo mich beeindruckt het, isch gsi, wie sauber und intuitiv d Syntax isch. Do isch es eifachs Bispil:
+
+```typst
+#set page(margin: 2cm)
+#set text(font: "Linux Libertine", size: 11pt)
+
+= Iileitig
+Das isch mini Dokumentation über das, was ich i dere Abteilig glernt ha.
+
+== Erste Abschnitt
+Do cha ich über mini Erfahrige und Erkenntnis schriibe.
+```
+
+D `#set` Direktive ermöglicht dir, s Dokument global z konfiguriere, und d Überschrifte-Syntax isch so viel sauberer als LaTeX's `\section{}` Befähl.
+
+## Benutzerdefinierti Vorlage
+
+S Erstelle vo benutzerdefinierte Vorlage isch es Chinderspiel. Du chasch wiederverwendbari Komponente definiere:
+
+```typst
+#let task(title, description) = {
+  block(
+    width: 100%,
+    fill: rgb("f0f0f0"),
+    radius: 8pt,
+    padding: 12pt,
+    [
+      *Ufgab: #title*
+      #description
+    ]
+  )
+}
+
+#task(
+  title: "Typst lerne",
+  description: "Word-Dokument in Typst-Format konvertiere"
+)
+```
+
+De funktional Ansatz macht es eifach, konsistenti, wiederverwendbari Dokumentelement z erstelle.
+
+## Tabälle und Liste
+
+Tabälle sind unkompliziert und lesbar:
+
+```typst
+#table(
+  columns: 3,
+  [*Datum*], [*Ufgab*], [*Status*],
+  [2025-08-15], [Typst iirichte], [Erledigt],
+  [2025-08-16], [Dokumentation schriibe], [I Bearbeitig],
+)
+```
+
+Und Liste funktioniere genau wie du es in Markdown erwarte würdsch, aber mit meh Kontrolle:
+
+```typst
+- Erste Punkt
+- Zweite Punkt
+  - Verschachtelte Punkt
+  - No en verschachtelte Punkt
+- Dritte Punkt
+```
+
+## Mathematik und Gleichige
+
+Mathematischi Usdrück sind wunderschön integriert:
+
+```typst
+D quadratischi Formel isch:
+$ x = (-b ± sqrt(b^2 - 4ac)) / (2a) $
+
+Oder als Blockgleichig:
+$ x = (-b ± sqrt(b^2 - 4ac)) / (2a) $
+```
+
+# S Ergebnis
+
+Nachdem ich mis Word-Dokument in Typst konvertiert ha, bi ich erstaunt gsi, wie viel eifacher es worde isch, es z pflege und z aktualisiere. D Versionskontrolle-Integration isch nahtlos - ich cha Änderige verfolge wie bi jeder andere Code-Datei. D Kompilierig isch schnell und d Usgab sieht professionell us.
+
+Min Kolleg, wo ich spöter an dem Tag mit Typst bekannt gmacht ha, isch no beeindruckter gsi. Si sind sofort agfange, ihri eigeni Dokumentation z konvertiere und sind sit denn nümme zrugggluegt.
+
+# Fazit
+
+Typst het Word vollständig als mis Standard-Tool zur Dokumentenerstellig ersetzt. D Kombination us:
+- Sauberer, lesbarer Syntax
+- Funktionalem Programmieransatz
+- Schneller Kompilierig
+- Grosser Usgabequalität
+- Versionskontrolle-fründlichem Workflow
+
+...macht es zum perfekte Tool für technischi Dokumentation, Bericht und jedes Dokument, wo du sowohl Kontrolle als au Benutzerfründlichkeit wotsch.
+
+Wänn du es leid bisch, mit Word's Formatierig z kämpfe oder LaTeX's Komplexität, empfehle ich dir wärmstens, [Typst](https://typst.app/) uszprobiere. Du chöntsch dich au drin verliebe!

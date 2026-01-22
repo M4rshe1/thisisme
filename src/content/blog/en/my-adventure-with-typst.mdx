@@ -4,7 +4,7 @@ publishedAt: "2025-08-15"
 author: "Colin Heggli"
 tech: ["typst", "yml", "cursor"]
 image: "/images/blog/typst.png"
-summary: "The way I found out about Typst and how it has replaced Word as my default way of create documents"
+summary: "The way I found out about Typst and how it has replaced Word as my default way of creating documents"
 ---
 
 # The start
@@ -45,3 +45,100 @@ Starting by how you define the layout of a document, custom templates, formattin
 # Examples
 
 Let me show you some examples:
+
+## Basic Document Structure
+
+One of the first things that impressed me was how clean and intuitive the syntax is. Here's a simple example:
+
+```typst
+#set page(margin: 2cm)
+#set text(font: "Linux Libertine", size: 11pt)
+
+= Introduction
+This is my documentation about what I learned in this department.
+
+== First Section
+Here I can write about my experiences and learnings.
+```
+
+The `#set` directive allows you to configure the document globally, and the heading syntax is so much cleaner than LaTeX's `\section{}` commands.
+
+## Custom Templates
+
+Creating custom templates is a breeze. You can define reusable components:
+
+```typst
+#let task(title, description) = {
+  block(
+    width: 100%,
+    fill: rgb("f0f0f0"),
+    radius: 8pt,
+    padding: 12pt,
+    [
+      *Task: #title*
+      #description
+    ]
+  )
+}
+
+#task(
+  title: "Learn Typst",
+  description: "Convert Word document to Typst format"
+)
+```
+
+This functional approach makes it easy to create consistent, reusable document elements.
+
+## Tables and Lists
+
+Tables are straightforward and readable:
+
+```typst
+#table(
+  columns: 3,
+  [*Date*], [*Task*], [*Status*],
+  [2025-08-15], [Setup Typst], [Done],
+  [2025-08-16], [Write documentation], [In Progress],
+)
+```
+
+And lists work just like you'd expect in markdown, but with more control:
+
+```typst
+- First item
+- Second item
+  - Nested item
+  - Another nested item
+- Third item
+```
+
+## Math and Equations
+
+Mathematical expressions are beautifully integrated:
+
+```typst
+The quadratic formula is:
+$ x = (-b ± sqrt(b^2 - 4ac)) / (2a) $
+
+Or as a block equation:
+$ x = (-b ± sqrt(b^2 - 4ac)) / (2a) $
+```
+
+# The Result
+
+After converting my Word document to Typst, I was amazed at how much easier it became to maintain and update. The version control integration is seamless - I can track changes just like any other code file. The compilation is fast, and the output looks professional.
+
+My coworker, who I introduced to Typst later that day, was even more impressed. They immediately started converting their own documentation and haven't looked back since.
+
+# Conclusion
+
+Typst has completely replaced Word as my default document creation tool. The combination of:
+- Clean, readable syntax
+- Functional programming approach
+- Fast compilation
+- Great output quality
+- Version control friendly workflow
+
+...makes it the perfect tool for technical documentation, reports, and any document where you want both control and ease of use.
+
+If you're tired of fighting with Word's formatting or LaTeX's complexity, I highly recommend giving [Typst](https://typst.app/) a try. You might just fall in love with it too!

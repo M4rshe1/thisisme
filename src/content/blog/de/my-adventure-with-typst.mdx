@@ -1,0 +1,144 @@
+---
+title: "Mein Abenteuer mit Typst"
+publishedAt: "2025-08-15"
+author: "Colin Heggli"
+tech: ["typst", "yml", "cursor"]
+image: "/images/blog/typst.png"
+summary: "Wie ich Typst entdeckt habe und wie es Word als meine Standardmethode zur Dokumentenerstellung ersetzt hat"
+---
+
+# Der Anfang
+
+Bevor wir uns damit beschäftigen, wie mein Abenteuer mit Typst verlief, lass uns damit beginnen, wie ich es entdeckt habe und auch einen Kollegen damit bekannt gemacht habe (der noch begeisterter war als ich).
+
+Wie üblich ging ich heute Morgen zur Arbeit. Da ich ein Lehrling bin, wechsle ich oft die Abteilungen.
+Und ich war kürzlich zu einer neuen gewechselt.
+
+Außerdem muss ich als Teil meiner Lehre eine Dokumentation über das erstellen, was ich gelernt habe.
+
+## Der Gedanke
+
+Also begann ich, ein Word-Dokument mit meiner Vorlage zu erstellen, wie in allen 3 Jahren meiner Lehre zuvor.
+Aber dann traf es mich: "Was wäre, wenn ich meine Dokumentation in LaTeX erstelle?".
+Ich hatte diesen Gedanken schon eine Weile im Kopf, weil ein Freund von mir mich damit bekannt gemacht hatte und ich auch [Overleaf](https://overleaf.com) ausprobieren wollte.
+
+## LaTeX & Overleaf
+
+Am Abend, nach der Arbeit, begann ich zu tüfteln und startete einen Overleaf Docker-Container auf meinem Heimserver.
+Ich probierte es eine Weile aus, begann aber schnell, die Art und Weise zu mögen, wie LaTeX funktionierte und wie die Syntax strukturiert war.
+
+Also ging ich ins Bett...
+
+# Liebe auf den ersten Blick
+
+Am nächsten Morgen, als ich aufwachte, hatte ich etwas Zeit, bis ich zur Arbeit gehen musste, also schaute ich YouTube und genau da passierte es.
+Ich sah ein [Video](https://www.youtube.com/watch?v=kI2e0o3sIVM) in meinem Feed...
+
+Während ich das Video anschaute, wurde mir klar, dass dies genau das war, was ich mir von LaTeX erhofft hatte.
+Einfach Text zu schreiben, funktional gestaltet, leicht lesbare Syntax und nicht all der Ballast, den LaTeX mit sich bringt.
+Ich verliebte mich sofort darin.
+
+Als ich auf der Arbeit ankam, begann ich, mein Word-Dokument in Typst zu konvertieren, und oh Junge, war das großartig.
+
+Angefangen damit, wie man das Layout eines Dokuments definiert, benutzerdefinierte Vorlagen, Formatierung spezifischer Teile und Elemente, die funktionale Syntax und wie einfach es ist zu schreiben, wenn man einmal eingerichtet ist.
+
+# Beispiele
+
+Lass mich dir einige Beispiele zeigen:
+
+## Grundlegende Dokumentstruktur
+
+Eines der ersten Dinge, die mich beeindruckten, war, wie sauber und intuitiv die Syntax ist. Hier ist ein einfaches Beispiel:
+
+```typst
+#set page(margin: 2cm)
+#set text(font: "Linux Libertine", size: 11pt)
+
+= Einleitung
+Dies ist meine Dokumentation über das, was ich in dieser Abteilung gelernt habe.
+
+== Erster Abschnitt
+Hier kann ich über meine Erfahrungen und Erkenntnisse schreiben.
+```
+
+Die `#set` Direktive ermöglicht es dir, das Dokument global zu konfigurieren, und die Überschriften-Syntax ist so viel sauberer als LaTeX's `\section{}` Befehle.
+
+## Benutzerdefinierte Vorlagen
+
+Das Erstellen benutzerdefinierter Vorlagen ist ein Kinderspiel. Du kannst wiederverwendbare Komponenten definieren:
+
+```typst
+#let task(title, description) = {
+  block(
+    width: 100%,
+    fill: rgb("f0f0f0"),
+    radius: 8pt,
+    padding: 12pt,
+    [
+      *Aufgabe: #title*
+      #description
+    ]
+  )
+}
+
+#task(
+  title: "Typst lernen",
+  description: "Word-Dokument in Typst-Format konvertieren"
+)
+```
+
+Dieser funktionale Ansatz macht es einfach, konsistente, wiederverwendbare Dokumentelemente zu erstellen.
+
+## Tabellen und Listen
+
+Tabellen sind unkompliziert und lesbar:
+
+```typst
+#table(
+  columns: 3,
+  [*Datum*], [*Aufgabe*], [*Status*],
+  [2025-08-15], [Typst einrichten], [Erledigt],
+  [2025-08-16], [Dokumentation schreiben], [In Bearbeitung],
+)
+```
+
+Und Listen funktionieren genau wie du es in Markdown erwarten würdest, aber mit mehr Kontrolle:
+
+```typst
+- Erster Punkt
+- Zweiter Punkt
+  - Verschachtelter Punkt
+  - Noch ein verschachtelter Punkt
+- Dritter Punkt
+```
+
+## Mathematik und Gleichungen
+
+Mathematische Ausdrücke sind wunderschön integriert:
+
+```typst
+Die quadratische Formel ist:
+$ x = (-b ± sqrt(b^2 - 4ac)) / (2a) $
+
+Oder als Blockgleichung:
+$ x = (-b ± sqrt(b^2 - 4ac)) / (2a) $
+```
+
+# Das Ergebnis
+
+Nachdem ich mein Word-Dokument in Typst konvertiert hatte, war ich erstaunt, wie viel einfacher es wurde, es zu pflegen und zu aktualisieren. Die Versionskontrolle-Integration ist nahtlos - ich kann Änderungen verfolgen wie bei jeder anderen Code-Datei. Die Kompilierung ist schnell und die Ausgabe sieht professionell aus.
+
+Mein Kollege, den ich später an diesem Tag mit Typst bekannt machte, war noch beeindruckter. Sie begannen sofort, ihre eigene Dokumentation zu konvertieren und haben seitdem nicht mehr zurückgeschaut.
+
+# Fazit
+
+Typst hat Word vollständig als mein Standard-Tool zur Dokumentenerstellung ersetzt. Die Kombination aus:
+- Sauberer, lesbarer Syntax
+- Funktionalem Programmieransatz
+- Schneller Kompilierung
+- Großer Ausgabequalität
+- Versionskontrolle-freundlichem Workflow
+
+...macht es zum perfekten Tool für technische Dokumentation, Berichte und jedes Dokument, bei dem du sowohl Kontrolle als auch Benutzerfreundlichkeit willst.
+
+Wenn du es leid bist, mit Word's Formatierung zu kämpfen oder LaTeX's Komplexität, empfehle ich dir wärmstens, [Typst](https://typst.app/) auszuprobieren. Du könntest dich auch darin verlieben!
