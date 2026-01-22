@@ -53,15 +53,13 @@ export default async function Blog({ params }: Props) {
   if (!post) notFound();
 
   return (
-    <div className="relative flex w-full min-h-screen">
-      {/* Desktop TOC - Floating on the right, aligned with content */}
+    <div className="relative flex lg:w-3/4 xl:w-full min-h-screen mx-auto"  id="top-of-page">
+      <article className="flex-1 w-full max-w-none mt-6 mb-16 flex flex-col items-start justify-center md:mt-12 lg:mt-20 px-4 relative">
       {post.headings && post.headings.length > 0 && (
-        <div className="hidden lg:block">
+        <div className="hidden xl:block">
           <BlogTOC headings={post.headings} tableOfContentsLabel={t("tableOfContents")} variant="desktop" />
         </div>
       )}
-
-      <article className="flex-1 w-full max-w-none mt-6 mb-16 flex flex-col items-start justify-center md:mt-12 lg:mt-20 px-4">
         <script
           type="application/ld+json"
           suppressHydrationWarning
@@ -84,7 +82,6 @@ export default async function Blog({ params }: Props) {
             }),
           }}
         />
-
         {post.metadata.image && (
           <div className="relative mb-6 h-96 w-full overflow-hidden rounded-lg">
             <Image
@@ -93,6 +90,11 @@ export default async function Blog({ params }: Props) {
               fill
               className="object-cover"
             />
+          </div>
+        )}
+        {post.headings && post.headings.length > 0 && (
+          <div className="block lg:hidden mb-4">
+            <BlogTOC headings={post.headings} tableOfContentsLabel={t("tableOfContents")} variant="mobile" />
           </div>
         )}
         <div className="mb-6 w-full">
@@ -116,11 +118,6 @@ export default async function Blog({ params }: Props) {
           </div>
         </div>
         <MDXComponent source={post.content} />
-
-        {/* Mobile/Tablet TOC - Below content */}
-        {post.headings && post.headings.length > 0 && (
-          <BlogTOC headings={post.headings} tableOfContentsLabel={t("tableOfContents")} variant="mobile" />
-        )}
       </article>
     </div>
   );

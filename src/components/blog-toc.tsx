@@ -3,6 +3,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { List } from "lucide-react";
 
 type Heading = {
   size: number;
@@ -61,22 +64,21 @@ export function BlogTOC({ headings, tableOfContentsLabel, variant = "desktop" }:
     e.preventDefault();
     const element = document.getElementById(slug);
     if (element) {
+      console.log(element);
       element.scrollIntoView({ behavior: "smooth", block: "start" });
       // Update URL without triggering scroll
-      window.history.pushState(null, "", `#${slug}`);
+      window.history.pushState(null, "", `#${element.id}`);
     }
   };
 
-  console.log(headings);
-
   const navContent = (
     <nav className="flex flex-col space-y-1">
-      {headings.map((props) => (
+      {headings.map((props, index) => (
         <Link
           key={props.slug}
-          href={`#${props.slug}`}
+          href={index === 0 ? `#top-of-page` : `#${props.slug}`}
           scroll={false}
-          onClick={(e) => handleLinkClick(e, props.slug)}
+          onClick={(e) => handleLinkClick(e, index === 0 ? "top-of-page" : props.slug)}
           className={cn(
             "font-normal no-underline text-neutral-600 dark:text-neutral-400 duration-200 hover:text-neutral-900 dark:hover:text-neutral-100 hover:underline motion-reduce:transition-none py-1 transition-colors",
             {
@@ -105,21 +107,31 @@ export function BlogTOC({ headings, tableOfContentsLabel, variant = "desktop" }:
 
   if (variant === "mobile") {
     return (
-      <aside className="lg:hidden mt-8 mb-8 w-full">
-        <div className="border-t-2 border-neutral-300 dark:border-neutral-700 pt-6">
-          <p className="mb-4 text-sm font-semibold uppercase text-neutral-600 dark:text-neutral-400">
-            {tableOfContentsLabel}
-          </p>
-          {navContent}
-        </div>
-      </aside>
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button variant="outline" size="sm" className="mb-4">
+            <List className="size-4" />
+            <span>{tableOfContentsLabel}</span>
+          </Button>
+        </SheetTrigger>
+        <SheetContent side="right" className="w-3/4 sm:max-w-sm">
+          <SheetHeader>
+            <SheetTitle>{tableOfContentsLabel}</SheetTitle>
+          </SheetHeader>
+          <div className="mt-6 px-6">
+            {navContent}
+          </div>
+        </SheetContent>
+      </Sheet>
     );
   }
 
   return (
-    <aside className="fixed right-8 w-64 z-10">
-      <div className="sticky top-24 pt-8">
-        <div className="border-r-2 border-neutral-300 dark:border-neutral-700 pr-6">
+    <aside
+      className="fixed left-1/2 xl:translate-x-[30rem] -translate-x-1/2 w-64 z-10"
+    >
+      <div className="sticky top-24">
+        <div className="border-l-2 border-neutral-300 dark:border-neutral-700 pl-6">
           <p className="mb-4 text-sm font-semibold uppercase text-neutral-600 dark:text-neutral-400">
             {tableOfContentsLabel}
           </p>
