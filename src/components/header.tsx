@@ -83,8 +83,18 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="sm:hidden fixed inset-x-0 top-20 p-4 bg-black/95 backdrop-blur-sm border-b border-gray-600">
-          <div className="flex flex-col gap-4">
+        <>
+          {/* Overlay */}
+          <div 
+            className="sm:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+          {/* Menu Content */}
+          <div 
+            className="sm:hidden fixed inset-x-0 top-20 p-4 bg-black/95 backdrop-blur-sm border-b border-gray-600 z-50"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex flex-col gap-4">
             <HeaderLink path={"/projects"} text={t("header.projects")} />
             {/* <HeaderLink path={"/blog"} text={t("header.blog")} /> */}
             <HeaderLink path={"/contact"} text={t("header.contact")} />
@@ -114,7 +124,8 @@ const Header = () => {
               ))}
             </div>
           </div>
-        </div>
+          </div>
+        </>
       )}
     </header>
   );

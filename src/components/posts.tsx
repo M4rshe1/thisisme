@@ -30,13 +30,24 @@ const Posts = async ({ locale }: { locale: string }) => {
           <Link
             href={`/blog/${post.slug}`}
             key={`/blog/${post.slug}`}
-            className="-mt-px mb-10 flex ml-6 rounded-lg border border-gray-600 hover:border-gray-400 pl-6 pr-3 py-3 duration-200 motion-reduce:transition-none bg-black/30 backdrop-blur-sm"
+            className="-mt-px mb-10 flex ml-6 rounded-lg border border-gray-600 hover:border-gray-400 pl-3 pr-3 py-3 duration-200 motion-reduce:transition-none bg-black/30 backdrop-blur-sm"
           >
             <div>
               <span className="absolute -left-[38px] -mt-3 flex size-6 shrink-0 items-center justify-center rounded-full border bg-gray-600 p-1 text-primary">
                 <Calendar className="size-3 text-gray-200" />
               </span>
               <div>
+                {post.metadata.image && (
+                  <div className="w-full overflow-hidden rounded-sm md:hidden block mb-2">
+                    <Image
+                      src={post.metadata.image}
+                      alt={post.metadata.title}
+                      width={720}
+                      height={480}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                )}
                 <h3 className="mb-1 flex items-center text-lg font-bold text-gray-200">
                   {post.metadata.title}{" "}
                   {index === 0 && (
@@ -70,7 +81,7 @@ const Posts = async ({ locale }: { locale: string }) => {
               </p>
             </div>
             {post.metadata.image && (
-              <div className="w-92 overflow-hidden rounded-lg">
+              <div className="w-92 overflow-hidden rounded-lg hidden md:block">
                 <Image
                   src={post.metadata.image}
                   alt={post.metadata.title}

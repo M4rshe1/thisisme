@@ -58,7 +58,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="lg:max-w-3xl w-full mx-auto py-4 border-t border-gray-600">
+    <footer className="lg:max-w-3xl w-full p-4 md:mx-auto py-4 border-t border-gray-600">
       <div className="w-full text-gray-600 text-sm mb-4">
         <p className="mb-4">
           Copyright © {new Date().getFullYear()} {META.name} aka.{" "}

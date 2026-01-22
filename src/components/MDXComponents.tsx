@@ -101,7 +101,7 @@ export function MDXComponent(
   props: React.ComponentPropsWithoutRef<typeof MDXRemote>
 ) {
   return (
-    <div className="prose prose-neutral prose-a:underline-offset-6 max-w-5xl prose-a:hover:underline-offset-auto prose-img:m-0 prose-a:font-bold prose-a:hover:decoration-wavy flex flex-col [&>*]:w-fit [&>pre]:w-full [&>blockquote]:w-full">
+    <div className="prose prose-neutral prose-a:underline-offset-6 max-w-full prose-a:hover:underline-offset-auto prose-img:m-0 prose-a:font-bold prose-a:hover:decoration-wavy flex flex-col [&>*]:w-fit [&>pre]:w-full [&>blockquote]:w-full">
       <MDXRemote
         {...props}
         components={{
