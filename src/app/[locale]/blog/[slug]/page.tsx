@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXComponent } from "@/components/MDXComponents";
 import { Header1 } from "@/components/ui/headers";
-import { Link } from "@/i18n/navigation";
 import { getBlogPosts } from "@/lib/blogUtils";
 import { cn, parseISO } from "@/lib/utils";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
+import { BlogTOC } from "@/components/blog-toc";
 
 type Props = {
   params: Promise<{ slug: string; locale: string }>;
@@ -54,46 +54,11 @@ export default async function Blog({ params }: Props) {
 
   return (
     <div className="relative flex w-full min-h-screen">
-      {/* TOC - fixed to page top, same x position as before */}
-      {post.headings && (
-        <aside
-          className="
-            hidden
-            lg:block
-            fixed
-            left-[calc(100%+3rem)]
-            top-16
-            w-56
-            h-fit
-            z-10
-          "
-          style={{ minHeight: "200px" }}
-        >
-          <div className="sticky top-24 flex flex-col space-y-2">
-            <p className="mb-2 text-sm uppercase">{t("tableOfContents")}</p>
-            {post.headings.map(
-              (props: { size: number; content: string; slug: string }) => (
-                <Link
-                  key={props.slug}
-                  href={`#${props.slug}`}
-                  scroll={true}
-                  className={cn(
-                    {
-                      "ml-2": props.size === 2,
-                      "ml-4": props.size === 3,
-                      "ml-6": props.size === 4,
-                      "ml-8": props.size === 5,
-                      "ml-10": props.size === 6,
-                    },
-                    "font-normal! no-underline opacity-50 duration-200 hover:underline hover:opacity-100 motion-reduce:transition-none"
-                  )}
-                >
-                  {props.content}
-                </Link>
-              )
-            )}
-          </div>
-        </aside>
+      {/* Desktop TOC - Floating on the right, aligned with content */}
+      {post.headings && post.headings.length > 0 && (
+        <div className="hidden lg:block">
+          <BlogTOC headings={post.headings} tableOfContentsLabel={t("tableOfContents")} variant="desktop" />
+        </div>
       )}
 
       <article className="flex-1 w-full max-w-none mt-6 mb-16 flex flex-col items-start justify-center md:mt-12 lg:mt-20 px-4">
@@ -151,6 +116,11 @@ export default async function Blog({ params }: Props) {
           </div>
         </div>
         <MDXComponent source={post.content} />
+
+        {/* Mobile/Tablet TOC - Below content */}
+        {post.headings && post.headings.length > 0 && (
+          <BlogTOC headings={post.headings} tableOfContentsLabel={t("tableOfContents")} variant="mobile" />
+        )}
       </article>
     </div>
   );
