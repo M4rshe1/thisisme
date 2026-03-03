@@ -57,6 +57,8 @@ export const TECH: technologyNames[] = [
   "eclipse",
   "subversion",
   "java",
+  "nixos",
+  "bun",
 ];
 
 export type Social = SocialWithIcon | SocialWithImage;
@@ -152,7 +154,7 @@ export const SETTINGS = {
  */
 export const META: Meta = {
   name: "Colin Heggli",
-  title: "Full Stack Developer",
+  title: "Software Engineer",
   email: "colin@heggli.dev",
   url: process.env.VERCEL_URL || "https://colin.heggli.dev",
   socials: {

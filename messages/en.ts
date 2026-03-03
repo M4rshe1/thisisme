@@ -1,9 +1,9 @@
 export default {
   meta: {
-    title: "{name} - Full Stack Developer | Software Engineer | IT Guy",
+    title: "{name} - Software Engineer | IT Guy",
     description: "This is the English translation file for the website.",
     keywords:
-      "{name}, Software Engineer, Full Stack Developer, IT Guy, Web Developer, Portfolio, Projects, Blog, Contact",
+      "{name}, Software Engineer, IT Guy, Web Developer, Portfolio, Projects, Blog, Contact",
     author: "{name}",
     language: "en",
   },

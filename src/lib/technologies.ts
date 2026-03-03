@@ -24,7 +24,7 @@ export const technologies: Record<string, TechnologyDef> = {
     "name": "Next.js",
     "icon": "/images/tech/next.js.png",
     "type": "frontend",
-    "color": "#000000"
+    "color": "#ffffff"
   },
   "typescript": {
     "name": "TypeScript",
@@ -336,13 +336,13 @@ export const technologies: Record<string, TechnologyDef> = {
     "name": "Vercel",
     "icon": "/images/tech/vercel.png",
     "type": "hosting",
-    "color": "#000000"
+    "color": "#ffffff"
   },
   "shadcnui": {
     "name": "Shadcn UI",
     "icon": "/images/tech/shadcn ui.png",
     "type": "ui library",
-    "color": "#000000"
+    "color": "#ffffff"
   },
   "turbopack": {
     "name": "Turbopack",
@@ -417,7 +417,7 @@ export const technologies: Record<string, TechnologyDef> = {
     "color": "#F38020"
   },
   "vscode": {
-    "name": "Visual Studio Code",
+    "name": "VS Code",
     "icon": "/images/tech/visual studio code.png",
     "type": "editor",
     "color": "#007ACC"
@@ -571,5 +571,11 @@ export const technologies: Record<string, TechnologyDef> = {
     "icon": "/images/tech/nixos.png",
     "type": "os",
     "color": "#5277C3"
+  },
+  "bun": {
+    "name": "Bun",
+    "icon": "/images/tech/bun.png",
+    "type": "package manager",
+    "color": "#fbf0df"
   }
 }
