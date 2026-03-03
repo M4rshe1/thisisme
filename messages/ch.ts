@@ -46,7 +46,6 @@ export default {
       seconds: "Sekunde",
     },
     title: "Über mich",
-    birthday: "2007-01-22",
     jobTitle: "Informatiker i Uusbildig",
     location: "Schaffhuuse, Schwiiz",
     learning: ["Cyber Security", "Java"],
@@ -61,34 +60,25 @@ export default {
   },
   hero: {
     linkText: "Meh erfahre",
-    link: "/#readmore",
     title: "Das bin ICH",
-    image: "/images/nordkapp.jpg",
     bio: "Ich tue gern Programmiere, neui Technologiä lehrne und Droone z'flüüge. Ich bin en Softwareentwickler mit ere Lideschaft drfür, alles z'baue, wo Spass macht.",
     welcome: "Hoi, ich bin de Colin",
     description:
       "Ich bin en Softwareentwickler mit ere Lideschaft zum Webapplikatione baue. Ich tue gern Programmiere und neui Technologiä lehrne.",
-    rotary: [
-      {
+    items: {
+      nordkapp: {
         title: "Nordkapp Reis 2025",
-        link: "https://youtu.be/eJs1toIXj5k?si=9PiRkNPdJdO5Xo1a",
         linkText: "Video aaluege",
-        image: "/images/nordkapp.jpg",
         summary:
           'Vor 1,5 Johr hät min Vater zu mir gseit: "Colin, wennt 18 bisch und de Füehrerschiin häsch, fahremed mir uf de Nordkapp". Ich han gseit: "Sicher, warum nid". Und so isch die Idee entstande.',
-        publishedAt: "2025-04-19",
-        newPage: true,
       },
-      {
+      thisisme: {
         title: "Das bin ICH",
-        link: "https://colin.heggli.dev",
         linkText: "Das Portfolio do",
-        publishedAt: "2025-05-12",
-        image: "/images/thisisme.png",
         summary:
           "Das isch mini persöönlichi Website, wo ich mini Projekt und mini Fähigkeite zeig. Ich han die mit Next.js, TypeScript, Tailwind CSS und vielne andere Technologiä erstellt.",
       },
-    ],
+    },
   },
   buttons: {
     readMore: "Meh erfahre",
@@ -121,26 +111,13 @@ export default {
     title: "Mini Projekt",
     description:
       "Entdeck do e paar vo mine neueste oder nöd so neueste Projekt. Für meh lueg uf mis GitHub-Profil.",
-    projects: [
-      {
+    items: {
+      thisisme: {
         name: "This is ME",
         description:
           "Das isch mini persöönlichi Website, wo ich mini Projekt und mini Fähigkeite zeig.",
-        image: "/images/thisisme.png",
-        link: "https://colin.heggli.dev",
-        github: "https://github.com/m4rshe1/thisisme",
-        startDate: "2025-05-11",
-        technologies: [
-          "nextjs",
-          "typescript",
-          "tailwindcss",
-          "lucide",
-          "i18n",
-          "shadcnui",
-          "turbopack",
-        ],
       },
-    ],
+    },
   },
   settings: {
     title: "Iistellige",
@@ -248,100 +225,42 @@ export default {
     educationTitle: "Uusbildig",
     now: "Jetzt",
     present: "Aktuell",
-    experience: [
-      {
+    items: {
+      wibilea: {
         company: "Wibilea",
         department: "Basisjahr",
         role: "Informatiker i Uusbildig",
-        startDate: "2022-08-01",
-        endDate: "2023-07-31",
-        tech: [
-          "office",
-          "excel",
-          "word",
-          "powerpoint",
-          "html",
-          "css",
-          "javascript",
-          "php",
-          "mysql",
-        ],
         description:
           "Am Afang vo minere Lehr han ich s'Wibilea Basisjahr i Neuhausen bsuecht. Ich han viel über d'Grundlage vo de IT und de Unternemme glehrnt.",
       },
-      {
+      gfLocalIt: {
         company: "Georg Fischer AG",
         department: "Lokali IT",
         role: "Informatiker i Uusbildig",
-        startDate: "2023-08-01",
-        tech: ["office", "excel", "word", "servicenow", "powershell"],
-        endDate: "2024-07-31",
         description:
           "Ich schaffe i de IT-Abteilig und bin zueständig für de Support vo de Mitarbeiter. Ich schaffe au a Projekt und lehrn viel über d'IT-Infrastruktur vonere grosse Firma.",
       },
-      {
+      gfOpex: {
         company: "Georg Fischer AG",
         department: "OpEx & Production IT",
         role: "Informatiker i Uusbildig",
-        startDate: "2024-08-01",
-        endDate: "2025-07-31",
-        tech: [
-          "python",
-          "sql",
-          "excel",
-          "zabbix",
-          "powershell",
-          "powerplatform",
-          "mssql",
-          "docker",
-          "windows",
-          "debian",
-          "linux",
-          "rhel",
-          "powerbi",
-          "codabix",
-          "azuredevops",
-          "csharp",
-        ],
         description:
           "Schaffe an verschiedne Projekt mit Schwärpunkt uf Datenanalyse und IoT. Aktivi Entwicklig vo Microsoft Power BI und Power Platform für Business Intelligence Löösige. Zuesetzlich hilf ich au no bi de IT Infrastruktur i de Produktion.",
       },
-      {
+      gfDzs: {
         company: "Georg Fischer AG",
         department: "DZS IT",
         role: "Informatiker i Uusbildig",
-        startDate: "2025-08-01",
-        endDate: "2026-07-31",
-        tech: [
-          "java",
-          "oracle",
-          "visualstudio",
-          "zabbix",
-          "rhel",
-          "powershell",
-          "mssql",
-          "postgresql",
-          "subversion",
-          "docker",
-          "windows",
-          "debian",
-          "linux",
-          "eclipse",
-        ],
         description:
           "Fähler behebig, neui Funktioone i UniWare LVS implementiere und Benutzer vom Distributions Zentrum unterstütze.",
       },
-    ],
-    education: [
-      {
+      bbz: {
         school: "BBZ Schaffhuuse",
         degree: "Informatiker EFZ",
-        startDate: "2022-08-01",
-        endDate: "2026-07-31",
         description:
           "Das isch d'Uusbildig, wo ich im Rahme vo minere Lehr bi de Georg Fischer mach.",
       },
-    ],
+    },
   },
   footer: {
     links: {

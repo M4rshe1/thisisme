@@ -11,16 +11,17 @@ import Dot from "@/components/dot";
 import { AnimatePresence, motion } from "motion/react"
 import Image from "next/image";
 import { META } from "@/config/settings";
+import { ABOUT } from "@/config/about";
 
 const About = () => {
   const t = useTranslations();
   const messages = useMessages();
   const [age, setAge] = useState({});
-  const [displayMode, setDisplayMode] = useState("full"); // 'full', 'minimized', 'closed'
+  const [displayMode, setDisplayMode] = useState("full");
 
   useEffect(() => {
     const calculateAge = () => {
-      const birth = new Date(t("about.birthday"));
+      const birth = new Date(ABOUT.birthday);
       const now = new Date();
 
       let years = now.getFullYear() - birth.getFullYear();
@@ -67,7 +68,7 @@ const About = () => {
     <div className="grid auto-rows-auto grid-cols-1 gap-6 md:grid-cols-2 md:grid-rows-1">
       <div>
         <Image
-          src={"/images/me.jpg"}
+          src={ABOUT.image}
           alt={"Picture of me"}
           width={300}
           height={300}
@@ -112,7 +113,6 @@ const About = () => {
       <div
         className={cn(
           "flex h-fit w-full flex-col gap-2 rounded-lg border border-gray-600 bg-black/30 p-4 shadow-lg backdrop-blur-sm"
-          // We'll let motion handle the height based on displayMode
         )}
       >
         <AnimatePresence mode="wait">
@@ -157,21 +157,18 @@ const About = () => {
                     "flex items-center gap-2 p-2 text-sm text-gray-200"
                   }
                 >
-                  {/* Green Button (Fullscreen) */}
                   <button
                     className={
                       "h-3 w-3 rounded-full bg-green-500 cursor-pointer"
                     }
                     onClick={() => setDisplayMode("full")}
                   ></button>
-                  {/* Yellow Button (Minimize) */}
                   <button
                     className={
                       "h-3 w-3 rounded-full bg-yellow-500 cursor-pointer"
                     }
                     onClick={() => setDisplayMode("minimized")}
                   ></button>
-                  {/* Red Button (Close) */}
                   <button
                     className={"h-3 w-3 rounded-full bg-red-500 cursor-pointer"}
                     onClick={() => setDisplayMode("closed")}
@@ -179,11 +176,9 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Animate the content based on displayMode */}
               <motion.div
                 variants={contentVariants}
                 animate={displayMode === "full" ? "full" : "minimized"}
-                // No initial or exit here, as we're animating based on a state change within the same component
               >
                 {displayMode === "full" && (
                   <pre className="m-4 whitespace-pre-wrap text-sm">
@@ -216,7 +211,7 @@ const About = () => {
           )}
         </AnimatePresence>
         <Link
-          href={"/resume.pdf"}
+          href={ABOUT.resumePath}
           className={buttonVariants({ variant: "accent" })}
         >
           {t("about.downloadResume")}

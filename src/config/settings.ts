@@ -8,6 +8,11 @@ import {
 import { AtSignIcon, LucideIcon } from "lucide-react";
 import { technologyNames } from "@/lib/technologies";
 
+/**
+ * Technologies displayed in the "Technology I use" section.
+ * Keys must match entries in src/lib/technologies.ts.
+ * Translations: messages/{locale}.ts -> technologies (section title/description only)
+ */
 export const TECH: technologyNames[] = [
   "javascript",
   "typescript",
@@ -132,6 +137,7 @@ export const SOCIALS: Social[] = [
   },
 ];
 
+/** UI behavior settings (not translated) */
 export const SETTINGS = {
   career: {
     showNowLine: true,
@@ -140,6 +146,10 @@ export const SETTINGS = {
   },
 };
 
+/**
+ * Site owner metadata.
+ * Translations: messages/{locale}.ts -> meta (page title, description, keywords)
+ */
 export const META: Meta = {
   name: "Colin Heggli",
   title: "Full Stack Developer",

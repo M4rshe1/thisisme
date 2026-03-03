@@ -19,6 +19,12 @@ const nextConfig: NextConfig = {
             },
             {
                 protocol: 'https',
+                hostname: 'github.com',
+                port: '',
+                pathname: '/M4rshe1/thisisme/blob/master/public/**',
+            },
+            {
+                protocol: 'https',
                 hostname: 'avatars.githubusercontent.com',
                 port: '',
                 pathname: '/**',

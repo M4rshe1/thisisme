@@ -1,6 +1,6 @@
 "use client";
 
-import { useFormatter, useMessages, useTranslations } from "next-intl";
+import { useFormatter, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { ArrowDown, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
@@ -10,6 +10,7 @@ import { Link } from "@/i18n/navigation";
 import { getLatestBlogPost } from "@/lib/blogUtils";
 import { useLocale } from "use-intl";
 import { META } from "@/config/settings";
+import { HERO, HERO_ROTARY } from "@/config/hero";
 import { useQuery } from "@tanstack/react-query";
 
 interface RotaryItem {
@@ -25,13 +26,24 @@ interface RotaryItem {
 
 const Hero = () => {
   const locale = useLocale();
-  const messages = useMessages();
-  const rotary = messages.hero.rotary;
+  const t = useTranslations("hero");
+
+  const rotaryItems: RotaryItem[] = HERO_ROTARY.map((item) => ({
+    type: "rotary",
+    link: item.link,
+    title: t(`items.${item.id}.title`),
+    linkText: t(`items.${item.id}.linkText`),
+    summary: t(`items.${item.id}.summary`),
+    image: item.image,
+    publishedAt: item.publishedAt,
+    newPage: item.newPage,
+  }));
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [items, setItems] = useState<RotaryItem[]>([
-    { type: "about" },
-    ...rotary,
+    { type: "about" } as RotaryItem,
+    ...rotaryItems,
   ]);
   const { data: latestPosts } = useQuery({
     queryKey: ["latestPosts", locale],
@@ -78,7 +90,7 @@ const Hero = () => {
         {items[currentIndex]?.type === "about" ? (
           <HeroMe />
         ) : (
-          <RotaryItem {...items[currentIndex]} />
+          <RotaryItemCard {...items[currentIndex]} />
         )}
         <div className="absolute bottom-4 left-0 right-0 flex justify-center items-center gap-2 z-10">
           {items.map((_, idx) => (
@@ -116,7 +128,7 @@ const HeroMe = () => {
   return (
     <div className="relative rounded-lg text-white overflow-hidden">
       <Image
-        src={t("image")}
+        src={HERO.image}
         alt={META.name}
         width={1920}
         height={1080}
@@ -133,7 +145,7 @@ const HeroMe = () => {
         </div>
 
         <Link
-          href={t("link")}
+          href={HERO.link}
           className={cn(
             "mt-4 text-gray-200 hover:text-white w-fit group",
             buttonVariants({ variant: "default" })
@@ -151,7 +163,7 @@ const HeroMe = () => {
   );
 };
 
-const RotaryItem = ({
+const RotaryItemCard = ({
   title,
   link,
   linkText,

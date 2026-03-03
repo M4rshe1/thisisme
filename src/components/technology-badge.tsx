@@ -1,9 +1,10 @@
 "use client"
 
-import technologies, {TechnologyDef} from "@/lib/technologies";
+import { technologies, TechnologyDef } from "@/lib/technologies";
 import Image from "next/image";
+import { cdnUrl } from "@/lib/utils";
 
-export const TechnologyBadge = ({tech}: { tech: string }) => {
+export const TechnologyBadge = ({ tech }: { tech: string }) => {
     const content: TechnologyDef | null | undefined = technologies[tech];
     if (!content) {
         return null;
@@ -30,7 +31,7 @@ export const TechnologyBadge = ({tech}: { tech: string }) => {
             }}
         >
             <Image
-                src={content.icon}
+                src={cdnUrl(content.icon)}
                 alt={content.name}
                 className="w-5 h-5 mr-2"
                 width={24}

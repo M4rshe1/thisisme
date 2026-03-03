@@ -46,7 +46,6 @@ export default {
       seconds: "seconds",
     },
     title: "About Me",
-    birthday: "2007-01-22",
     jobTitle: "IT Guy in apprentice",
     location: "Schaffhausen, Switzerland",
     learning: ["Cyber Security", "Java"],
@@ -61,34 +60,25 @@ export default {
   },
   hero: {
     linkText: "Read More",
-    link: "/#readmore",
     title: "This is ME",
-    image: "/images/nordkapp.jpg",
     bio: "I love coding, learning new technologies and flying drone. I am a software engineer with a passion for building anything that is fun.",
     welcome: "Hey, I'm Colin",
     description:
       "I am a software engineer with a passion for building web applications. I love coding and learning new technologies.",
-    rotary: [
-      {
+    items: {
+      nordkapp: {
         title: "Nordkapp Trip 2025",
-        link: "https://youtu.be/eJs1toIXj5k?si=9PiRkNPdJdO5Xo1a",
         linkText: "Watch the video",
-        image: "/images/nordkapp.jpg",
         summary:
           '1.5 years ago my Dad sade to me: "Colin, when your 18 and you have your driving license, we will go to Nordkapp". I sad: "Sure, why not". And this is how the idea was born.',
-        publishedAt: "2025-04-19",
-        newPage: true,
       },
-      {
+      thisisme: {
         title: "This is ME",
-        link: "https://colin.heggli.dev",
         linkText: "This Portfolio",
-        publishedAt: "2025-05-12",
-        image: "/images/thisisme.png",
         summary:
           "This is my personal website where I showcase my projects and skills. I built it using Next.js, TypeScript, Tailwind CSS and many more.",
       },
-    ],
+    },
   },
   buttons: {
     readMore: "Read More",
@@ -121,26 +111,13 @@ export default {
     title: "My Projects",
     description:
       "Explore some of my recent or not so recent projects below. For more, visit my GitHub profile.",
-    projects: [
-      {
+    items: {
+      thisisme: {
         name: "This is ME",
         description:
           "This is my personal website where I showcase my projects and skills.",
-        image: "/images/thisisme.png",
-        link: "https://colin.heggli.dev",
-        github: "https://github.com/m4rshe1/thisisme",
-        startDate: "2025-05-11",
-        technologies: [
-          "nextjs",
-          "typescript",
-          "tailwindcss",
-          "lucide-react",
-          "i18n",
-          "shadcnui",
-          "turbopack",
-        ],
       },
-    ],
+    },
   },
   settings: {
     title: "Settings",
@@ -250,102 +227,42 @@ export default {
     educationTitle: "Education",
     now: "Now",
     present: "Present",
-    experience: [
-      {
+    items: {
+      wibilea: {
         company: "Wibilea",
         department: "Base Year",
         role: "IT Guy in apprentice",
-        startDate: "2022-08-01",
-        endDate: "2023-07-31",
-        tech: [
-          "office",
-          "excel",
-          "word",
-          "powerpoint",
-          "html",
-          "css",
-          "javascript",
-          "php",
-          "mysql",
-        ],
         description:
           "At the beginning of my apprentice I attended the Wibilea Basis Year in Neuhausen. I learned a lot about the basics of IT and business.",
       },
-      {
+      gfLocalIt: {
         company: "Georg Fischer AG",
         department: "Local IT",
         role: "IT Guy in apprentice",
-        startDate: "2023-08-01",
-        tech: ["office", "excel", "word", "servicenow", "powershell"],
-        endDate: "2024-07-31",
         description:
           "I am working in the IT department and I am responsible for the support of the employees. I am also working on projects and I am learning a lot about the IT infrastructure of a big company.",
       },
-      {
+      gfOpex: {
         company: "Georg Fischer AG",
         department: "OpEx & Production IT",
         role: "IT Guy in apprentice",
-        startDate: "2024-08-01",
-        endDate: "2025-07-31",
-        tech: [
-          "python",
-          "sql",
-          "excel",
-          "zabbix",
-          "powershell",
-          "powerplatform",
-          "mssql",
-          "docker",
-          "windows",
-          "debian",
-          "linux",
-          "rhel",
-          "powerbi",
-          "codabix",
-          "azuredevops",
-          "csharp",
-        ],
         description:
           "Working on various projects focused on data analysis and data science initiatives. Actively developing expertise in Microsoft Power BI and Power Platform implementation for business intelligence solutions. Now and then I also doing support for the Infrastructure in the production",
       },
-      {
+      gfDzs: {
         company: "Georg Fischer AG",
         department: "DZS IT",
         role: "IT Guy in apprentice",
-        startDate: "2025-08-01",
-        endDate: "2026-07-31",
-        tech: [
-          "java",
-          "oracle",
-          "visualstudio",
-          "zabbix",
-          "rhel",
-          "powershell",
-          "mssql",
-          "postgresql",
-          "subversion",
-          "docker",
-          "windows",
-          "debian",
-          "typst",
-          "linux",
-          "eclipse",
-          "nixos",
-        ],
         description:
           "Fixing bugs, implementing new features into UniWare LVS and support the users of the Distribution Center.",
       },
-    ],
-    education: [
-      {
+      bbz: {
         school: "BBZ Schaffhausen",
         degree: "Business IT specialist EFZ",
-        startDate: "2022-08-01",
-        endDate: "2026-07-31",
         description:
           "This is the education I am doing as part of my apprenticeship at Georg Fischer.",
       },
-    ],
+    },
   },
   footer: {
     links: {

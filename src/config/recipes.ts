@@ -1,5 +1,18 @@
 import { Recipe } from "@/lib/recipes";
 
+/**
+ * Recipe configuration.
+ * Translations: messages/{locale}.ts -> recipes.recipes.{key}
+ *   - recipes.recipes.{key}.name
+ *   - recipes.recipes.{key}.description
+ *   - recipes.recipes.{key}.instructions (string[])
+ *   - recipes.recipes.{key}.story (optional)
+ *
+ * Ingredient labels: recipes.ingredients.{ingredientId}
+ * Kitchen labels:    recipes.kitchen.{kitchenType}
+ * Unit labels:       recipes.units.{unit}
+ * Allergen labels:   recipes.allergens.{allergen}
+ */
 export const RECIPES: Record<string, Recipe> = {
   indianButterChicken: {
     dateCreated: "2025-10-02",

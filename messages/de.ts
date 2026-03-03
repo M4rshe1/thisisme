@@ -46,7 +46,6 @@ export default {
       seconds: "Sekunden",
     },
     title: "Über mich",
-    birthday: "2007-01-22",
     jobTitle: "Informatiker in Ausbildung",
     location: "Schaffhausen, Schweiz",
     learning: ["Cyber Security", "Java"],
@@ -61,34 +60,25 @@ export default {
   },
   hero: {
     linkText: "Mehr erfahren",
-    link: "/#readmore",
     title: "Das bin ICH",
-    image: "/images/nordkapp.jpg",
     bio: "Ich liebe es zu programmieren, neue Technologien zu lernen und Drohne zu fliegen. Ich bin ein Softwareentwickler mit einer Leidenschaft dafür, alles zu bauen, was Spass macht.",
     welcome: "Hey, ich bin Colin",
     description:
       "Ich bin ein Softwareentwickler mit einer Leidenschaft für den Bau von Webanwendungen. Ich liebe es zu programmieren und neue Technologien zu lernen.",
-    rotary: [
-      {
+    items: {
+      nordkapp: {
         title: "Nordkapp Reise 2025",
-        link: "https://youtu.be/eJs1toIXj5k?si=9PiRkNPdJdO5Xo1a",
         linkText: "Video ansehen",
-        image: "/images/nordkapp.jpg",
         summary:
           'Vor 1,5 Jahren sagte mein Vater zu mir: "Colin, wenn du 18 bist und deinen Führerschein hast, fahren wir zum Nordkapp". Ich sagte: "Sicher, warum nicht". Und so wurde die Idee geboren.',
-        publishedAt: "2025-04-19",
-        newPage: true,
       },
-      {
+      thisisme: {
         title: "Das bin ICH",
-        link: "https://colin.heggli.dev",
         linkText: "Dieses Portfolio",
-        publishedAt: "2025-05-12",
-        image: "/images/thisisme.png",
         summary:
           "Dies ist meine persönliche Website, auf der ich meine Projekte und Fähigkeiten präsentiere. Ich habe sie mit Next.js, TypeScript, Tailwind CSS und vielen weiteren Technologien gebaut.",
       },
-    ],
+    },
   },
   buttons: {
     readMore: "Mehr erfahren",
@@ -121,26 +111,13 @@ export default {
     title: "Meine Projekte",
     description:
       "Entdecken Sie unten einige meiner jüngsten oder nicht so jüngsten Projekte. Für mehr besuchen Sie mein GitHub-Profil.",
-    projects: [
-      {
+    items: {
+      thisisme: {
         name: "Das bin ICH",
         description:
           "Dies ist meine persönliche Website, auf der ich meine Projekte und Fähigkeiten präsentiere.",
-        image: "/images/thisisme.png",
-        link: "https://colin.heggli.dev",
-        github: "https://github.com/m4rshe1/thisisme",
-        startDate: "2025-05-11",
-        technologies: [
-          "nextjs",
-          "typescript",
-          "tailwindcss",
-          "lucide-react",
-          "i18n",
-          "shadcnui",
-          "turbopack",
-        ],
       },
-    ],
+    },
   },
   settings: {
     title: "Einstellungen",
@@ -248,100 +225,42 @@ export default {
     educationTitle: "Ausbildung",
     now: "Jetzt",
     present: "Aktuell",
-    experience: [
-      {
+    items: {
+      wibilea: {
         company: "Wibilea",
         department: "Basisjahr",
         role: "Informatiker in Ausbildung",
-        startDate: "2022-08-01",
-        endDate: "2023-07-31",
-        tech: [
-          "office",
-          "excel",
-          "word",
-          "powerpoint",
-          "html",
-          "css",
-          "javascript",
-          "php",
-          "mysql",
-        ],
         description:
           "Zu Beginn meiner Lehre besuchte ich das Wibilea Basisjahr in Neuhausen. Ich habe viel über die Grundlagen der IT und Wirtschaft gelernt.",
       },
-      {
+      gfLocalIt: {
         company: "Georg Fischer AG",
         department: "Lokale IT",
         role: "Informatiker in Ausbildung",
-        startDate: "2023-08-01",
-        tech: ["office", "excel", "word", "servicenow", "powershell"],
-        endDate: "2024-07-31",
         description:
           "Ich arbeite in der IT-Abteilung und bin für den Support der Mitarbeiter zuständig. Ich arbeite auch an Projekten und lerne viel über die IT-Infrastruktur eines grossen Unternehmens.",
       },
-      {
+      gfOpex: {
         company: "Georg Fischer AG",
         department: "OpEx & Production IT",
         role: "Informatiker in Ausbildung",
-        startDate: "2024-08-01",
-        endDate: "2025-07-31",
-        tech: [
-          "python",
-          "sql",
-          "excel",
-          "zabbix",
-          "powershell",
-          "powerplatform",
-          "mssql",
-          "docker",
-          "windows",
-          "debian",
-          "linux",
-          "rhel",
-          "powerbi",
-          "codabix",
-          "azuredevops",
-          "csharp",
-        ],
         description:
           "Arbeit an verschiedenen Projekten mit Schwerpunkt auf Datenanalyse und Datenwissenschaftsinitiativen. Aktive Entwicklung von Fachkenntnissen in der Implementierung von Microsoft Power BI und Power Platform für Business Intelligence Lösungen. Ab und zu leiste ich auch Unterstützung für die Infrastruktur in der Produktion.",
       },
-      {
+      gfDzs: {
         company: "Georg Fischer AG",
         department: "DZS IT",
         role: "Informatiker in Ausbildung",
-        startDate: "2025-08-01",
-        endDate: "2026-07-31",
-        tech: [
-          "java",
-          "oracle",
-          "visualstudio",
-          "zabbix",
-          "rhel",
-          "powershell",
-          "mssql",
-          "postgresql",
-          "subversion",
-          "docker",
-          "windows",
-          "debian",
-          "linux",
-          "eclipse",
-        ],
         description:
           "Fehlerbehebung, Implementierung neuer Funktionen in UniWare LVS und Unterstützung der Benutzer des Distributions Zentrums.",
       },
-    ],
-    education: [
-      {
+      bbz: {
         school: "BBZ Schaffhausen",
         degree: "Informatiker EFZ",
-        startDate: "2022-08-01",
-        endDate: "2026-07-31",
         description:
           "Dies ist die Ausbildung, die ich im Rahmen meiner Lehre bei Georg Fischer absolviere.",
       },
-    ],
+    },
   },
   footer: {
     links: {

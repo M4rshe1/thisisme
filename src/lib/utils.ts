@@ -103,3 +103,7 @@ export function toTitleCase(slug: string): string {
     .trim()
     .replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substring(1));
 }
+
+export function cdnUrl(path: string): string {
+  return `https://github.com/M4rshe1/thisisme/blob/master/public${path}?raw=true`;
+}

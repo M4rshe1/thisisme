@@ -1,4 +1,4 @@
-import { getMessages, getTranslations } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { Description, Header1 } from "@/components/ui/headers";
 import { parseISO } from "@/lib/utils";
 import {
@@ -9,32 +9,8 @@ import {
 } from "@/components/ui/tooltip";
 import TechnologyBadge from "@/components/technology-badge";
 import { cn } from "@/lib/utils";
-import {SETTINGS} from "@/config/settings";
-
-interface CareerData {
-    career: {
-        title: string;
-        description: string;
-        experienceTitle: string;
-        educationTitle: string;
-        experience: {
-            company: string;
-            department: string;
-            role: string;
-            startDate: string;
-            endDate: string | null;
-            tech: string[];
-            description: string;
-        }[];
-        education: {
-            school: string;
-            degree: string;
-            startDate: string;
-            endDate: string | null;
-            description: string;
-        }[];
-    };
-}
+import { SETTINGS } from "@/config/settings";
+import { EXPERIENCE, EDUCATION } from "@/config/career";
 
 interface TimelineItem {
     type: "experience" | "education";
@@ -51,10 +27,8 @@ interface TimelineItem {
     description?: string;
 }
 
-// Constants for timeline layout
 const PIXELS_PER_YEAR = 150;
 
-// Helper function to assign columns
 const assignColumns = (items: TimelineItem[]): TimelineItem[] => {
     const sortedItems = [...items].sort(
         (a, b) => a.startDate.getTime() - b.startDate.getTime()
@@ -94,7 +68,6 @@ const assignColumns = (items: TimelineItem[]): TimelineItem[] => {
     return itemsWithColumns;
 };
 
-// Helper function to get column width based on overlaps
 const getColumnWidth = (items: TimelineItem[], type: string) => {
     const maxColumn = Math.max(
         ...items
@@ -104,16 +77,12 @@ const getColumnWidth = (items: TimelineItem[], type: string) => {
     return maxColumn + 1;
 };
 
-// Helper function to get the vertical position of an item
 const getItemPosition = (date: Date, startYear: number) => {
     const yearDiff = date.getFullYear() - startYear;
     const monthOffset = date.getMonth() / 12;
     return (yearDiff + monthOffset) * PIXELS_PER_YEAR;
 };
 
-// --- New Modular Components ---
-
-// Component for the year labels column
 const TimelineYearLabels = ({
                                 years,
                                 startYear,
@@ -138,7 +107,6 @@ const TimelineYearLabels = ({
     );
 };
 
-// Component for a single timeline item (Experience or Education)
 const TimelineItemComponent = ({
                                    item,
                                    locale,
@@ -146,7 +114,7 @@ const TimelineItemComponent = ({
                                    startYear,
                                    columnCount,
                                    borderColor,
-                                   isFuture, // New prop to indicate if the item is in the future
+                                   isFuture,
                                }: {
     item: TimelineItem;
     locale: string;
@@ -173,7 +141,7 @@ const TimelineItemComponent = ({
                 <div
                     className={cn(
                         "absolute left-0 group transition-opacity",
-                        isFuture && "opacity-40" // Apply greyed out style if in the future
+                        isFuture && "opacity-40"
                     )}
                     style={{
                         top: `${topPosition}px`,
@@ -242,7 +210,6 @@ const TimelineItemComponent = ({
     );
 };
 
-// Component for a timeline column (Experience or Education)
 const TimelineColumn = ({
                             items,
                             title,
@@ -284,7 +251,7 @@ const TimelineColumn = ({
                             startYear={startYear}
                             columnCount={columnCount}
                             borderColor={borderColor}
-                            isFuture={isFuture} // Pass down the isFuture prop
+                            isFuture={isFuture}
                         />
                     );
                 })}
@@ -293,25 +260,27 @@ const TimelineColumn = ({
     );
 };
 
-// --- Main CareerTimeline Component ---
 const CareerTimeline = async ({ locale }: { locale: string }) => {
     const t = await getTranslations("career");
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    const messages: CareerData = await getMessages();
 
-    const allItems = [
-        ...messages.career.experience.map((item) => ({
-            ...item,
+    const allItems: TimelineItem[] = [
+        ...EXPERIENCE.map((item) => ({
             type: "experience" as const,
             startDate: new Date(item.startDate),
             endDate: item.endDate ? new Date(item.endDate) : new Date(),
+            company: t(`items.${item.id}.company`),
+            department: t(`items.${item.id}.department`),
+            role: t(`items.${item.id}.role`),
+            description: t(`items.${item.id}.description`),
+            tech: item.tech,
         })),
-        ...messages.career.education.map((item) => ({
-            ...item,
+        ...EDUCATION.map((item) => ({
             type: "education" as const,
             startDate: new Date(item.startDate),
             endDate: item.endDate ? new Date(item.endDate) : new Date(),
+            school: t(`items.${item.id}.school`),
+            degree: t(`items.${item.id}.degree`),
+            description: t(`items.${item.id}.description`),
         })),
     ];
 
@@ -334,7 +303,6 @@ const CareerTimeline = async ({ locale }: { locale: string }) => {
     const experienceColumns = getColumnWidth(itemsWithColumns, "experience");
     const educationColumns = getColumnWidth(itemsWithColumns, "education");
 
-    // Calculate the vertical position of the current date
     const now = new Date();
     const nowPosition = getItemPosition(now, startYear);
 
@@ -344,10 +312,8 @@ const CareerTimeline = async ({ locale }: { locale: string }) => {
             <Description className="mb-16">{t("description")}</Description>
 
             <div className="relative w-full grid grid-cols-[60px_1fr_1fr] gap-4">
-                {/* Year Labels Column */}
                 <TimelineYearLabels years={years} startYear={startYear} />
 
-                {/* "Now" Label */}
                 {
                     SETTINGS.career.showNowLineText &&
                 <div
@@ -368,7 +334,6 @@ const CareerTimeline = async ({ locale }: { locale: string }) => {
                 }
 
 
-                {/* Experience Column */}
                 <TimelineColumn
                     items={itemsWithColumns.filter((item) => item.type === "experience")}
                     title={t("experienceTitle")}
@@ -380,7 +345,6 @@ const CareerTimeline = async ({ locale }: { locale: string }) => {
                     latestEndDate={latestEndDate}
                 />
 
-                {/* Education Column */}
                 <TimelineColumn
                     items={itemsWithColumns.filter((item) => item.type === "education")}
                     title={t("educationTitle")}

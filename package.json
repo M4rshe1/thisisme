@@ -87,6 +87,7 @@
     "@types/node": "^25.0.9",
     "@types/react": "^19.2.9",
     "@types/react-dom": "^19.2.3",
+    "axios": "^1.13.6",
     "eslint": "^9.39.2",
     "eslint-config-next": "16.1.4",
     "next-sitemap": "^4.2.3",
