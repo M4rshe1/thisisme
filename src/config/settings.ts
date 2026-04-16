@@ -59,6 +59,7 @@ export const TECH: technologyNames[] = [
   "java",
   "nixos",
   "bun",
+  "cachyos",
 ];
 
 export type Social = SocialWithIcon | SocialWithImage;

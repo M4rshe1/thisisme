@@ -577,5 +577,11 @@ export const technologies: Record<string, TechnologyDef> = {
     "icon": "/images/tech/bun.png",
     "type": "package manager",
     "color": "#fbf0df"
+  },
+  "cachyos": {
+    "name": "CachyOS",
+    "icon": "/images/tech/cachyos.png",
+    "type": "os",
+    "color": "#000000"
   }
 }
