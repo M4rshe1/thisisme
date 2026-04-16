@@ -101,6 +101,30 @@ export const EXPERIENCE: ExperienceConfig[] = [
       "nixos",
     ],
   },
+  {
+    // trl: career.items.gfDzsFix
+    id: "gfDzsFix",
+    startDate: "2026-08-01",
+    endDate: "2026-12-31",
+    tech: [
+      "java",
+      "oracle",
+      "visualstudio",
+      "zabbix",
+      "rhel",
+      "powershell",
+      "mssql",
+      "postgresql",
+      "subversion",
+      "docker",
+      "windows",
+      "debian",
+      "typst",
+      "linux",
+      "eclipse",
+      "nixos",
+    ],
+  },
 ];
 
 export const EDUCATION: EducationConfig[] = [

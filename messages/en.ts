@@ -256,6 +256,13 @@ export default {
         description:
           "Fixing bugs, implementing new features into UniWare LVS and support the users of the Distribution Center.",
       },
+      gfDzsFix: {
+        company: "Georg Fischer AG",
+        department: "DZS IT",
+        role: "Software Engineer & System Administrator",
+        description:
+          "Developing and fixing bugs in UniWare LVS and administrating the IT infrastructure in the production.",
+      },
       bbz: {
         school: "BBZ Schaffhausen",
         degree: "Business IT specialist EFZ",
@@ -282,7 +289,8 @@ export default {
   },
   recipes: {
     filter: {
-      searchPlaceholder: "Search recipes by name, description, ingredients, or kitchen...",
+      searchPlaceholder:
+        "Search recipes by name, description, ingredients, or kitchen...",
       kitchen: "Kitchen",
       search: "Search",
       all: "All",

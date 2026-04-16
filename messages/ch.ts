@@ -254,6 +254,13 @@ export default {
         description:
           "Fähler behebig, neui Funktioone i UniWare LVS implementiere und Benutzer vom Distributions Zentrum unterstütze.",
       },
+      gfDzsFix: {
+        company: "Georg Fischer AG",
+        department: "DZS IT",
+        role: "Softwärentwickler & Systemadministrator",
+        description:
+          "Wieterentwicklig vom UniWare LVS und Administration vo de IT Infrastruktur i de Produktion.",
+      },
       bbz: {
         school: "BBZ Schaffhuuse",
         degree: "Informatiker EFZ",

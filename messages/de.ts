@@ -254,9 +254,16 @@ export default {
         description:
           "Fehlerbehebung, Implementierung neuer Funktionen in UniWare LVS und Unterstützung der Benutzer des Distributions Zentrums.",
       },
+      gfDzsFix: {
+        company: "Georg Fischer AG",
+        department: "DZS IT",
+        role: "Softwareentwickler & Systemadministrator",
+        description:
+          "Wieterentwicklung vom UniWare LVS und Administration der IT-Infrastruktur in der Produktion.",
+      },
       bbz: {
         school: "BBZ Schaffhausen",
-        degree: "Informatiker EFZ",
+        degree: "Softwareentwickler & Systemadministrator",
         description:
           "Dies ist die Ausbildung, die ich im Rahmen meiner Lehre bei Georg Fischer absolviere.",
       },
