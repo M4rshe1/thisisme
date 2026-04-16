@@ -582,6 +582,6 @@ export const technologies: Record<string, TechnologyDef> = {
     "name": "CachyOS",
     "icon": "/images/tech/cachyos.png",
     "type": "os",
-    "color": "#000000"
+    "color": "#0ea49c"
   }
 }
